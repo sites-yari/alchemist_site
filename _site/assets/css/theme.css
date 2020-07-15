@@ -1,4 +1,15 @@
 .under_bg_color{ background-color: white !important; }
+.body-contour{ 
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 15%;
+  padding-bottom: 5%; 
+}
+.content-promotional{ 
+  margin-left: 5%; 
+  margin-right: 5%;
+  text-align: center;
+}
 .txt_color_black{ color: black !important; }
 
-.pad_top_100{ padding-top: 100px; }
+/* .pad_top_100{ padding-top: 100px; } */
