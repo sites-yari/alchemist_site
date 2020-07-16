@@ -22,7 +22,7 @@ collections: #====================| POSTS |=====================================
         description: Everything needed for the index
         fields:
           - label: "Conteudo 1" # ---| ingles |---
-            name: content 1
+            name: content1
             widget: "object"
             fields:
                 - { label: "Titulo", name: "title", widget: "string" }
