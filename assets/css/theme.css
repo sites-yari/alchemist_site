@@ -49,7 +49,7 @@
 }
 .goal-text li{ 
   list-style-type:none; 
-  text-align: left;
+  /* text-align: left; */
   padding-left: 10%;
   padding-right: 10%;
 }
