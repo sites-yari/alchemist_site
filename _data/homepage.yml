@@ -4,3 +4,21 @@ content1:
     Lorem Ipsum has been the industry's standard dummy text ever since the
     1500s.
   title: 'ALCHEMIST promotional '
+
+content2:
+  goal1:
+    img: "../assets/imgs/phone_web_alchemist.png"
+    desc: >-
+      Share what you're saving for and Digit does the rest. It can budget for 
+      your next vacation, pay off credit cards, or put money away for a rainy 
+      day.
+    title: 'Goals you can actually achieve.'
+  goal2:
+    img: "../assets/imgs/phone_web_alchemist.png"
+    desc: >-
+      Share what you're saving for and Digit does the rest. It can budget for 
+      your next vacation, pay off credit cards, or put money away for a rainy 
+      day.
+    title: 'Goals you can actually achieve 2.'
+
+  

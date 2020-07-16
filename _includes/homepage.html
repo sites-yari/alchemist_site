@@ -1,11 +1,35 @@
-<div class="body-contour">
-  <div class="content-promotional-bg">
-    <div class="content-promotional">
+<div class="body-contour-sideless">
+  <!-- CONTENT 1 -->
+  <div class="content-promotional">
+    <h1 class="">{{site.data.homepage.content1.title}}</h1>
+    <br>
+    <p class="pad_bottom_50 limit-description">{{site.data.homepage.content1.desc}}</p>
+  </div>
 
-      <h1 class="pad_top_100">{{site.data.homepage.content1.title}}</h1>
-      <br>
-      <p class="">{{site.data.homepage.content1.desc}}</p>
-    
+  <!-- CONTENT 2 -->
+  <div class="content-goals">
+    <!-- goal 1 -->
+    <div class="goal-one row">
+      <div class="goal-img col-md-6">
+        <img src="{{site.data.homepage.content2.goal1.img}}" width="100%" class="right-side">
+      </div>
+      <div class="goal-text col-md-6">
+        <h1 class="pad_top_100">{{site.data.homepage.content2.goal1.title}}</h1>
+        <br>
+        <p class="pad_bottom_50 limit-description">{{site.data.homepage.content2.goal1.desc}}</p>
+      </div>
+    </div>
+    <!-- goal 2 -->
+    <div class="goal-two row">
+      <div class="goal-text col-md-6">
+        <h1 class="pad_top_100">{{site.data.homepage.content2.goal2.title}}</h1>
+        <br>
+        <p class="pad_bottom_50 limit-description">{{site.data.homepage.content2.goal2.desc}}</p>
+      </div>
+      <div class="goal-img col-md-6">
+        <img src="{{site.data.homepage.content2.goal2.img}}" width="100%">
+      </div>
     </div>
   </div>
 </div>
+
