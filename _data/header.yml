@@ -1,0 +1,29 @@
+title: ALCHEMIST
+
+right:
+  btn1:
+    text: ""
+    link: #
+  btn2:
+    text: ""
+    link: #
+  btn3:
+    text: ""
+    link: #
+  btn4:
+    text: ""
+    link: #
+  btn5:
+    text: ""
+    link: #
+
+left:
+  btn1:
+    text: "Home"
+    link: #
+  btn2:
+    text: "Contacts"
+    link: #
+  btn3:
+    text: ""
+    link: #

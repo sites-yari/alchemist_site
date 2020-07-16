@@ -1,0 +1,30 @@
+
+publish_mode: editorial_workflow
+media_folder: "assets/uploads" # Media files will be stored in the repo under uploads/versions
+
+backend:
+  name: git-gateway
+  # repo: https://github.com/sites-yari/pnch_ementa
+  repo: https://github.com/sites-yari/alchemist_site
+  branch: master # Branch to update (optional; defaults to master)
+
+
+collections: #====================| POSTS |===================================================|  
+  - name: "data" #|=====================| DATA |====================================================|
+    label: "Data"
+    editor:
+      preview: true
+    files:
+      # ---| INDEX |---
+      - name: "homepage"
+        label: "Homepage"
+        file: "_data/homepage.yml"
+        description: Everything needed for the index
+        fields:
+          - label: "Conteudo 1" # ---| ingles |---
+            name: content 1
+            widget: "object"
+            fields:
+                - { label: "Titulo", name: "title", widget: "string" }
+                - { label: "Descrição", name: "desc", widget: "string" }
+              
