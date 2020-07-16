@@ -22,6 +22,8 @@ collections: #====================| POSTS |=====================================
         description: Everything needed from the Navbar
         fields:
           - { label: "Titulo", name: "title", widget: "string" }
+          - { label: "Link do titulo", name: "link_title", widget: "string" }
+          - { label: "Logo", name: "img", widget: "string" }
           - label: "Left side"
             name: left
             widget: "object"
@@ -74,4 +76,24 @@ collections: #====================| POSTS |=====================================
                   - { label: "Titulo", name: "title", widget: "string" }
                   - { label: "Descrição", name: "desc", widget: "string" }
                   - { label: "Imagem", name: "img", widget: "string" }
+          - label: "Conteudo 3"
+            name: content3
+            widget: "object"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Descrição", name: "desc", widget: "string" }
+              - label: "Caixa 1"
+                name: box1
+                widget: "object"
+                fields:
+                  - { label: "Titulo", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "desc", widget: "string" }
+                  - { label: "Icon", name: "icon", widget: "string" }
+              - label: "Caixa 2"
+                name: box2
+                widget: "object"
+                fields:
+                  - { label: "Titulo", name: "title", widget: "string" }
+                  - { label: "Descrição", name: "desc", widget: "string" }
+                  - { label: "Icon", name: "icon", widget: "string" }
               

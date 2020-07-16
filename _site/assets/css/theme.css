@@ -1,3 +1,5 @@
+
+/* --- BODY contents --- */
 .under_bg_color{ background-color: white !important; }
 .body-contour{ 
   padding-left: 5%;
@@ -20,6 +22,20 @@
   background-color: #fafafa;
   text-align: center;
 }
+.content-secured-money{
+  text-align: center;
+}
+.secured-money-main{
+  margin-left: 10%; 
+  margin-right: 10%;
+}
+.content-grid-contour{
+  padding: 2% !important;
+}
+
+
+
+/* --- Common alterarions --- */
 .txt_color_black{ color: black !important; }
 .limit-description{
   padding-left: 15%;
@@ -43,6 +59,7 @@
 
 
 
+.pad_top_5{ padding-top: 5px; }
 .pad_top_10{ padding-top: 10px; }
 .pad_top_20{ padding-top: 20px; }
 .pad_top_30{ padding-top: 30px; }

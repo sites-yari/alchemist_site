@@ -21,4 +21,21 @@ content2:
       day.
     title: 'Goals you can actually achieve 2.'
 
+content3:
+  title: Over $1,000,000,000 securely saved.
+  desc: >-
+    We use state-of-the-art encryption to keep your data safe. Digit users have 
+    already put a billion in the bank, and the savings are just getting started.
+  box1:
+    icon: "../assets/imgs/alchemist_logo_simple.png"
+    title: Your money is held at FDIC insured banks.
+    desc: Which means you're protected up to $250,000.
+  box2:
+    icon: "../assets/imgs/alchemist_logo_simple.png"
+    title: Your data is secured by 256-bit encryption.
+    desc: That's the same level of security as the military.
+
+
+
+
   
