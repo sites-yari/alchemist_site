@@ -21,7 +21,7 @@ right:
 
 left:
   btn1:
-    text: "Home"
+    text: "Help"
     link: #
   btn2:
     text: "Contacts"

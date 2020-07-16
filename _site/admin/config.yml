@@ -96,4 +96,19 @@ collections: #====================| POSTS |=====================================
                   - { label: "Titulo", name: "title", widget: "string" }
                   - { label: "Descrição", name: "desc", widget: "string" }
                   - { label: "Icon", name: "icon", widget: "string" }
+          - label: "Conteudo 4"
+            name: content4
+            widget: "object"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Logo", name: "img_logo", widget: "string" }
+              - { label: "IOS link", name: "ios_link", widget: "string" }
+              - { label: "Android link", name: "android_link", widget: "string" }
+              - label: "Caixa 1"
+                name: box1
+                widget: "object"
+                fields:
+                  - { label: "Texto 1", name: "opt1", widget: "string" }
+                  - { label: "Texto 2", name: "opt2", widget: "string" }
+                  - { label: "Texto 3", name: "opt3", widget: "string" }
               
