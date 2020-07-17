@@ -46,6 +46,16 @@ collections: #====================| POSTS |=====================================
                 fields:
                   - { label: "Texto", name: "text", widget: "string" }
                   - { label: "Link", name: "link", widget: "string" }
+      # ---| FOOTER |---
+      - name: "footer"
+        label: "Footer"
+        file: "_data/footer.yml"
+        description: Everything needed from the footer
+        fields:
+          - { label: "Text", name: "text", widget: "string" }
+          - { label: "Link do twitter", name: "twitter_link", widget: "string" }
+          - { label: "link do Linkedin", name: "linkedin_link", widget: "string" }
+          - { label: "link do Instagram ", name: "insta_link", widget: "string" }
       # ---| INDEX |---
       - name: "homepage"
         label: "Homepage"

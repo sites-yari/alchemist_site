@@ -15,11 +15,11 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 15%;
-  padding-bottom: 5%; 
+  /* padding-bottom: 5%;  */
 }
 .body-contour-sideless{
   padding-top: 15%;
-  padding-bottom: 5%; 
+  /* padding-bottom: 5%;  */
 }
 .content-promotional{ 
   margin-left: 10%; 
@@ -55,6 +55,7 @@
 }
 .goal-text li .icon{ padding-right: 10px; }
 .goal-text .big-icon{ text-align: center; }
+.footer-custom{ background-color: #fafafa; }
 
 
 
@@ -77,6 +78,12 @@
   .goal-img{ 
     opacity: 0; 
     width: 0%!important; 
+  }
+  .no-mobile{
+    opacity: 0; 
+    width: 0%!important; 
+    height: 0% !important;
+    padding: 0px !important;
   }
 }
 
