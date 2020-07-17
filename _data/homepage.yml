@@ -1,53 +1,39 @@
 content1:
   desc: >-
-    Alchemist allows you to transform your savings in gold, a stable and save
+    Alchemist allows you to transform your savings into gold, a stable and safe
     currency specially in times of crisis
+  gold_title: gold
+  img: ../assets/imgs/promo_img.png
   title_part1: 'Aim for the '
-  gold_title: 'gold'
   title_part2: ''
-  img: "../assets/imgs/promo_img.png"
-
 content2:
   goal1:
-    img: "../assets/imgs/phone_web_alchemist.png"
     desc: >-
       Share what you're saving for and Digit does the rest. It can budget for 
       your next vacation, pay off credit cards, or put money away for a rainy 
       day.
-    title: 'Goals you can actually achieve.'
+    img: ../assets/imgs/phone_web_alchemist.png
+    title: Goals you can actually achieve.
   goal2:
-    img: "../assets/imgs/phone_web_alchemist.png"
     desc: >-
       Share what you're saving for and Digit does the rest. It can budget for 
       your next vacation, pay off credit cards, or put money away for a rainy 
       day.
-    title: 'Goals you can actually achieve 2.'
-
+    img: ../assets/imgs/phone_web_alchemist.png
+    title: Goals you can actually achieve 2.
 content3:
-  title: Over $1,000,000,000 securely saved.
+  box1:
+    desc: 'Which means you''re protected up to $250,000.'
+    icon: ../assets/imgs/alchemist_logo_simple.png
+    title: Your money is held at FDIC insured banks.
+  box2:
+    desc: That's the same level of security as the military.
+    icon: ../assets/imgs/alchemist_logo_simple.png
+    title: Your data is secured by 256-bit encryption.
   desc: >-
     We use state-of-the-art encryption to keep your data safe. Digit users have 
     already put a billion in the bank, and the savings are just getting started.
-  box1:
-    icon: "../assets/imgs/alchemist_logo_simple.png"
-    title: Your money is held at FDIC insured banks.
-    desc: Which means you're protected up to $250,000.
-  box2:
-    icon: "../assets/imgs/alchemist_logo_simple.png"
-    title: Your data is secured by 256-bit encryption.
-    desc: That's the same level of security as the military.
-
+  title: 'Over $1,000,000,000 securely saved.'
 content4:
+  img_logo: ../assets/imgs/alchemist_logo_color.png
   title: Get the app
-  img_logo: "../assets/imgs/alchemist_logo_color.png"
-  ios_link: #
-  android_link: #
-  depiction:
-    opt1: Spend happily and find your Spending Sweet Spot
-    opt2: Save smartly with Goals and Rules
-    opt3: Invest confidently in pre-built portfolios
-
-
-
-
-  
