@@ -1,9 +1,11 @@
 content1:
   desc: >-
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s.
-  title: 'ALCHEMIST promotional '
+    Alchemists allows you to transform your savings in gold, a stable and save
+    currency even in timesof crisis
+  title_part1: 'Aim for the '
+  gold_title: 'gold'
+  title_part2: ''
+  img: "../assets/imgs/promo_img.png"
 
 content2:
   goal1:

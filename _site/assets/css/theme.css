@@ -26,6 +26,7 @@
   margin-right: 10%;
   text-align: center;
 }
+.content-promotional h1 span{ color: #FFB304; }
 .content-goals{
   border-top: 1px solid rgba(244,245,246,.75);
   border-bottom: 1px solid rgba(244,245,246,.75);
@@ -61,11 +62,18 @@
 
 /* --- Common alterarions --- */
 .txt_color_black{ color: black !important; }
+.big-font-1{ font-size: 52px; }
+.font-1{ font-size: 20px; }
 .limit-description{
   padding-left: 15%;
   padding-right: 15%;
 }
 .goal-img{
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 2%;
+}
+.promotion-img{
   background-repeat: no-repeat;
   background-size: contain;
   padding: 2%;

@@ -2,11 +2,47 @@
 
 
   <!-- CONTENT 1 -->
-  <div class="content-promotional">
+  <div class="content-promotional row">
+
+    <div class=" col-sm-12 col-md-6">
+      <h1 class=" big-font-1">
+        {{site.data.homepage.content1.title_part1}}
+        <span>{{site.data.homepage.content1.gold_title}}</span>
+        {{site.data.homepage.content1.title_part2}}
+      </h1>
+      <br>
+      <p class="pad_bottom_50 limit-description font-1">{{site.data.homepage.content1.desc}}</p>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3 col-sm-5">
+          <a href="#">
+            <img src="../assets/imgs/app_store_btn.png" width="200" height="70"> 
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-2"></div>
+        <div class="col-md-3 col-sm-5">
+          <a href="#">
+            <img src="../assets/imgs/play_store_btn.png" width="200" height="70"> 
+          </a>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+
+    <div class=" col-sm-12 col-md-6">
+      <div class="promotion-img">
+        <img src="{{site.data.homepage.content1.img}}" width="50%">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTENT 1 -->
+  <!-- <div class="content-promotional">
     <h1 class="">{{site.data.homepage.content1.title}}</h1>
     <br>
     <p class="pad_bottom_50 limit-description">{{site.data.homepage.content1.desc}}</p>
-  </div>
+  </div> -->
 
 
   <!-- CONTENT 2 -->
