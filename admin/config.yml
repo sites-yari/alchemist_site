@@ -66,8 +66,11 @@ collections: #====================| POSTS |=====================================
             name: content1
             widget: "object"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Titulo parte 1", name: "title_part1", widget: "string" }
+              - { label: "Titulo parte 2", name: "title_part2", widget: "string" }
+              - { label: "Entre os Titulos 1 e 2", name: "gold_title", widget: "string" }
               - { label: "Descrição", name: "desc", widget: "string" }
+              - { label: "Imagem", name: "img", widget: "string" }
           - label: "Conteudo 2"
             name: content2
             widget: "object"
