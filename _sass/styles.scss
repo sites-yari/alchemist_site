@@ -1,0 +1,9 @@
+@import 'vendor/_normalize';
+@import 'vendor/bootstrap/bootstrap';
+@import 'themes/default';
+@import 'themes/yari';
+@import 'components/button';
+
+.test {
+    border: 1px solid $colour-black;
+}
