@@ -1,9 +1,7 @@
-<div class="body-contour-sideless">
-
+<div class="homepage">
 
   <!-- CONTENT 1 -->
   <div class="content-promotional row">
-
     <div class=" col-sm-12 col-md-6">
       <h1 class=" big-font-1">
         {{site.data.homepage.content1.title_part1}}
@@ -11,18 +9,18 @@
         {{site.data.homepage.content1.title_part2}}
       </h1>
       <br>
-      <p class="pad_bottom_50 limit-description font-1">{{site.data.homepage.content1.desc}}</p>
+      <p class="pb-5 limit-description font-1">{{site.data.homepage.content1.desc}}</p>
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-3 col-sm-5">
           <a href="#">
-            <img src="../assets/imgs/app_store_btn.png" width="200" height="70"> 
+            <img alt="app store btn" src="../assets/imgs/app_store_btn.png" width="200" height="70">
           </a>
         </div>
         <div class="col-md-2 col-sm-2"></div>
         <div class="col-md-3 col-sm-5">
           <a href="#">
-            <img src="../assets/imgs/play_store_btn.png" width="200" height="70"> 
+            <img alt="play store btn" src="../assets/imgs/play_store_btn.png" width="200" height="70">
           </a>
         </div>
         <div class="col-md-2"></div>
@@ -31,39 +29,39 @@
 
     <div class=" col-sm-12 col-md-6">
       <div class="promotion-img">
-        <img src="{{site.data.homepage.content1.img}}" width="50%">
+        <img alt="promotion image" src="{{site.data.homepage.content1.img}}" width="50%">
       </div>
     </div>
 
   </div>
 
   <!-- CONTENT 1 -->
-  <!-- <div class="content-promotional">
+  <div class="content-promotional">
     <h1 class="">{{site.data.homepage.content1.title}}</h1>
     <br>
-    <p class="pad_bottom_50 limit-description">{{site.data.homepage.content1.desc}}</p>
-  </div> -->
+    <p class="pt-10 pb-10 limit-description">{{site.data.homepage.content1.desc}}</p>
+  </div>
 
 
   <!-- CONTENT 2 -->
   <div class="content-goals">
     <!-- goal 1 -->
-    <div class="goal-one row">
+    <div class="goal-one row no-gutters">
       <div class="goal-img col-md-6">
         <img src="{{site.data.homepage.content2.goal1.img}}" width="100%" class="right-side">
       </div>
       <div class="goal-text col-md-6">
-        <h1 class="pad_top_100">{{site.data.homepage.content2.goal1.title}}</h1>
+        <h1 class="pt-8">{{site.data.homepage.content2.goal1.title}}</h1>
         <br>
-        <p class="pad_bottom_50 limit-description">{{site.data.homepage.content2.goal1.desc}}</p>
+        <p class="pb-5 limit-description">{{site.data.homepage.content2.goal1.desc}}</p>
       </div>
     </div>
     <!-- goal 2 -->
     <div class="goal-two row">
       <div class="goal-text col-md-6">
-        <h1 class="pad_top_100">{{site.data.homepage.content2.goal2.title}}</h1>
+        <h1 class="pt-8">{{site.data.homepage.content2.goal2.title}}</h1>
         <br>
-        <p class="pad_bottom_50 limit-description">{{site.data.homepage.content2.goal2.desc}}</p>
+        <p class="pb-5 limit-description">{{site.data.homepage.content2.goal2.desc}}</p>
       </div>
       <div class="goal-img col-md-6">
         <img src="{{site.data.homepage.content2.goal2.img}}" width="100%">
@@ -75,49 +73,52 @@
   <!-- CONTENT 3 -->
   <div class="content-secured-money">
     <div class="secured-money-main">
-      <h1 class="pad_top_80">{{site.data.homepage.content3.title}}</h1>
+      <h1 class="pt-7">{{site.data.homepage.content3.title}}</h1>
       <br>
-      <p class="pad_bottom_20 limit-description">{{site.data.homepage.content3.desc}}</p>
+      <p class="pb-4 limit-description">{{site.data.homepage.content3.desc}}</p>
     </div>
 
-    <div class="secured-money-grid row pad_bottom_100">
+    <div class="secured-money-grid row pb-8">
       <div class="col-md-1"></div>
       <div class="col-md-5 content-grid-contour">
         <img src="{{site.data.homepage.content3.box1.icon}}" width="50" height="50">
-        <h4 class="pad_top_10">{{site.data.homepage.content3.box1.title}}</h4>
+        <h4 class="pt-3">{{site.data.homepage.content3.box1.title}}</h4>
         <p class=" limit-description">{{site.data.homepage.content3.box1.desc}}</p>
       </div>
 
       <div class="col-md-5 content-grid-contour">
         <img src="{{site.data.homepage.content3.box2.icon}}" width="50" height="50">
-        <h4 class="pad_top_10">{{site.data.homepage.content3.box2.title}}</h4>
+        <h4 class="pt-3">{{site.data.homepage.content3.box2.title}}</h4>
         <p class="limit-description">{{site.data.homepage.content3.box2.desc}}</p>
       </div>
       <div class="col-md-1"></div>
     </div>
   </div>
 
-
   <!-- CONTENT 4 -->
-  <div class="content-get-app pad_bottom_80">
-    <div class="get-app-title pad_top_100 pad_bottom_80">
-      <img src="{{site.data.homepage.content4.img_logo}}" width="100" height="100" >
-      <div class="pad_bottom_30"></div>
+  <div id="section-downloads" class="content-get-app pb-7">
+    <div class="get-app-title pt-8 pb-7">
+      <img src="{{site.data.homepage.content4.img_logo}}" width="100" height="100">
+      <div class="pb-4"></div>
       <h1>{{site.data.homepage.content4.title}}</h1>
     </div>
 
-    <div class="goal-text col-12 pad_bottom_80">
+    <div class="goal-text col-12 pb-7">
       <ul>
         <li>
           <img src="../assets/imgs/check.png" width="30" height="20" class="icon">
           {{site.data.homepage.content4.depiction.opt1}}
         </li>
-        <li><p></p></li>
+        <li>
+          <p></p>
+        </li>
         <li>
           <img src="../assets/imgs/check.png" width="30" height="20" class="icon">
           {{site.data.homepage.content4.depiction.opt2}}
         </li>
-        <li><p></p></li>
+        <li>
+          <p></p>
+        </li>
         <li>
           <img src="../assets/imgs/check.png" width="30" height="20" class="icon">
           {{site.data.homepage.content4.depiction.opt3}}
@@ -129,19 +130,15 @@
       <div class="col-md-3"></div>
       <div class="col-md-3 col-sm-6">
         <a href="#">
-          <img src="../assets/imgs/app_store_btn.png" width="280" height="100"> 
+          <img src="../assets/imgs/app_store_btn.png" width="280" height="100">
         </a>
       </div>
       <div class="col-md-3 col-sm-6">
         <a href="#">
-          <img src="../assets/imgs/play_store_btn.png" width="280" height="100"> 
+          <img src="../assets/imgs/play_store_btn.png" width="280" height="100">
         </a>
       </div>
       <div class="col-md-3"></div>
     </div>
+
   </div>
-
-
-
-</div>
-
