@@ -2,10 +2,48 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
+$yari-colors: (
+    "primary": $alchemist-victoria-2,
+    "secondary": $alchemist-victoria-1,
+    "danger": $alchemist-status-warning,
+    "warning": $alchemist-status-error,
+    "success": $alchemist-status-success,
+    "info": $alchemist-status-info,
+    "light": $alchemist-gray-100,
+    "dark": $alchemist-gray-800,
+);
 
-$colour-primary: #231651;
-$colour-secondary: #2374AB;
-$colour-light: #D6FFF6;
-$colour-highlight1: #4DCCBD;
-$colour-highlight2: #FF8484;
-$colour-black: #000;
+// Boostrap variables to override
+$body-bg: #fff;
+$body-color: #000;
+
+$theme-colors: (
+    "primary": yari-color(primary),
+    "secondary": yari-color(secondary),
+    "danger": yari-color(danger),
+    "success": yari-color(success),
+    "info": yari-color(info),
+    "warning": yari-color(warning),
+    "light": yari-color(light),
+    "dark": yari-color(dark),
+);
+
+
+$colors: (
+  "blue": yari-color(primary),
+  "red": yari-color(danger),
+  "gray": $alchemist-gray-600,
+  "gray-dark": yari-color(dark),
+);
+
+
+$border-radius: .75rem;
+$border-width: 1px;
+
+
+$font-family-monospace: 'Montserrat-Regular',  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-monospace;
+
+
+
+

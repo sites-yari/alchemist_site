@@ -1,3 +1,11 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.test {
+    border: 1px solid yari-color(primary);
+
+    // @include responde-to('medium') {
+    //     border: 10px solid $color-primary;
+    //     text-align: center;
+    // }
+}
