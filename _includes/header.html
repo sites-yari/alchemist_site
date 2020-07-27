@@ -1,9 +1,11 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navbar-shadow" aria-label="navbar brand">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light navbar-shadow" aria-label="navbar brand">
     <div class="container-fluid">
-      <a class="navbar-brand txt_color_black" href="{{site.data.header.link_title}}" >
+      <a class="navbar-brand text-dark d-flex align-content-center " href="{{site.data.header.link_title}}">
         <img src="{{ site.data.header.img }}" width="30" height="30">
-        <strong>{{site.data.header.title}}</strong>
+        <div class="m-auto pl-2">
+          <strong>{{site.data.header.title}}</strong>
+        </div>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,19 +18,31 @@
         <form class="form-inline mt-2 mt-md-0">
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item active">
-              <a class="nav-link txt_color_black" href="{{site.data.header.left.btn1.link}}">
+              <a class="nav-link text-dark" href="{{site.data.header.left.btn1.link}}">
                 {{site.data.header.left.btn1.text}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link txt_color_black" href="{{site.data.header.left.btn2.link}}">
+              <a class="nav-link text-dark" href="{{site.data.header.left.btn2.link}}">
                 {{site.data.header.left.btn2.text}}</a>
             </li>
-            <li class="nav-item">
-              <a class="btn btn-outline-light" href="#section-downloads">Download now!</a>
+            <li class="nav-item pl-3">
+              <a class="btn btn-outline-dark" href="#homepage">Download now!</a>
             </li>
           </ul>
         </form>
       </div>
     </div>
   </nav>
+  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+  </div>
 </header>

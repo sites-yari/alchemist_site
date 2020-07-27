@@ -61,3 +61,6 @@ $spacers: map-merge((0: 0,
     10: ($spacer * 9.375) //150px
   ),
   $spacers);
+
+
+$enable-responsive-font-sizes: true;

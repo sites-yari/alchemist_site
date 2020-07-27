@@ -5,10 +5,11 @@
 @import 'abstracts/variables';
 
 // themes
-@import 'themes/yari';
+@import 'themes/default';
 
 // vendors
 @import 'vendor/_normalize';
 @import 'vendor/bootstrap/bootstrap';
 
 // @import 'components/button';
+@import 'themes/yari';

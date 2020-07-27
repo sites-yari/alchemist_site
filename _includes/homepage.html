@@ -1,145 +1,332 @@
-<div class="homepage">
-
+<div id="homepage" class="homepage">
   <!-- CONTENT 1 -->
-  <section class="content-promotional row">
-    <div class=" col-sm-12 col-md-6">
-      <h1 class=" big-font-1">
-        {{site.data.homepage.content1.title_part1}}
-        <span>{{site.data.homepage.content1.gold_title}}</span>
-        {{site.data.homepage.content1.title_part2}}
-      </h1>
-      <br>
-      <p class="pb-5 limit-description font-1">{{site.data.homepage.content1.desc}}</p>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-3 col-sm-5">
-          <a href="#">
-            <img alt="app store btn" src="../assets/imgs/app_store_btn.png" width="200" height="70">
-          </a>
+  <section class="content-promotional pt-7">
+    <div class="row no-gutters">
+      <div class="col-xs-12 col-sm-7 d-flex justify-content-center text-center">
+        <div class="m-auto pl-sm-4 pl-lg-8">
+          <h1 class="title">
+            {{site.data.homepage.section_1.title_part1}}
+            <span> {{site.data.homepage.section_1.gold_title}}</span>
+            {{site.data.homepage.section_1.title_part2}}
+          </h1>
+          <br>
+          <p class="pb-5 mx-3 desc">{{site.data.homepage.section_1.desc}}</p>
+          <div class="col-xs-12 col-sm-7"></div>
+          {% include downloads.html %}
         </div>
-        <div class="col-md-2 col-sm-2"></div>
-        <div class="col-md-3 col-sm-5">
-          <a href="#">
-            <img alt="play store btn" src="../assets/imgs/play_store_btn.png" width="200" height="70">
-          </a>
+      </div>
+
+      <div class="col-xs-12 col-sm-5 d-flex justify-content-center text-center">
+        <div class="phone-img my-auto pr-sm-4 pr-lg-8">
+          <img class="img-fluid" alt="promotion img" src="{{site.data.homepage.section_1.img}}">
         </div>
-        <div class="col-md-2"></div>
-      </div>
-    </div>
-
-    <div class=" col-sm-12 col-md-6">
-      <div class="promotion-img">
-        <img alt="promotion image" src="{{site.data.homepage.content1.img}}" width="50%">
-      </div>
-    </div>
-
-  </section>
-
-  <!-- CONTENT 1 -->
-  <section class="content-promotional">
-    <h1 class="">{{site.data.homepage.content1.title}}</h1>
-    <br>
-    <p class="pt-10 pb-10 limit-description">{{site.data.homepage.content1.desc}}</p>
-  </section>
-
-
-  <!-- CONTENT 2 -->
-  <section class="content-goals">
-    <!-- goal 1 -->
-    <div class="goal-one row no-gutters">
-      <div class="goal-img col-md-6">
-        <img src="{{site.data.homepage.content2.goal1.img}}" width="100%" class="right-side">
-      </div>
-      <div class="goal-text col-md-6">
-        <h1 class="pt-8">{{site.data.homepage.content2.goal1.title}}</h1>
-        <br>
-        <p class="pb-5 limit-description">{{site.data.homepage.content2.goal1.desc}}</p>
-      </div>
-    </div>
-    <!-- goal 2 -->
-    <div class="goal-two row">
-      <div class="goal-text col-md-6">
-        <h1 class="pt-8">{{site.data.homepage.content2.goal2.title}}</h1>
-        <br>
-        <p class="pb-5 limit-description">{{site.data.homepage.content2.goal2.desc}}</p>
-      </div>
-      <div class="goal-img col-md-6">
-        <img src="{{site.data.homepage.content2.goal2.img}}" width="100%">
       </div>
     </div>
   </section>
 
-
-  <!-- CONTENT 3 -->
-  <section class="content-secured-money">
-    <div class="secured-money-main">
-      <h1 class="pt-7">{{site.data.homepage.content3.title}}</h1>
-      <br>
-      <p class="pb-4 limit-description">{{site.data.homepage.content3.desc}}</p>
+  <!-- CONTENT 2  -->
+  {% assign section_2 = site.data.homepage.section_2 %}
+  <section class="row no-gutters row-with-bg-1">
+    <div class="col-sm-12 col-xs-12">
+      <h2>{{ section_2.title }}</h2>
     </div>
 
-    <div class="secured-money-grid row pb-8">
-      <div class="col-md-1"></div>
-      <div class="col-md-5 content-grid-contour">
-        <img src="{{site.data.homepage.content3.box1.icon}}" width="50" height="50">
-        <h4 class="pt-3">{{site.data.homepage.content3.box1.title}}</h4>
-        <p class=" limit-description">{{site.data.homepage.content3.box1.desc}}</p>
+    <div class="col-sm-6 col-xs-6 text-center">
+      <div class="featured-phone">
+        <img alt="img" class="img-fluid" src="{{ section_2.img }}">
       </div>
+    </div>
 
-      <div class="col-md-5 content-grid-contour">
-        <img src="{{site.data.homepage.content3.box2.icon}}" width="50" height="50">
-        <h4 class="pt-3">{{site.data.homepage.content3.box2.title}}</h4>
-        <p class="limit-description">{{site.data.homepage.content3.box2.desc}}</p>
+    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
+      <div class="my-auto desc">
+        {{ section_2.desc | markdownify }}
       </div>
-      <div class="col-md-1"></div>
     </div>
   </section>
 
-  <!-- CONTENT 4 -->
-  <section id="section-downloads" class="content-get-app pb-7">
-    <div class="get-app-title pt-8 pb-7">
-      <img src="{{site.data.homepage.content4.img_logo}}" width="100" height="100">
-      <div class="pb-4"></div>
-      <h1>{{site.data.homepage.content4.title}}</h1>
+  <!-- CONTENT 3  -->
+  {% assign section_3 = site.data.homepage.section_3 %}
+  <section class="row no-gutters row-with-bg-1 data-bg" data-bg="{{ section_3.bg_data }}">
+    <div class="col-sm-12 col-xs-12">
+      <h2>{{ section_3.title }}</h2>
     </div>
 
-    <div class="goal-text col-12 pb-7">
-      <ul>
-        <li>
-          <img src="../assets/imgs/check.png" width="30" height="20" class="icon">
-          {{site.data.homepage.content4.depiction.opt1}}
-        </li>
-        <li>
-          <p></p>
-        </li>
-        <li>
-          <img src="../assets/imgs/check.png" width="30" height="20" class="icon">
-          {{site.data.homepage.content4.depiction.opt2}}
-        </li>
-        <li>
-          <p></p>
-        </li>
-        <li>
-          <img src="../assets/imgs/check.png" width="30" height="20" class="icon">
-          {{site.data.homepage.content4.depiction.opt3}}
-        </li>
-      </ul>
+    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
+      <div class="my-auto desc">
+        {{ section_3.desc | markdownify }}
+      </div>
     </div>
+
+    <div class="col-sm-6 col-xs-6 text-center">
+      <div class="featured-phone">
+        <img alt="img" class="img-fluid" src="{{ section_3.img }}">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT 4  -->
+  {% assign section_4 = site.data.homepage.section_4 %}
+  <section class="row no-gutters row-with-bg-1 bg-left">
+    <div class="col-sm-12 col-xs-12">
+      <h2>{{ section_4.title }}</h2>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
+      <div class="my-auto desc">
+        {{ section_4.desc | markdownify }}
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 text-center">
+      <div class="featured-phone">
+        <img alt="img" class="img-fluid" src="{{ section_4.img }}">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stepper -->
+  {% assign stepperhowTo = site.data.homepage.stepper %}
+  {% assign id = stepperhowTo.id %}
+
+  <section id="{{id}}" class="stepper pt-7 pb-7">
+    <h2 class="text-center pb-4"> {{ stepperhowTo.title }} </h2>
+    {% assign totalSteps = stepperhowTo.steps.size %}
+
+    {% assign totalStepsFor = totalSteps | minus: 1 %}
+    {% assign steps = stepperhowTo.steps %}
 
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3 col-sm-6">
-        <a href="#">
-          <img src="../assets/imgs/app_store_btn.png" width="280" height="100">
-        </a>
+      <div class="col-xs-12 col-md-5">
+        {% for i in (0..totalStepsFor) %}
+        <div class="content-wrp">
+          <div class="description-mobile">
+            {{ steps[i].description }}
+          </div>
+
+          <div id="{{id}}-media-{{i}}" class="media-wrp {% if i == 0 %} active {% endif %}">
+            <img alt="step image" src="{{ steps[i].img }}" class="img-fluid img" />
+            <img alt="step image mask" src="{{ steps[i].imgMask }}" class="img-fluid img-mask" />
+          </div>
+        </div>
+
+        {% endfor %}
       </div>
-      <div class="col-md-3 col-sm-6">
-        <a href="#">
-          <img src="../assets/imgs/play_store_btn.png" width="280" height="100">
-        </a>
+      <div class="d-none d-md-block col-md-1">
+        <!-- stepper buttons -->
+        <div class="stepper-nav">
+          {% for i in (0..totalStepsFor) %}
+          <a id="{{id}}-step-button-{{i}}" class="step-button {% if i == 0 %} active {% endif %}"
+            onclick='stepperShow("{{ id }}", "{{ i }}")'>
+            <div class="index">
+              {% if stepperhowTo.showStepNumbers == true %}
+              {{ i | plus: 1 }}
+              {% endif %}
+            </div>
+          </a>
+          {% endfor %}
+        </div>
       </div>
-      <div class="col-md-3"></div>
+      <div id="{{id}}-desc-wrp" class="col-xs-12 col-md-5">
+        <!-- only descriptions -->
+        {% for i in (0..totalStepsFor) %}
+        <div id="{{id}}-desc-{{i}}" class="description  {% if i == 0 %} active {% endif %} ">
+          {{ steps[i].description }}
+        </div>
+        {% endfor %}
+      </div>
     </div>
 
   </section>
+
+
+  <!-- CONTENT 5  -->
+  {% assign section_5 = site.data.homepage.section_5 %}
+  <section class="row no-gutters my-5 row-with-bg-1 data-bg-color" data-bg-color="{{ section_5.bg_data_color }}">
+    <div class="col-12 pb-4">
+      <h2 class="highlighted">{{ section_5.title }} <span>{{ section_5.title_2 }}</span></h2>
+    </div>
+
+    <div class="col-12 d-flex justify-content-center text-center pt-4 ">
+      <div class="my-auto desc">
+        {{ section_5.desc | markdownify }}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTENT 6  -->
+  {% assign section_6 = site.data.homepage.section_6 %}
+  <section class="row-only-video">
+    <a href="javascript:;" class="" data-modal data-video="{{ section_6.youtube_embed_token }}"
+      data-title="{{ section_6.title }}" data-size="xl">
+      <div class="video-overlay-play-button "></div>
+    </a>
+    <img class="img-fluid" src="{{ section_6.img }}" alt="Video featured image - {{ section_6.title }}" />
+  </section>
+
+
+  <!-- CONTENT Dynamic  -->
+  {% assign section_template = site.data.homepage.section_template %}
+
+  {% assign section_n_types = "section-1,section-2,section-3" | split: ',' %}
+  <!-- {% assign section_bg_wire_types = "bg-wire-left bg-wire-center bg-wire-right" | join: ' ' %} -->
+
+  {% for s in section_template %}
+
+  {% if s.section_type == "promotional" %}
+  <section class="content-promotional pt-7">
+    <div class="row no-gutters">
+      <div class="col-xs-12 col-sm-7 d-flex justify-content-center text-center">
+        <div class="m-auto pl-sm-4 pl-lg-8">
+          <h1 class="title">
+            {{s.title}}
+            <span> {{s.title_2}}</span>
+          </h1>
+          <br>
+          <p class="pb-5 mx-3 desc">{{s.desc}}</p>
+          <div class="col-xs-12 col-sm-7"></div>
+          {% if s.include_relative != "" %}
+          {% include {{ s.include_relative }} %}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-5 d-flex justify-content-center text-center">
+        <div class="phone-img my-auto pr-sm-4 pr-lg-8">
+          <img class="img-fluid" alt="promotion img" src="{{s.img}}">
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+
+  {% if s.section_type == "bg-color" %}
+  <section class="row no-gutters my-5 row-with-bg-1 data-bg-color" data-bg-color="{{ section_5.bg_data_color }}">
+    <div class="col-sm-12 col-xs-12">
+      <h2>{{ s.title }}</h2>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
+      <div class="my-auto desc">
+        {{ s.desc | markdownify }}
+      </div>
+    </div>
+
+    {% if s.img != "" %}
+    <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
+      <div class="my-auto desc">
+        <img alt="img" class="img-fluid" src="{{ s.img }}">
+      </div>
+    </div>
+    {% endif %}
+
+    {% if s.include_relative != "" %}
+    <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
+      <div class="my-auto desc">
+        {% include {{ s.include_relative }} %}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% if s.section_type == "bg-color-title-highlighted" %}
+  <section class="row no-gutters my-5 row-with-bg-1 data-bg-color" data-bg-color="{{ s.bg_data_color }}">
+    <div class="col-12 pb-4">
+      <h2 class="highlighted">{{ s.title }} <span>{{ s.title_2 }}</span></h2>
+    </div>
+
+    <div class="col-12 d-flex justify-content-center text-center pt-4 ">
+      <div class="my-auto desc">
+        {{ s.desc | markdownify }}
+      </div>
+    </div>
+
+    {% if s.include_relative != "" %}
+    <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
+      <div class="my-auto desc">
+        {% include {{ s.include_relative }} %}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+
+  {% if section_n_types contains s.section_type %}
+  {% case s.section_type %}
+  {% when 'section-1' %}
+  <section class="row no-gutters row-with-bg-1">
+    <div class="col-sm-12 col-xs-12">
+      <h2>{{ s.title }}</h2>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 text-center">
+      <div class="featured-phone">
+        <img alt="img" class="img-fluid" src="{{ s.img }}">
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
+      <div class="my-auto desc">
+        {{ s.desc | markdownify }}
+      </div>
+    </div>
+  </section>
+  {% when 'section-2' %}
+  <section id="section-downloads" class="my-5 row-with-bg-1 bg-center">
+    <div class="row no-gutters">
+      <div class="col-12 d-flex justify-content-center text-center">
+        <div class="my-auto desc">
+          <h2>
+            {{ s.title }}
+          </h2>
+          {{ s.desc | markdownify }}
+        </div>
+      </div>
+      <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
+        <div class="my-auto desc">
+          {% if s.include_relative != "" %}
+          {% include {{ s.include_relative }} %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% else %}
+  <section class="row no-gutters row-with-bg-1 bg-left">
+    <div class="col-sm-12 col-xs-12">
+      <h2>{{ s.title }}</h2>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
+      <div class="my-auto desc">
+        {{ s.desc | markdownify }}
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 text-center">
+      <div class="featured-phone">
+        <img alt="img" class="img-fluid" src="{{ s.img }}">
+      </div>
+    </div>
+
+    <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
+      <div class="my-auto desc">
+        {% if s.include_relative != "" %}
+        {% include {{ s.include_relative }} %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endcase %}
+
+  {% endif %}
+
+
+  {% endfor %}
+
+
+
 </div>

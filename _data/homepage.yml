@@ -1,39 +1,117 @@
-content1:
+downloads_app_store:
+  alt: "Download to app store"
+  img: ../assets/imgs/app_store_btn.png
+  url: "https://www.apple.com/pt/ios/app-store/"
+
+downloads_google_play:
+  alt: "Download to app store"
+  img: ../assets/imgs/play_store_btn.png
+  url: "https://play.google.com/store"
+
+section_1:
   desc: >-
-    Alchemist allows you to transform your savings into gold, a stable and safe
-    currency specially in times of crisis like now!
+    Be a modern Alchemist and achieve your goals with simple automated investments in gold. You set the rules and we make the magic!
   gold_title: gold
   img: ../assets/imgs/promo_img.png
   title_part1: Aim for the
   title_part2: ''
-content2:
-  goal1:
-    desc: >-
-      Share what you're saving for and Digit does the rest. It can budget for 
-      your next vacation, pay off credit cards, or put money away for a rainy 
-      day.
-    img: ../assets/imgs/phone_web_alchemist.png
-    title: Goals you can actually achieve.
-  goal2:
-    desc: >-
-      Share what you're saving for and Digit does the rest. It can budget for 
-      your next vacation, pay off credit cards, or put money away for a rainy 
-      day.
-    img: ../assets/imgs/phone_web_alchemist.png
-    title: Goals you can actually achieve 2.
-content3:
-  box1:
-    desc: 'Which means you''re protected up to $250,000.'
-    icon: ../assets/imgs/alchemist_logo_simple.png
-    title: Your money is held at FDIC insured banks.
-  box2:
-    desc: That's the same level of security as the military.
-    icon: ../assets/imgs/alchemist_logo_simple.png
-    title: Your data is secured by 256-bit encryption.
+
+section_2:
+  title: Why Alchemist?
+  img: ../assets/imgs/promo_img.png
   desc: >-
-    We use state-of-the-art encryption to keep your data safe. Digit users have 
-    already put a billion in the bank, and the savings are just getting started.
-  title: 'Over $1,000,000,000 securely saved.'
-content4:
-  img_logo: ../assets/imgs/alchemist_logo_color.png
-  title: Get the app
+    **Goals you can actually achieve**
+
+
+    Alchemist will help you to save in Gold and get the budget for going on holidays, making that travel trip, buying that unique gadget or simply investing for a rainy day.  
+    
+    Investing with a purpose is powerful.
+
+    Set your Goals and funding Rules and let our automatic investment methods buy you grams of Gold in small increments with zero impact in your lifestyle. Invest every day with your purchases, income or whenever you decide, and before you know it, you'll have reached your goals.
+
+
+section_3:
+  title: Why Gold?
+  img: ../assets/imgs/promo_img.png
+  bg_data: ../assets/imgs/bg-wire-2.png
+  desc: >-
+    Physical gold is the ultimate storage of wealth. A stable currency, immune to inflation, bank collapses and financial risks. It shines bright in uncertain times and is one of the safest and smartest ways to invest and build wealth.
+
+    Alchemist lets you invest in 99.99% investment-grade physical gold from amounts as small as 1 milligram, and you have access to professional market rates with prices updated every 5 seconds and guaranteed low costs.
+
+
+section_4:
+  title: Bullet Proof Security
+  img: ../assets/imgs/promo_img.png
+  desc: >-
+    We’ve done the extra mile to make all your data, your money and your gold protected at all times. 
+    We work with the most advanced security protocols and have the backing banking? of Easy Payments and Finance E.P.S.A as a regulated payment entity, regulated by the Spanish Central Bank.
+
+
+    **Your data is secured by 256-bit encryption.**
+    That's the same level of security as the military.
+    
+    ## **Physical Gold Redemption (soon)** 
+
+    Invest in physical gold and get it delivered to your door!  
+
+section_5:
+  title: Alchemist is
+  title_2: free of charge
+  bg_data_color: "#e7effc"
+  desc: >-
+    Automated investment in gold with our innovative methods won't cost you anything, it's free! 
+
+    We charge a **transparent** trading fee of 1% which is among the lowest in the market.
+
+section_6:
+  title: "Video 1"
+  img: "../assets/imgs/bg-wire-2.png"
+  youtube_embed_token: "0mHmrNdaiBY"
+  desc: >-
+
+section_template:
+  - title: "Download now!"
+    section_type: section-2
+    include_relative: "downloads.html"
+    desc: >-
+
+stepper:
+  title: How to get started
+  id: howto1
+  showStepNumbers: true
+  steps:
+    - { title: "Add your own goals",
+        mediaType: "image", 
+        usingImgMask: "active",
+        imgMask: "../assets/imgs/stepper/iphone.png",
+        showImgMobile: true,
+        img: "../assets/imgs/stepper/1.png",
+        description: "Your goals tailored by you, this way you can save as much money as you want for your own objectives."
+      }
+    - { title: "Link your account", 
+        mediaType: "image", 
+        usingImgMask: "active",
+        imgMask: "../assets/imgs/stepper/iphone.png",
+        showImgMobile: true,
+        img: "../assets/imgs/stepper/2.png",
+        description: "Link your account with a brand new and secure technology. With open banking  you can connect your bank account, and allow us to invest your money according to your needs and funding rules."
+      }
+    - { title: "Save and Invest automatically", 
+        mediaType: "image", 
+        usingImgMask: "active",
+        imgMask: "../assets/imgs/stepper/iphone.png",
+        showImgMobile: true,
+        img: "../assets/imgs/stepper/3.png",
+        description: "With Alchemist you can just sit down and relax! Select the methods you want to use and let us help you reach your goals."
+      }
+    - { title: "Already done?", 
+        mediaType: "image", 
+        usingImgMask: "active",
+        imgMask: "../assets/imgs/stepper/iphone.png",
+        showImgMobile: true,
+        img: "../assets/imgs/stepper/4.png",
+        description: "Yes, it is that simple! Now you can monitor your goals and investments and check your progress any time."
+      }
+
+
