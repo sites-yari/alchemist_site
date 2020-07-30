@@ -1,7 +1,7 @@
 <div id="homepage" class="homepage">
   <!-- CONTENT 1 -->
-  <section class="content-promotional pt-7">
-    <div class="row no-gutters">
+  <section class="content-promotional pt-7 d-flex justify-content-center text-center">
+    <div class="row no-gutters ">
       <div class="col-xs-12 col-sm-7 d-flex justify-content-center text-center">
         <div class="m-auto pl-sm-4 pl-lg-8">
           <h1 class="title">
@@ -44,9 +44,29 @@
     </div>
   </section>
 
+
+  {% assign section_7 = site.data.homepage.section_7 %}
+  <section class="row no-gutters row-with-bg-1 no-bg">
+    <div class="col-sm-5 col-xs-5 d-flex justify-content-center text-center">
+      <div class="my-auto pl-3 desc">
+        <h2>{{ section_7.title }}</h2>
+        <br>
+        <p>
+          {{ section_7.desc | markdownify }}
+        </p>
+      </div>
+    </div>
+
+    <div class="col-sm-7 col-xs-7 text-center">
+      <div class="featured-phone">
+        <img alt="img" class="img-fluid" src="{{ section_7.img }}">
+      </div>
+    </div>
+  </section>
+
   <!-- CONTENT 3  -->
   {% assign section_3 = site.data.homepage.section_3 %}
-  <section class="row no-gutters row-with-bg-1 bg-left data-bg" data-bg="{{ section_3.bg_data }}">
+  <section class="row no-gutters row-with-bg-1 bg-middle-left data-bg" data-bg="{{ section_3.bg_data }}">
     <div class="col-sm-12 col-xs-12">
       <h2>{{ section_3.title }}</h2>
     </div>
@@ -88,8 +108,8 @@
   {% assign stepperhowTo = site.data.homepage.stepper %}
   {% assign id = stepperhowTo.id %}
 
-  <section id="{{id}}" class="stepper pt-7 pb-7">
-    <h2 class="text-center pb-4"> {{ stepperhowTo.title }} </h2>
+  <section id="{{id}}" class="stepper pt-4 pb-4 pt-sm-7 pb-sm-7">
+    <h2 class="text-center pb-4 pb-sm-6 main-title"> {{ stepperhowTo.title }} </h2>
     {% assign totalSteps = stepperhowTo.steps.size %}
 
     {% assign totalStepsFor = totalSteps | minus: 1 %}
@@ -100,10 +120,21 @@
         {% for i in (0..totalStepsFor) %}
         <div class="content-wrp">
           <div class="description-mobile p-2">
-            {{ steps[i].description }}
+            <div class="row align-items-start">
+              <div class="col-12">
+                <h2 class="steps-title"> {{steps[i].title}} </h2>
+              </div>
+              <div class="col-12 pb-3 pb-sm-8">
+              </div>
+              <div class="col-12 p-3">
+                <div class="desc">
+                  {{ steps[i].description }}
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div id="{{id}}-media-{{i}}" class="media-wrp {% if i == 0 %} active {% endif %}">
+          <div id="{{id}}-media-{{i}}" class="media-wrp {% if i == 0 %} active {% endif %} {% if steps[i].showImgMobile == false %} hide-mobile {% endif %}">
             <img alt="step image" src="{{ steps[i].img }}" class="img-fluid img" />
             <img alt="step image mask" src="{{ steps[i].imgMask }}" class="img-fluid img-mask" />
           </div>
@@ -130,7 +161,18 @@
         <!-- only descriptions -->
         {% for i in (0..totalStepsFor) %}
         <div id="{{id}}-desc-{{i}}" class="description  {% if i == 0 %} active {% endif %} ">
-          {{ steps[i].description }}
+          <div class="row align-items-start">
+            <div class="col-12">
+              <h2 class="steps-title"> {{steps[i].title}} </h2>
+            </div>
+            <div class="col-12 pb-1 pb-sm-5">
+            </div>
+            <div class="col-12">
+              <div class="desc">
+                {{ steps[i].description }}
+              </div>
+            </div>
+          </div>
         </div>
         {% endfor %}
       </div>
@@ -141,13 +183,13 @@
 
   <!-- CONTENT 5  -->
   {% assign section_5 = site.data.homepage.section_5 %}
-  <section class="row no-gutters my-5 row-with-bg-1 data-bg-color" data-bg-color="{{ section_5.bg_data_color }}">
-    <div class="col-12 pb-4">
-      <h2 class="highlighted">{{ section_5.title }} <span>{{ section_5.title_2 }}</span></h2>
+  <section class="row no-gutters row-with-bg-1 data-bg-color" data-bg-color="{{ section_5.bg_data_color }}">
+    <div class="col-12 justify-content-center text-center">
+        <h2 class="highlighted">{{ section_5.title }} <span>{{ section_5.title_2 }}</span></h2>
     </div>
 
-    <div class="col-12 d-flex justify-content-center text-center pt-4 ">
-      <div class="my-auto desc">
+    <div class="col-12 text-center">
+      <div class=" desc">
         {{ section_5.desc | markdownify }}
       </div>
     </div>
@@ -156,11 +198,14 @@
 
   <!-- CONTENT 6  -->
   {% assign section_6 = site.data.homepage.section_6 %}
-  
 
+<!-- 
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ section_6.youtube_embed_token }}?theme=dark&controls=0&disablekb=0&enablejsapi=0&rel=0&showinfo=0&modestbranding=1&color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen frameborder="0" scrolling="no" ></iframe>
-  </div>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/{{ section_6.youtube_embed_token }}?theme=dark&controls=0&disablekb=0&enablejsapi=0&rel=0&showinfo=0&modestbranding=1&color=white"
+      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      frameborder="0" scrolling="no"></iframe>
+  </div> -->
 
   <section class="row-only-video">
     <a href="javascript:;" class="" data-modal data-video="{{ section_6.youtube_embed_token }}"
@@ -180,7 +225,7 @@
   {% for s in section_template %}
 
   {% if s.section_type == "promotional" %}
-  <section class="content-promotional pt-7">
+  <section class="content-promotional d-flex justify-content-center text-center">
     <div class="row no-gutters">
       <div class="col-xs-12 col-sm-7 d-flex justify-content-center text-center">
         <div class="m-auto pl-sm-4 pl-lg-8">

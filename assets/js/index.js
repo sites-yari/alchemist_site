@@ -47,7 +47,7 @@ $(document).ready(function () {
             if ($image) {
                 $('#quickview .modal-body').html('<div class="text-center"><img class="img-fluid" src="'+$image+'" alt="'+$title+'"></div>');
             } else if ($video) {
-                $('#quickview .modal-body').html('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/'+$video+'?autoplay=1" allowfullscreen></iframe></div>');
+                $('#quickview .modal-body').html('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/'+$video+'?autoplay=1&theme=dark&controls=0&disablekb=0&rel=0&showinfo=0&modestbranding=1&color=red" allowfullscreen></iframe></div>');
             }
             if ($page) {
                 $('#quickview .modal-body').load($page,function(){

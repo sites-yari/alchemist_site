@@ -161,6 +161,14 @@ collections: #====================| POSTS |=====================================
               - { label: "Featured Image", name: "img", widget: "string", default: "../assets/imgs/bg-wire-2.png"}
               - { label: "YouTube embed token", name: "youtube_embed_token", widget: "string", default: "0mHmrNdaiBY" }
 
+          - label: "Section 7"
+            name: section_7
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
           - label: "Stepper"
             name: "stepper"
             widget: "object"

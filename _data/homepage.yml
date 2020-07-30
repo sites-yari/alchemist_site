@@ -12,7 +12,7 @@ section_1:
   desc: >-
     Be a modern Alchemist and achieve your goals with simple automated investments in gold. You set the rules and we make the magic!
   gold_title: gold
-  img: ../assets/imgs/promo_img.png
+  img: ../assets/imgs/d_1.png
   title_part1: Aim for the
   title_part2: ''
 
@@ -32,7 +32,7 @@ section_2:
 
 section_3:
   title: Why Gold?
-  img: ../assets/imgs/promo_img.png
+  img: ../assets/imgs/loan.png
   bg_data: ../assets/imgs/bg-wire-1.png
   desc: >-
     Physical gold is the ultimate storage of wealth. A stable currency, immune to inflation, bank collapses and financial risks. It shines bright in uncertain times and is one of the safest and smartest ways to invest and build wealth.
@@ -42,7 +42,7 @@ section_3:
 
 section_4:
   title: Bullet Proof Security
-  img: ../assets/imgs/promo_img.png
+  img: ../assets/imgs/bulletproffsec.png
   desc: >-
     We’ve done the extra mile to make all your data, your money and your gold protected at all times. 
     We work with the most advanced security protocols and have the backing banking? of Easy Payments and Finance E.P.S.A as a regulated payment entity, regulated by the Spanish Central Bank.
@@ -66,9 +66,17 @@ section_5:
 
 section_6:
   title: "Video 1"
-  img: "../assets/imgs/bg-wire-2.png"
+  img: "../assets/imgs/millennials.jpg"
   youtube_embed_token: "0mHmrNdaiBY"
   desc: >-
+
+section_7:
+  title: "Add your own goals"
+  img: "../assets/imgs/add_goals.png"
+  desc: >-
+    And let the app take you there!
+
+
 
 section_template:
   - title: "Download now!"
@@ -93,7 +101,7 @@ stepper:
         mediaType: "image", 
         usingImgMask: "active",
         imgMask: "../assets/imgs/stepper/iphone.png",
-        showImgMobile: true,
+        showImgMobile: false,
         img: "../assets/imgs/stepper/2.png",
         description: "Link your account with a brand new and secure technology. With open banking  you can connect your bank account, and allow us to invest your money according to your needs and funding rules."
       }
@@ -101,7 +109,7 @@ stepper:
         mediaType: "image", 
         usingImgMask: "active",
         imgMask: "../assets/imgs/stepper/iphone.png",
-        showImgMobile: true,
+        showImgMobile: false,
         img: "../assets/imgs/stepper/3.png",
         description: "With Alchemist you can just sit down and relax! Select the methods you want to use and let us help you reach your goals."
       }
@@ -109,7 +117,7 @@ stepper:
         mediaType: "image", 
         usingImgMask: "active",
         imgMask: "../assets/imgs/stepper/iphone.png",
-        showImgMobile: true,
+        showImgMobile: false,
         img: "../assets/imgs/stepper/4.png",
         description: "Yes, it is that simple! Now you can monitor your goals and investments and check your progress any time."
       }
