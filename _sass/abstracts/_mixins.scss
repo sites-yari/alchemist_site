@@ -33,7 +33,6 @@
 }
 
 
-
 //  USAGE
 // @include keyframes(slide-down) {
 //     0% { opacity: 1; }
@@ -70,10 +69,6 @@
 }
 
 @mixin animation($str) {
-    -webkit-animation: #{$str};
-    -moz-animation: #{$str};
-    -ms-animation: #{$str};
-    -o-animation: #{$str};
     animation: #{$str};
 }
 

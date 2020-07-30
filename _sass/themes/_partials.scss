@@ -1,0 +1,122 @@
+
+%defaultSection {
+    position: relative;
+    min-height: 650px;
+    font-family: "Montserrat-Regular";
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: white;
+    background-image: url("../../assets/imgs/bg-wire-1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom -150px right -350px;
+
+    h2 {
+        text-align: center;
+        font-family: "Montserrat-Bold";
+        font-size: 3em;
+
+        &.highlighted {
+            font-size: 3em;
+
+            span {
+                border-bottom: 0.2em solid $alchemist-gold-4;
+            }
+        }
+    }
+
+    .featured-phone {
+        margin-top: 5%;
+
+        img {
+            max-height: 550px;
+        }
+    }
+
+    .desc {
+        margin: 12%;
+        font-size: 1.2em;
+        text-align: left;
+    }
+}
+
+
+
+
+.row-with-bg-1 {
+    @extend %defaultSection;
+
+    @include media-breakpoint-up(sm) {
+        &:after {
+            content: "";
+            background-image: linear-gradient(to bottom, white, transparent);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5em;
+        }
+
+        &:before {
+            content: "";
+            background-image: linear-gradient(to bottom, transparent, white);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 95%;
+            left: 0;
+            width: 100%;
+            height: 5em;
+        }
+    }
+
+    &.data-bg {
+        background-size: cover;
+        background-position: 50% 50%;
+
+        &:after,
+        &:before {
+            background: none;
+        }
+    }
+
+    &.data-bg-color {
+        background-image: none;
+
+        &:after,
+        &:before {
+            background: none;
+        }
+    }
+
+    &.bg-left {
+        background-position: bottom -150px left -350px;
+    }
+
+    &.bg-middle-left {
+        background-size: contain;
+        background-position: -50% 50%;
+    }
+
+    &.bg-center {
+        background-position: center center;
+    }
+
+    &.no-bg {
+        background-image: none;
+    }
+
+    &.bg-gradient-gold {
+        background-image: none;
+        background: $alchemist-gold-4;
+        background: linear-gradient(0deg, $alchemist-gold-4 0%, $alchemist-gold-4 20%, $alchemist-white-100 100%);
+    }
+
+}
+
+@include media-breakpoint-down(md) {
+    .d-none-mobile {
+        display: none !important;
+    }
+}

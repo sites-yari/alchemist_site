@@ -13,23 +13,37 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <!-- left menu -->
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item active">
-              <a class="nav-link text-dark" href="{{site.data.header.left.btn1.link}}">
-                {{site.data.header.left.btn1.text}}</a>
-            </li>
+          {% assign nav_left = site.data.header.left %}
+          {% for nav_link in nav_left %}
+            {% if nav_link.type == "default" %}
             <li class="nav-item">
-              <a class="nav-link text-dark" href="{{site.data.header.left.btn2.link}}">
-                {{site.data.header.left.btn2.text}}</a>
+              <a class="nav-link text-dark" href="{{nav_link.link}}">
+                {{nav_link.text}}</a>
             </li>
-            <li class="nav-item pl-3">
-              <a class="btn btn-outline-dark" href="#homepage">Download now!</a>
-            </li>
+            {% else %}
+              <li class="nav-item pl-3 my-auto">
+                <a class="btn btn-outline-dark" href="{{nav_link.link}}">{{nav_link.text}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+          <ul class="navbar-nav nav-flex-icons">
+            {% assign nav_right = site.data.header.right %}
+            {% for nav_link in nav_right %}
+              {% if nav_link.type == "default" %}
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="{{nav_link.link}}">
+                  {{nav_link.text}}</a>
+              </li>
+              {% else %}
+                <li class="nav-item pl-3 my-auto">
+                  <a class="btn btn-outline-dark" href="{{nav_link.link}}">{{nav_link.text}}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
-        </form>
+        </div>
       </div>
     </div>
   </nav>

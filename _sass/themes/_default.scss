@@ -64,3 +64,11 @@ $spacers: map-merge((0: 0,
 
 
 $enable-responsive-font-sizes: true;
+
+
+body {
+  // navbar fixed
+  padding-top: 70px;
+  font-family: "Montserrat-Regular";
+  color: $alchemist-gray-800;
+}

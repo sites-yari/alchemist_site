@@ -1,7 +1,46 @@
+var myStepper;
+
 $(document).ready(function () {
     if (jQuery) {
+        // ================================== video
 
-       
+        var $refreshButton = $('#refresh');
+        var $results = $('#css_result');
+        
+        function refresh(){
+          var css = $('style.cp-pen-styles').text();
+          $results.html(css);
+        }
+      
+        refresh();
+        $refreshButton.click(refresh);
+        
+        // Select all the contents when clicked
+        $results.click(function(){
+          $(this).select();
+        });
+        //===================================
+
+
+
+
+        const stepper = $('section[data-stepper]');
+        const stepperAutoPlay = $(stepper).data('autoplay') || false;
+        const stepperTotal = $(stepper).data('total') || 1;
+        const stepperDelay = $(stepper).data('delay') || 3000;
+        const stepperId = $(stepper).attr('id');
+        if (stepperAutoPlay) {
+            myStepper = setInterval(myTimer, stepperDelay);
+            var c = 0;
+            function myTimer() {
+                c += 1;
+                if (c === stepperTotal) {
+                    c = 0;
+                }
+                stepperShow(stepperId, c, false);
+            }
+        }
+
         // ====================================================== Sections data-bg
         $("section.row-with-bg-1.data-bg").each(function (i) {
             // $(this).attr('style','background-image: url('+ imagesArray[i] +'));
@@ -69,8 +108,10 @@ $(document).ready(function () {
     }
 });
 
-var stepperShow = function (stepper, stepIndex) {
-
+var stepperShow = function (stepper, stepIndex, stop = true) {
+    if (stop) {
+        clearInterval(myStepper);
+    }
     const _rootStepperPath = "#" + stepper;
     // const _stepper = $(_rootStepperPath);
 
@@ -100,7 +141,6 @@ var stepperShow = function (stepper, stepIndex) {
 
     const childrenStepMediaPath = _rootStepperPath + " .content-wrp";
     var childrenStepMedia = $(childrenStepMediaPath).children();
-    console.log("stepperShow -> childrenStepMedia", childrenStepMedia)
 
     for (let i = 0; i < childrenStepMedia.length; i++) {
         const element = childrenStepMedia[i];

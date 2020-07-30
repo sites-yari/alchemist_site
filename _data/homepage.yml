@@ -18,65 +18,78 @@ section_1:
 
 section_2:
   title: Why Alchemist?
-  img: ../assets/imgs/promo_img.png
+  img: ../assets/imgs/gold_chart.png
   desc: >-
-    **Goals you can actually achieve**
-
-
     Alchemist will help you to save in Gold and get the budget for going on holidays, making that travel trip, buying that unique gadget or simply investing for a rainy day.  
-    
+
+    ### [Learn more about](#)
+
+section_7:
+  title: "Add your own goals"
+  img: "../assets/imgs/add_goals.png"
+  bg_data_color: "#ffb304"
+  desc: >-
+    And let the app take you there!
+
+
+section_8:
+  title: "Goals you can actually achieve"
+  img: "../assets/imgs/d_1.png"
+  bg_data_color: "#fffff"
+  desc: >-
     Investing with a purpose is powerful.
 
     Set your Goals and funding Rules and let our automatic investment methods buy you grams of Gold in small increments with zero impact in your lifestyle. Invest every day with your purchases, income or whenever you decide, and before you know it, you'll have reached your goals.
 
+section_9:
+  title: "Physical Gold Redemption (soon) "
+  img: "../assets/imgs/delivery_gold.png"
+  bg_data_color: "#fffff"
+  desc: >-
+    ### Invest in physical gold and get it delivered to your door!  
+
 
 section_3:
   title: Why Gold?
-  img: ../assets/imgs/loan.png
+  img: ../assets/imgs/gold_nugget_2.png
   bg_data: ../assets/imgs/bg-wire-1.png
   desc: >-
     Physical gold is the ultimate storage of wealth. A stable currency, immune to inflation, bank collapses and financial risks. It shines bright in uncertain times and is one of the safest and smartest ways to invest and build wealth.
 
+    
     Alchemist lets you invest in 99.99% investment-grade physical gold from amounts as small as 1 milligram, and you have access to professional market rates with prices updated every 5 seconds and guaranteed low costs.
 
 
 section_4:
   title: Bullet Proof Security
-  img: ../assets/imgs/bulletproffsec.png
+  img: ../assets/imgs/bulletproffsec_3.png
+  bg_data: ../assets/imgs/bg-wire-2.png
   desc: >-
     We’ve done the extra mile to make all your data, your money and your gold protected at all times. 
+    
+    
     We work with the most advanced security protocols and have the backing banking? of Easy Payments and Finance E.P.S.A as a regulated payment entity, regulated by the Spanish Central Bank.
 
 
     **Your data is secured by 256-bit encryption.**
     That's the same level of security as the military.
     
-    ## **Physical Gold Redemption (soon)** 
-
-    Invest in physical gold and get it delivered to your door!  
 
 section_5:
   title: Alchemist is
   title_2: free of charge
-  bg_data_color: "#e7effc"
+  bg_data_color: "#5f657e"
   desc: >-
     Automated investment in gold with our innovative methods won't cost you anything, it's free! 
 
     We charge a **transparent** trading fee of 1% which is among the lowest in the market.
 
 section_6:
-  title: "Video 1"
-  img: "../assets/imgs/millennials.jpg"
-  youtube_embed_token: "0mHmrNdaiBY"
+  title: "Video_1"
+  img: ../assets/imgs/videoposter.png
+  v_mp4: "https://www.dropbox.com/s/5s3fxr9883gjoia/Promo_Square_v18.mp4?dl=1"
+  v_webm: "https://vjs.zencdn.net/v/oceans.webm"
   desc: >-
-
-section_7:
-  title: "Add your own goals"
-  img: "../assets/imgs/add_goals.png"
-  desc: >-
-    And let the app take you there!
-
-
 
 section_template:
   - title: "Download now!"
@@ -88,6 +101,8 @@ stepper:
   title: How to get started
   id: howto1
   showStepNumbers: true
+  autoplay: true
+  delay: 3000
   steps:
     - { title: "Add your own goals",
         mediaType: "image", 

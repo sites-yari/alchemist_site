@@ -15,6 +15,13 @@ collections: #====================| POSTS |=====================================
     editor:
     preview: true
     files:
+      - name: "navigation"
+        label: "Navigation"
+        file: "_data/navigation.yml"
+        description: Navigation section
+        fields:
+           - { label: "Name", name: "name", widget: "string" }
+           - { label: "Link", name: "link", widget: "string" }
       - name: "downloads"
         label: "Downloads"
         file: "_data/downloads.yml"
@@ -40,36 +47,49 @@ collections: #====================| POSTS |=====================================
         file: "_data/header.yml"
         description: Everything needed from the Navbar
         fields:
-          - { label: "Titulo", name: "title", widget: "string" }
-          - { label: "Link do titulo", name: "link_title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link for Title", name: "link_title", widget: "string" }
           - { label: "Logo", name: "img", widget: "string" }
+          - label: "Right side"
+            name: right
+            widget: "list"
+            fields:
+              - label: "Nav link"
+                name: navlink
+                widget: "object"
+                fields:
+                  - { label: "label", name: "label", widget: "string" }
+                  - { label: "Link", name: "link", widget: "string" }
+                  - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
+
           - label: "Left side"
             name: left
-            widget: "object"
+            widget: "list"
             fields:
-              - label: "Button 1"
-                name: btn1
+              - label: "Nav link"
+                name: navlink
                 widget: "object"
                 fields:
-                  - { label: "Texto", name: "text", widget: "string" }
+                  - { label: "label", name: "label", widget: "string" }
                   - { label: "Link", name: "link", widget: "string" }
-              - label: "Button 2"
-                name: btn2
-                widget: "object"
-                fields:
-                  - { label: "Texto", name: "text", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
-              - label: "Button 3"
-                name: btn3
-                widget: "object"
-                fields:
-                  - { label: "Texto", name: "text", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
+                  - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
+
       # ---| FOOTER |---
       - name: "footer"
         label: "Footer"
         file: "_data/footer.yml"
         description: Everything needed from the footer
+        fields:
+          - { label: "Text", name: "text", widget: "string" }
+          - { label: "Link do twitter", name: "twitter_link", widget: "string" }
+          - { label: "link do Linkedin", name: "linkedin_link", widget: "string" }
+          - { label: "link do Instagram ", name: "insta_link", widget: "string" }
+
+      # ---| Security |---
+      - name: "security"
+        label: "security"
+        file: "_data/security.yml"
+        description: Everything needed from the Security page
         fields:
           - { label: "Text", name: "text", widget: "string" }
           - { label: "Link do twitter", name: "twitter_link", widget: "string" }
@@ -128,6 +148,7 @@ collections: #====================| POSTS |=====================================
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Image", name: "img", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
+ 
           - label: "Section 3"
             name: section_3
             widget: "object"
@@ -136,13 +157,17 @@ collections: #====================| POSTS |=====================================
               - { label: "Image", name: "img", widget: "string" }
               - { label: "Image bg for replacement of default", name: "bg_data", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
+
           - label: "Section 4"
             name: section_4
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Image", name: "img", widget: "string" }
+              - { label: "Image bg for replacement of default", name: "bg_data", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
+
+
           - label: "Section 5"
             name: section_5
             widget: "object"
@@ -159,7 +184,8 @@ collections: #====================| POSTS |=====================================
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
               - { label: "Featured Image", name: "img", widget: "string", default: "../assets/imgs/bg-wire-2.png"}
-              - { label: "YouTube embed token", name: "youtube_embed_token", widget: "string", default: "0mHmrNdaiBY" }
+              - { label: "Video mp4", name: "v_mp4", widget: "string", default: "https://vjs.zencdn.net/v/oceans.mp4" }
+              - { label: "Video webm", name: "v_webm", widget: "string", default: "https://vjs.zencdn.net/v/oceans.webm" }
 
           - label: "Section 7"
             name: section_7
@@ -167,6 +193,16 @@ collections: #====================| POSTS |=====================================
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Image", name: "img", widget: "string" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+          - label: "Section 8"
+            name: section_8
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string", default: "*.gif" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
 
           - label: "Stepper"
@@ -176,6 +212,8 @@ collections: #====================| POSTS |=====================================
               - { label: "Title", name: "title", widget: "string" }
               - { label: "ID", name: "id", widget: "string" }
               - { label: "Show step numbers", name: "showStepNumbers", widget: "boolean", default: false }
+              - { label: "Auto play", name: "autoplay", widget: "boolean", default: true }
+              - { label: "Slide delay", name: "delay", widget: "number", default: 3000, valueType: "int", min: 1000, max: 10000 }
               - label: "Steps"
                 name: "steps"
                 widget: "list"
