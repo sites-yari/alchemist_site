@@ -46,7 +46,7 @@
 
   <!-- CONTENT 3  -->
   {% assign section_3 = site.data.homepage.section_3 %}
-  <section class="row no-gutters row-with-bg-1 data-bg" data-bg="{{ section_3.bg_data }}">
+  <section class="row no-gutters row-with-bg-1 bg-left data-bg" data-bg="{{ section_3.bg_data }}">
     <div class="col-sm-12 col-xs-12">
       <h2>{{ section_3.title }}</h2>
     </div>
@@ -99,7 +99,7 @@
       <div class="col-xs-12 col-md-5">
         {% for i in (0..totalStepsFor) %}
         <div class="content-wrp">
-          <div class="description-mobile">
+          <div class="description-mobile p-2">
             {{ steps[i].description }}
           </div>
 
@@ -156,9 +156,15 @@
 
   <!-- CONTENT 6  -->
   {% assign section_6 = site.data.homepage.section_6 %}
+  
+
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ section_6.youtube_embed_token }}?theme=dark&controls=0&disablekb=0&enablejsapi=0&rel=0&showinfo=0&modestbranding=1&color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen frameborder="0" scrolling="no" ></iframe>
+  </div>
+
   <section class="row-only-video">
     <a href="javascript:;" class="" data-modal data-video="{{ section_6.youtube_embed_token }}"
-      data-title="{{ section_6.title }}" data-size="xl">
+      data-title="{{ section_6.title }}" data-size="xxl">
       <div class="video-overlay-play-button "></div>
     </a>
     <img class="img-fluid" src="{{ section_6.img }}" alt="Video featured image - {{ section_6.title }}" />

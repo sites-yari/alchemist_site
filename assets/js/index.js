@@ -1,5 +1,7 @@
 $(document).ready(function () {
     if (jQuery) {
+
+       
         // ====================================================== Sections data-bg
         $("section.row-with-bg-1.data-bg").each(function (i) {
             // $(this).attr('style','background-image: url('+ imagesArray[i] +'));
