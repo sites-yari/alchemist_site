@@ -132,7 +132,6 @@ collections: #====================| POSTS |=====================================
                       - { label: "Section type 3 - featured image left", value: "section-3" }
                       - { label: "Section simple background color", value: "bg-color" }
                       - { label: "Section title-highlighted", value: "bg-color-title-highlighted" }
-                      # - { label: "Section full video 1", value: "section-video-1" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Title", name: "title_2", widget: "string" }
                   - { label: "Description", name: "desc", widget: "markdown" }

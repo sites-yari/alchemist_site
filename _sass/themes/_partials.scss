@@ -47,28 +47,28 @@
     @extend %defaultSection;
 
     @include media-breakpoint-up(sm) {
-        &:after {
-            content: "";
-            background-image: linear-gradient(to bottom, white, transparent);
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 5em;
-        }
+        // &:after {
+        //     content: "";
+        //     background-image: linear-gradient(to bottom, white, transparent);
+        //     background-repeat: no-repeat;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     bottom: 0;
+        //     width: 100%;
+        //     height: 5em;
+        // }
 
-        &:before {
-            content: "";
-            background-image: linear-gradient(to bottom, transparent, white);
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 95%;
-            left: 0;
-            width: 100%;
-            height: 5em;
-        }
+        // &:before {
+        //     content: "";
+        //     background-image: linear-gradient(to bottom, transparent, white);
+        //     background-repeat: no-repeat;
+        //     position: absolute;
+        //     top: 95%;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 5em;
+        // }
     }
 
     &.data-bg {
