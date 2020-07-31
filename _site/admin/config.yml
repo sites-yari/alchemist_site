@@ -109,17 +109,7 @@ collections: #====================| POSTS |=====================================
             widget: "list"
             summary: "{{fields.title}}"
             fields:
-              - label: "Template section type"
-                name: "section_type"
-                widget: "select"
-                default: "section-1"
-                options:
-                  - { label: "promotional", value: "promotional" }
-                  - { label: "Section type 1 - featured image right", value: "section-1" }
-                  - { label: "Section type 2 - featured image center", value: "section-2" }
-                  - { label: "Section type 3 - featured image left", value: "section-3" }
-                  - { label: "Section simple background color", value: "bg-color" }
-                  - { label: "Section title-highlighted", value: "bg-color-title-highlighted" }
+              - { label: "Template section type", name: "section_type", widget: "select", default: "section-1", options: [{ label: "promotional", value: "promotional" }, { label: "Section type 1 - featured image right", value: "section-1" }, { label: "Section type 2 - featured image center", value: "section-2" }, { label: "Section type 3 - featured image left", value: "section-3" }, { label: "Section simple background color", value: "bg-color" }, { label: "Section title-highlighted", value: "bg-color-title-highlighted" }] }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Title", name: "title_2", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
