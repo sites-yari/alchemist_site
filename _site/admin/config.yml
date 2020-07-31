@@ -103,7 +103,7 @@ collections: #====================| POSTS |=====================================
         description: Everything needed for the index
         fields:
           - label: "Section 1"
-            name: content_1
+            name: section_1
             widget: "object"
             fields:
               - { label: "Title part 1", name: "title_part1", widget: "string" }
@@ -217,14 +217,10 @@ collections: #====================| POSTS |=====================================
                 name: "steps"
                 widget: "list"
                 fields:
-                  - label: "Step"
-                    name: "step"
-                    widget: "object"
-                    fields:
-                      - { label: "Title", name: "title", widget: "string" }
-                      - { label: "Image Mask URL", name: "imgMask", widget: "string" }
-                      - { label: "Image Show mask", name: "usingImgMask", widget: "select", default: "active",  options: ["disabled", "active"] }
-                      - { label: "Media type", name: "mediaType", widget: "select", default: "image",  options: ["image", "video"] }
-                      - { label: "Image URL", name: "img", widget: "string" }
-                      - { label: "Image show in mobile", name: "showImgMobile", widget: "boolean", default: true }
-                      - { label: 'Description of step', name: 'description', widget: 'markdown' }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Image Mask URL", name: "imgMask", widget: "string" }
+                  - { label: "Image Show mask", name: "usingImgMask", widget: "select", default: "active",  options: ["disabled", "active"] }
+                  - { label: "Media type", name: "mediaType", widget: "select", default: "image",  options: ["image", "video"] }
+                  - { label: "Image URL", name: "img", widget: "string" }
+                  - { label: "Image show in mobile", name: "showImgMobile", widget: "boolean", default: true }
+                  - { label: 'Description of step', name: 'description', widget: 'markdown' }
