@@ -104,20 +104,6 @@ collections: #====================| POSTS |=====================================
               - { label: "Description", name: "desc", widget: "string" }
               - { label: "Image", name: "img", widget: "string" }
 
-          - label: "Template sections"
-            name: "section_template"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - { label: "Template section type", name: "section_type", widget: "select", default: "section-1", options: [{ label: "promotional", value: "promotional" }, { label: "Section type 1 - featured image right", value: "section-1" }, { label: "Section type 2 - featured image center", value: "section-2" }, { label: "Section type 3 - featured image left", value: "section-3" }, { label: "Section simple background color", value: "bg-color" }, { label: "Section title-highlighted", value: "bg-color-title-highlighted" }] }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Title", name: "title_2", widget: "string" }
-              - { label: "Description", name: "desc", widget: "markdown" }
-              - { label: "Featured Image", name: "img", widget: "string" }
-              - { label: "Image bg for replacement of default (applied to selected type)", name: "bg_data", widget: "string" }
-              - { label: "Color bg for replacement of default (applied to selected type)", name: "bg_data_color", widget: "string" }
-              - { label: "Include relative nested html file", name: "include_relative", widget: "string", default: '' }
-
           - label: "Section 2"
             name: section_2
             widget: "object"
@@ -125,7 +111,25 @@ collections: #====================| POSTS |=====================================
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Image", name: "img", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
- 
+
+          - label: "Section 7"
+            name: section_7
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+          - label: "Section 8"
+            name: section_8
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string", default: "*.gif" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
           - label: "Section 3"
             name: section_3
             widget: "object"
@@ -144,42 +148,12 @@ collections: #====================| POSTS |=====================================
               - { label: "Image bg for replacement of default", name: "bg_data", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
 
-
-          - label: "Section 5"
-            name: section_5
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Title <highlighted> ", name: "title_2", widget: "string" }
-              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
-              - { label: "Description", name: "desc", widget: "markdown" }
-
-          - label: "Section 6"
-            name: section_6
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "desc", widget: "markdown" }
-              - { label: "Featured Image", name: "img", widget: "string", default: "../assets/imgs/bg-wire-2.png"}
-              - { label: "Video mp4", name: "v_mp4", widget: "string", default: "https://vjs.zencdn.net/v/oceans.mp4" }
-              - { label: "Video webm", name: "v_webm", widget: "string", default: "https://vjs.zencdn.net/v/oceans.webm" }
-
-          - label: "Section 7"
-            name: section_7
+          - label: "Section 9"
+            name: section_9
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Image", name: "img", widget: "string" }
-              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
-              - { label: "Description", name: "desc", widget: "markdown" }
-
-          - label: "Section 8"
-            name: section_8
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Image", name: "img", widget: "string", default: "*.gif" }
-              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
               - { label: "Description", name: "desc", widget: "markdown" }
 
           - label: "Stepper"
@@ -202,3 +176,37 @@ collections: #====================| POSTS |=====================================
                   - { label: "Image URL", name: "img", widget: "string" }
                   - { label: "Image show in mobile", name: "showImgMobile", widget: "boolean", default: true }
                   - { label: 'Description of step', name: 'description', widget: 'markdown' }
+
+          - label: "Section 5"
+            name: section_5
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title <highlighted> ", name: "title_2", widget: "string" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+          - label: "Section 6"
+            name: section_6
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+              - { label: "Featured Image", name: "img", widget: "string", default: "../assets/imgs/bg-wire-2.png"}
+              - { label: "Video mp4", name: "v_mp4", widget: "string", default: "https://vjs.zencdn.net/v/oceans.mp4" }
+              - { label: "Video webm", name: "v_webm", widget: "string", default: "https://vjs.zencdn.net/v/oceans.webm" }
+
+
+          - label: "Template sections"
+            name: "section_template"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Template section type", name: "section_type", widget: "select", default: "section-1", options: [{ label: "promotional", value: "promotional" }, { label: "Section type 1 - featured image right", value: "section-1" }, { label: "Section type 2 - featured image center", value: "section-2" }, { label: "Section type 3 - featured image left", value: "section-3" }, { label: "Section simple background color", value: "bg-color" }, { label: "Section title-highlighted", value: "bg-color-title-highlighted" }] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title", name: "title_2", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+              - { label: "Featured Image", name: "img", widget: "string" }
+              - { label: "Image bg for replacement of default (applied to selected type)", name: "bg_data", widget: "string" }
+              - { label: "Color bg for replacement of default (applied to selected type)", name: "bg_data_color", widget: "string" }
+              - { label: "Include relative nested html file", name: "include_relative", widget: "string", default: '' }
