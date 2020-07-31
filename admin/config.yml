@@ -117,28 +117,24 @@ collections: #====================| POSTS |=====================================
             widget: "list"
             summary: "{{fields.title}}"
             fields:
-              - label: "Template section"
-                name: template_section
-                widget: "object"
-                fields:
-                  - label: "Template section type"
-                    name: "section_type"
-                    widget: "select"
-                    default: "section-1"
-                    options:
-                      - { label: "promotional", value: "promotional" }
-                      - { label: "Section type 1 - featured image right", value: "section-1" }
-                      - { label: "Section type 2 - featured image center", value: "section-2" }
-                      - { label: "Section type 3 - featured image left", value: "section-3" }
-                      - { label: "Section simple background color", value: "bg-color" }
-                      - { label: "Section title-highlighted", value: "bg-color-title-highlighted" }
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Title", name: "title_2", widget: "string" }
-                  - { label: "Description", name: "desc", widget: "markdown" }
-                  - { label: "Featured Image", name: "img", widget: "string" }
-                  - { label: "Image bg for replacement of default (applied to selected type)", name: "bg_data", widget: "string" }
-                  - { label: "Color bg for replacement of default (applied to selected type)", name: "bg_data_color", widget: "string" }
-                  - { label: "Include relative nested html file", name: "include_relative", widget: "string", default: '' }
+              - label: "Template section type"
+                name: "section_type"
+                widget: "select"
+                default: "section-1"
+                options:
+                  - { label: "promotional", value: "promotional" }
+                  - { label: "Section type 1 - featured image right", value: "section-1" }
+                  - { label: "Section type 2 - featured image center", value: "section-2" }
+                  - { label: "Section type 3 - featured image left", value: "section-3" }
+                  - { label: "Section simple background color", value: "bg-color" }
+                  - { label: "Section title-highlighted", value: "bg-color-title-highlighted" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title", name: "title_2", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+              - { label: "Featured Image", name: "img", widget: "string" }
+              - { label: "Image bg for replacement of default (applied to selected type)", name: "bg_data", widget: "string" }
+              - { label: "Color bg for replacement of default (applied to selected type)", name: "bg_data_color", widget: "string" }
+              - { label: "Include relative nested html file", name: "include_relative", widget: "string", default: '' }
 
           - label: "Section 2"
             name: section_2
