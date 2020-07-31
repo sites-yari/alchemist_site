@@ -20,8 +20,8 @@ collections: #====================| POSTS |=====================================
         file: "_data/navigation.yml"
         description: Navigation section
         fields:
-           - { label: "Name", name: "name", widget: "string" }
-           - { label: "Link", name: "link", widget: "string" }
+            - { label: "Name", name: "name", widget: "string" }
+            - { label: "Link", name: "link", widget: "string" }
       - name: "downloads"
         label: "Downloads"
         file: "_data/downloads.yml"
@@ -54,25 +54,17 @@ collections: #====================| POSTS |=====================================
             name: right
             widget: "list"
             fields:
-              - label: "Nav link"
-                name: navlink
-                widget: "object"
-                fields:
-                  - { label: "label", name: "label", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
-                  - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
+              - { label: "label", name: "label", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
 
           - label: "Left side"
             name: left
             widget: "list"
             fields:
-              - label: "Nav link"
-                name: navlink
-                widget: "object"
-                fields:
-                  - { label: "label", name: "label", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
-                  - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
+              - { label: "label", name: "label", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
 
       # ---| FOOTER |---
       - name: "footer"
