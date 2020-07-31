@@ -1,0 +1,23 @@
+.headless-modal {
+    // create custom modal from bootstrap
+}
+
+.modal-dialog {
+    width: 90vw;
+    padding: 0;
+    max-width: 90vw;
+    min-width: 90vw;
+
+}
+
+.modal-content {
+    height: auto;
+    border-radius: 0;
+    background: none;
+    border: none;
+}
+
+.modal-body {
+    margin: 0;
+    padding: 0;
+}

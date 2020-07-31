@@ -1,0 +1,79 @@
+
+.homepage {
+    font-family: "Montserrat-Regular";
+    text-align: justify;
+
+    .content-promotional {
+        min-height: 650px;
+
+        @include media-breakpoint-up(lg) {
+            min-height: 950px;
+        }
+
+        .title {
+            text-align: center;
+            font-family: "Montserrat-Bold";
+            font-size: 2.3em;
+
+            @include media-breakpoint-up(sm) {
+                font-size: 5em;
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: 4em;
+            }
+        }
+
+        h1 span {
+            color: $alchemist-gold-4;
+        }
+
+        .phone-img {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+
+            @include media-breakpoint-up(sm) {
+                margin-left: 25%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-left: 10%;
+            }
+        }
+
+        .desc {
+            font-size: 1.3em;
+        }
+    }
+
+    .content-goals {
+        border-top: 1px solid rgba(244, 245, 246, .75);
+        border-bottom: 1px solid rgba(244, 245, 246, .75);
+        background-color: #fafafa;
+        text-align: center;
+    }
+
+    .goal-text {
+        li {
+            list-style-type: none;
+            padding-left: 10%;
+            list-style-type: none;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        li .icon {
+            padding-right: 10px;
+        }
+
+        .big-icon {
+            text-align: center;
+        }
+    }
+
+    .content-get-app {
+        background-color: $alchemist-victoria-2;
+        color: $alchemist-gray-100;
+    }
+}

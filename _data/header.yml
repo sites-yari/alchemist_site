@@ -1,31 +1,18 @@
 title: ALCHEMIST
-link_title: #
-img: ../assets/imgs/alchemist_logo_color.png
-
-right:
-  btn1:
-    text: ""
-    link: #
-  btn2:
-    text: ""
-    link: #
-  btn3:
-    text: ""
-    link: #
-  btn4:
-    text: ""
-    link: #
-  btn5:
-    text: ""
-    link: #
+link_title: /
+img: ../assets/imgs/alchemist_logo_simple.png
 
 left:
-  btn1:
-    text: "Help"
+
+right:
+  - text: Help
     link: #
-  btn2:
-    text: "Contacts"
+    type: default
+
+  - text: Contacts
     link: #
-  btn3:
-    text: ""
-    link: #
+    type: default
+
+  - text: Download now!
+    link: #homepage
+    type: button

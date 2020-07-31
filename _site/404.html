@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>  </title>
 
   <!-- netlify -->
   <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <link href="../assets/css/styles.css" media="screen" rel="stylesheet" type="text/css">
 
-  <link href="../assets/css/theme.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="../assets/css/main.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 
 
-  <body class="under_bg_color">
-    <div class="pusher">
-      <div>
-        <header>
-
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar navbar-shadow" >
-    <a class="navbar-brand txt_color_black" href="">
-      <img src="../assets/imgs/alchemist_logo_color.png" width="30" height="30">
-      <strong>ALCHEMIST</strong>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon navbar-burger"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <ul class="navbar-nav mr-auto">
-        <!-- <li class="nav-item active">
-          <a class="nav-link txt_color_black" href="#">Home <span class="sr-only">(current)</span></a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li> -->
-      </ul>
-
-      <ul class="navbar-nav nav-flex-icons">
-        <li class="nav-item active">
-          <a class="nav-link txt_color_black" href="">
-            Help<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link txt_color_black" href="">
-            Contacts<span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-      
+<body>
+  <div>
+    <div>
+      <header>
+  <nav class="navbar navbar-expand-md fixed-top navbar-light navbar-shadow" aria-label="navbar brand">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark d-flex align-content-center " href="/">
+        <img src="../assets/imgs/alchemist_logo_simple.png" width="30" height="30">
+        <div class="m-auto pl-2">
+          <strong>ALCHEMIST</strong>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon navbar-burger"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          
+          
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+          <ul class="navbar-nav nav-flex-icons">
+            
+            
+              
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="">
+                  Help</a>
+              </li>
+              
+            
+              
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="">
+                  Contacts</a>
+              </li>
+              
+            
+              
+                <li class="nav-item pl-3 my-auto">
+                  <a class="btn btn-outline-dark" href="">Download now!</a>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
-
-</header>
-<!--Main Navigation-->
+  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+        </div> -->
+        <div class="modal-body"></div>
       </div>
-      <div class="">
-          <style type="text/css" media="screen">
+    </div>
+  </div>
+</header>
+
+    </div>
+    <div>
+      <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
     max-width: 600px;
@@ -79,11 +107,10 @@
   <p>The requested page could not be found.</p>
 </div>
 
-      </div>
-      <div class="">
-          <!-- Footer -->
-<footer class="page-footer font-small indigo footer-custom">
-
+    </div>
+    <div>
+      <!-- Footer -->
+<footer class="page-footer footer-custom">
   <!-- Footer Links -->
   <div class="container">
 
@@ -93,7 +120,7 @@
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">About us</a>
+          <a class="color-primary" href="#!">About us</a>
         </h6>
       </div>
       <!-- Grid column -->
@@ -101,21 +128,21 @@
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Products</a>
+          <a class="color-primary" href="./security.html">Security</a>
         </h6>
       </div>
       <!-- Grid column -->
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3 no-mobile">
-        <img src="../assets/imgs/alchemist_logo_simple.png" width="50" height="50" >
+        <img src="../assets/imgs/alchemist_logo_simple.png" width="50" height="50">
       </div>
       <!-- Grid column -->
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Help</a>
+          <a class="color-primary" href="#!">FAQ</a>
         </h6>
       </div>
       <!-- Grid column -->
@@ -123,7 +150,7 @@
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Contact</a>
+          <a class="color-primary" href="#!">Terms</a>
         </h6>
       </div>
       <!-- Grid column -->
@@ -137,7 +164,7 @@
 
       <!-- Grid column -->
       <div class="col-md-8 col-12 mt-5">
-        <p style="line-height: 1.7rem">Professional Consulting and Product  Development within your budget and on time, powered by modern  technologies. Our team is fluent in Ruby, Elixir, Elm, Angular,  React and Mobile Development. We can design and build your product  from scratch or integrate your existing team.</p>
+        <p style="line-height: 1.7rem">- Address of Alchemist -</p>
       </div>
       <!-- Grid column -->
 
@@ -183,13 +210,29 @@
   </div>
   <!-- Copyright -->
 
+
+  <!-- alchemist -->
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript" src="../assets/js/index.js"></script>
+
 </footer>
 <!-- Footer -->
-      </div> 
-    </div>  
-    
-    <!-- Javascripts -->
-    <!-- <script>
+
+    </div>
+  </div>
+
+  <!-- Javascripts -->
+  <!-- <script>
       function hideAndShow() {
         var policy = document.getElementById("privacy_policy");
         var terms = document.getElementById("terms_condition");
@@ -203,6 +246,8 @@
         }
       }
       </script> -->
-  </body>
+  <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+
+</body>
 
 </html>

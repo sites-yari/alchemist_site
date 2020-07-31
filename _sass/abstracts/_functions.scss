@@ -1,0 +1,7 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+@function yari-color($color-name) {
+    @return map-get($yari-colors, $color-name);
+}
+

@@ -1,0 +1,9 @@
+downloads_app_store:
+  alt: "Download to app store"
+  img: ../assets/imgs/app_store_btn.png
+  url: "https://www.apple.com/pt/ios/app-store/"
+
+downloads_google_play:
+  alt: "Download to app store"
+  img: ../assets/imgs/play_store_btn.png
+  url: "https://play.google.com/store"

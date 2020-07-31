@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+$yari-colors: (
+    "primary": $alchemist-victoria-2,
+    "secondary": $alchemist-victoria-1,
+    "danger": $alchemist-status-warning,
+    "warning": $alchemist-status-error,
+    "success": $alchemist-status-success,
+    "info": $alchemist-status-info,
+    "light": $alchemist-gray-100,
+    "dark": $alchemist-gray-800,
+);
+
+// Boostrap variables to override
+$body-bg: #fff;
+$body-color: #000;
+
+$theme-colors: (
+    "primary": yari-color(primary),
+    "secondary": yari-color(secondary),
+    "danger": yari-color(danger),
+    "success": yari-color(success),
+    "info": yari-color(info),
+    "warning": yari-color(warning),
+    "light": yari-color(light),
+    "dark": yari-color(dark),
+);
+
+
+$colors: (
+  "blue": yari-color(primary),
+  "red": yari-color(danger),
+  "gray": $alchemist-gray-600,
+  "gray-dark": yari-color(dark),
+);
+
+
+$border-radius: .75rem;
+$border-width: 1px;
+
+
+$font-family-monospace: 'Montserrat-Regular',  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-monospace;
+
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge((0: 0,
+    1: ($spacer * .25), //4px
+    2: ($spacer * .5), //8px
+    3: ($spacer), //16px
+    4: ($spacer * 1.5), //24px
+    5: ($spacer * 3), //48px
+    6: ($spacer * 4), //64px
+    7: ($spacer * 5), //80px
+    8: ($spacer * 6.25), //100px
+    9: ($spacer * 7.5), //120px
+    10: ($spacer * 9.375) //150px
+  ),
+  $spacers);
+
+
+$enable-responsive-font-sizes: true;
+
+
+body {
+  // navbar fixed
+  padding-top: 70px;
+  font-family: "Montserrat-Regular";
+  color: $alchemist-gray-800;
+}

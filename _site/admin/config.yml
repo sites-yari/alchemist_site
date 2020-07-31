@@ -13,39 +13,67 @@ collections: #====================| POSTS |=====================================
   - name: "data" #|=====================| DATA |====================================================|
     label: "Data"
     editor:
-      preview: true
-    files: 
+    preview: true
+    files:
+      - name: "navigation"
+        label: "Navigation"
+        file: "_data/navigation.yml"
+        description: Navigation section
+        fields:
+           - { label: "Name", name: "name", widget: "string" }
+           - { label: "Link", name: "link", widget: "string" }
+      - name: "downloads"
+        label: "Downloads"
+        file: "_data/downloads.yml"
+        description: Downloads section
+        fields:
+          - label: "Section downloads app store"
+            name: downloads_app_store
+            widget: "object"
+            fields:
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Url", name: "url", widget: "string" }
+          - label: "Section downloads google play"
+            name: downloads_google_play
+            widget: "object"
+            fields:
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Url", name: "url", widget: "string" }
       # ---| HEADER |---
       - name: "header"
         label: "Header"
         file: "_data/header.yml"
         description: Everything needed from the Navbar
         fields:
-          - { label: "Titulo", name: "title", widget: "string" }
-          - { label: "Link do titulo", name: "link_title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link for Title", name: "link_title", widget: "string" }
           - { label: "Logo", name: "img", widget: "string" }
+          - label: "Right side"
+            name: right
+            widget: "list"
+            fields:
+              - label: "Nav link"
+                name: navlink
+                widget: "object"
+                fields:
+                  - { label: "label", name: "label", widget: "string" }
+                  - { label: "Link", name: "link", widget: "string" }
+                  - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
+
           - label: "Left side"
             name: left
-            widget: "object"
+            widget: "list"
             fields:
-              - label: "Button 1"
-                name: btn1
+              - label: "Nav link"
+                name: navlink
                 widget: "object"
                 fields:
-                  - { label: "Texto", name: "text", widget: "string" }
+                  - { label: "label", name: "label", widget: "string" }
                   - { label: "Link", name: "link", widget: "string" }
-              - label: "Button 2"
-                name: btn2
-                widget: "object"
-                fields:
-                  - { label: "Texto", name: "text", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
-              - label: "Button 3"
-                name: btn3
-                widget: "object"
-                fields:
-                  - { label: "Texto", name: "text", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
+                  - { label: "Html element type", name: "type", widget: "select", default: "default", options: [{ label: "Nav bar link", value: "default" }, { label: "Nav bar Button", value: "button" }] }
+
       # ---| FOOTER |---
       - name: "footer"
         label: "Footer"
@@ -56,69 +84,147 @@ collections: #====================| POSTS |=====================================
           - { label: "Link do twitter", name: "twitter_link", widget: "string" }
           - { label: "link do Linkedin", name: "linkedin_link", widget: "string" }
           - { label: "link do Instagram ", name: "insta_link", widget: "string" }
+
+      # ---| Security |---
+      - name: "security"
+        label: "security"
+        file: "_data/security.yml"
+        description: Everything needed from the Security page
+        fields:
+          - { label: "Text", name: "text", widget: "string" }
+          - { label: "Link do twitter", name: "twitter_link", widget: "string" }
+          - { label: "link do Linkedin", name: "linkedin_link", widget: "string" }
+          - { label: "link do Instagram ", name: "insta_link", widget: "string" }
+
       # ---| INDEX |---
       - name: "homepage"
         label: "Homepage"
         file: "_data/homepage.yml"
         description: Everything needed for the index
         fields:
-          - label: "Conteudo 1"
-            name: content1
+          - label: "Section 1"
+            name: content_1
             widget: "object"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
-              - { label: "Descrição", name: "desc", widget: "string" }
-          - label: "Conteudo 2"
-            name: content2
+              - { label: "Title part 1", name: "title_part1", widget: "string" }
+              - { label: "Title part 2", name: "title_part2", widget: "string" }
+              - { label: "Between title 1 e 2", name: "gold_title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+
+          - label: "Template sections"
+            name: "section_template"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Template section"
+                name: template_section
+                widget: "object"
+                fields:
+                  - label: "Template section type"
+                    name: "section_type"
+                    widget: "select"
+                    default: "section-1"
+                    options:
+                      - { label: "promotional", value: "promotional" }
+                      - { label: "Section type 1 - featured image right", value: "section-1" }
+                      - { label: "Section type 2 - featured image center", value: "section-2" }
+                      - { label: "Section type 3 - featured image left", value: "section-3" }
+                      - { label: "Section simple background color", value: "bg-color" }
+                      - { label: "Section title-highlighted", value: "bg-color-title-highlighted" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Title", name: "title_2", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "markdown" }
+                  - { label: "Featured Image", name: "img", widget: "string" }
+                  - { label: "Image bg for replacement of default (applied to selected type)", name: "bg_data", widget: "string" }
+                  - { label: "Color bg for replacement of default (applied to selected type)", name: "bg_data_color", widget: "string" }
+                  - { label: "Include relative nested html file", name: "include_relative", widget: "string", default: '' }
+
+          - label: "Section 2"
+            name: section_2
             widget: "object"
             fields:
-              - label: "Goal 1"
-                name: goal1
-                widget: "object"
-                fields:
-                  - { label: "Titulo", name: "title", widget: "string" }
-                  - { label: "Descrição", name: "desc", widget: "string" }
-                  - { label: "Imagem", name: "img", widget: "string" }
-              - label: "Goal 2"
-                name: goal2
-                widget: "object"
-                fields:
-                  - { label: "Titulo", name: "title", widget: "string" }
-                  - { label: "Descrição", name: "desc", widget: "string" }
-                  - { label: "Imagem", name: "img", widget: "string" }
-          - label: "Conteudo 3"
-            name: content3
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+ 
+          - label: "Section 3"
+            name: section_3
             widget: "object"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
-              - { label: "Descrição", name: "desc", widget: "string" }
-              - label: "Caixa 1"
-                name: box1
-                widget: "object"
-                fields:
-                  - { label: "Titulo", name: "title", widget: "string" }
-                  - { label: "Descrição", name: "desc", widget: "string" }
-                  - { label: "Icon", name: "icon", widget: "string" }
-              - label: "Caixa 2"
-                name: box2
-                widget: "object"
-                fields:
-                  - { label: "Titulo", name: "title", widget: "string" }
-                  - { label: "Descrição", name: "desc", widget: "string" }
-                  - { label: "Icon", name: "icon", widget: "string" }
-          - label: "Conteudo 4"
-            name: content4
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Image bg for replacement of default", name: "bg_data", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+          - label: "Section 4"
+            name: section_4
             widget: "object"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
-              - { label: "Logo", name: "img_logo", widget: "string" }
-              - { label: "IOS link", name: "ios_link", widget: "string" }
-              - { label: "Android link", name: "android_link", widget: "string" }
-              - label: "Caixa 1"
-                name: box1
-                widget: "object"
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Image bg for replacement of default", name: "bg_data", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+
+          - label: "Section 5"
+            name: section_5
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title <highlighted> ", name: "title_2", widget: "string" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+          - label: "Section 6"
+            name: section_6
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+              - { label: "Featured Image", name: "img", widget: "string", default: "../assets/imgs/bg-wire-2.png"}
+              - { label: "Video mp4", name: "v_mp4", widget: "string", default: "https://vjs.zencdn.net/v/oceans.mp4" }
+              - { label: "Video webm", name: "v_webm", widget: "string", default: "https://vjs.zencdn.net/v/oceans.webm" }
+
+          - label: "Section 7"
+            name: section_7
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+          - label: "Section 8"
+            name: section_8
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "img", widget: "string", default: "*.gif" }
+              - { label: "Color bg for replacement of default", name: "bg_data_color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "markdown" }
+
+          - label: "Stepper"
+            name: "stepper"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Show step numbers", name: "showStepNumbers", widget: "boolean", default: false }
+              - { label: "Auto play", name: "autoplay", widget: "boolean", default: true }
+              - { label: "Slide delay", name: "delay", widget: "number", default: 3000, valueType: "int", min: 1000, max: 10000 }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
                 fields:
-                  - { label: "Texto 1", name: "opt1", widget: "string" }
-                  - { label: "Texto 2", name: "opt2", widget: "string" }
-                  - { label: "Texto 3", name: "opt3", widget: "string" }
-              
+                  - label: "Step"
+                    name: "step"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Image Mask URL", name: "imgMask", widget: "string" }
+                      - { label: "Image Show mask", name: "usingImgMask", widget: "select", default: "active",  options: ["disabled", "active"] }
+                      - { label: "Media type", name: "mediaType", widget: "select", default: "image",  options: ["image", "video"] }
+                      - { label: "Image URL", name: "img", widget: "string" }
+                      - { label: "Image show in mobile", name: "showImgMobile", widget: "boolean", default: true }
+                      - { label: 'Description of step', name: 'description', widget: 'markdown' }

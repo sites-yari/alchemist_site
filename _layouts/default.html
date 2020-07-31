@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt">
-  {% include head.html %}
+{% include head.html %}
 
-  <body class="under_bg_color">
-    <div class="pusher">
-      <div>
-        {% include header.html %}
-      </div>
-      <div class="">
-          {{ content }}
-      </div>
-      <div class="">
-          {% include footer.html %}
-      </div> 
-    </div>  
-    
-    <!-- Javascripts -->
-    <!-- <script>
+<body>
+  <div>
+    <div>
+      {% include header.html %}
+    </div>
+    <div>
+      {{ content }}
+    </div>
+    <div>
+      {% include footer.html %}
+    </div>
+  </div>
+
+  <!-- Javascripts -->
+  <!-- <script>
       function hideAndShow() {
         var policy = document.getElementById("privacy_policy");
         var terms = document.getElementById("terms_condition");
@@ -30,6 +30,8 @@
         }
       }
       </script> -->
-  </body>
+  <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+
+</body>
 
 </html>
