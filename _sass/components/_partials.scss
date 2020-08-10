@@ -1,4 +1,3 @@
-
 %defaultSection {
     position: relative;
     min-height: 650px;
@@ -25,12 +24,21 @@
         }
     }
 
-    .featured-phone {
+    @include media-breakpoint-down(md) {
+        h2 {
+            font-size: 2em;
+            padding: 2%;
+        }
+    }
+
+    .featured-img {
         margin-top: 5%;
 
         img {
-            max-height: 550px;
+            max-height: 15%;
+            padding: 10%;
         }
+        
     }
 
     .desc {
