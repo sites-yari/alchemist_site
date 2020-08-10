@@ -1,3 +1,11 @@
 .security-page {
-    
+    %section-base {
+        .title {
+            font-size: 3em;
+        }
+
+    }
+    .section-1 {
+        @extend %section-base;
+    }
 }
