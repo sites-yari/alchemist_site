@@ -5,19 +5,22 @@
 @import 'default';
 
 // partials "shared between components and pages"
-@import "animations";
-@import "partials";
-@import 'video';
-@import 'stepper';
+@import "../abstracts/animations";
 
 // components
-@import 'navbar';
-@import 'downloads';
-@import 'modal';
-@import 'footer';
+@import "../components/partials";
+@import '../components/downloads';
+@import '../components/video';
+@import '../components/stepper';
+
+// layout
+@import '../layout/navbar';
+@import '../layout/modal';
+@import '../layout/footer';
+
 
 // by page
-@import 'homepage';
-@import 'securitypage';
+@import '../pages/homepage';
+@import '../pages/securitypage';
 
 
