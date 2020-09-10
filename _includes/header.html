@@ -1,62 +1,43 @@
 <header>
-  <nav class="navbar navbar-expand-md fixed-top navbar-light navbar-shadow" aria-label="navbar brand">
-    <div class="container-fluid">
-      <a class="navbar-brand text-dark d-flex align-content-center " href="{{site.data.header.link_title}}">
-        <img src="{{ site.data.header.img }}" width="30" height="30">
-        <div class="m-auto pl-2">
-          <strong>{{site.data.header.title}}</strong>
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon navbar-burger"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          {% assign nav_left = site.data.header.left %}
-          {% for nav_link in nav_left %}
-            {% if nav_link.type == "default" %}
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="{{nav_link.link}}">
-                {{nav_link.text}}</a>
-            </li>
-            {% else %}
-              <li class="nav-item pl-3 my-auto">
-                <a class="btn btn-outline-dark" href="{{nav_link.link}}">{{nav_link.text}}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-        <div class="form-inline mt-2 mt-md-0">
-          <ul class="navbar-nav nav-flex-icons">
-            {% assign nav_right = site.data.header.right %}
-            {% for nav_link in nav_right %}
-              {% if nav_link.type == "default" %}
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="{{nav_link.link}}">
-                  {{nav_link.text}}</a>
-              </li>
-              {% else %}
-                <li class="nav-item pl-3 my-auto">
-                  <a class="btn btn-outline-dark" href="{{nav_link.link}}">{{nav_link.text}}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
+    <nav class="navbar navbar-expand-md fixed-top navbar-light mx-sm-3 mx-lg-8" aria-label="navbar brand">
+      <div class="container-fluid">
+        <a class="navbar-brand text-dark d-flex align-content-center " href="{{site.data.header.link_title}}">
+          <img class="img-fluid img-brand" src="./assets/imgs/H_gold.svg" width="65%">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon navbar-burger"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
           </ul>
+          <div class="form-inline mt-2 mt-md-0">
+            <ul class="navbar-nav nav-flex-icons">
+              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">Security</a>
+              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="#">Help</a>
+
+              <li class="nav-item pl-3 my-auto">
+                <a class="btn btn-primary text-white" href="#">Download</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <!-- <div class="modal-header">
+    </nav>
+
+    <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
           <h5 class="modal-title"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
               aria-hidden="true">&times;</span></button>
         </div> -->
-        <div class="modal-body"></div>
+          <div class="modal-body"></div>
+        </div>
       </div>
     </div>
-  </div>
 </header>

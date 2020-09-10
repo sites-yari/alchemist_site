@@ -3,7 +3,7 @@
 // default one.
 // -----------------------------------------------------------------------------
 $yari-colors: (
-    "primary": $alchemist-victoria-2,
+    "primary": $alchemist-sky-2,
     "secondary": $alchemist-victoria-1,
     "danger": $alchemist-status-warning,
     "warning": $alchemist-status-error,
@@ -58,17 +58,28 @@ $spacers: map-merge((0: 0,
     7: ($spacer * 5), //80px
     8: ($spacer * 6.25), //100px
     9: ($spacer * 7.5), //120px
-    10: ($spacer * 9.375) //150px
+    10: ($spacer * 9.375), //150px
+    11: ($spacer * 10),
+    12: ($spacer * 11)
   ),
   $spacers);
 
 
 $enable-responsive-font-sizes: true;
 
-
 body {
-  // navbar fixed
-  padding-top: 70px;
+  height: 100%;
+  width: 100%;
   font-family: "Montserrat-Regular";
   color: $alchemist-gray-800;
+  font-size: 1rem;
 }
+
+// Override bootstrap
+.btn {
+  font-size: 0.75rem;
+  padding: .375rem 2rem;
+}
+
+
+

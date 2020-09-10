@@ -1,14 +1,25 @@
-
 .navbar-light {
-    min-height: 90px;
-    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+
+    padding-top: 2rem;
+    min-height: 70px;
+
 
     .nav-link {
-        font-size: 1.4em;
+        padding: .375rem 2rem;
+        font-size: .875rem;
     }
-}
 
-.navbar-shadow {
-    border: 0px solid;
-    box-shadow: 0px 0px 7px $alchemist-gray-400;
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .navbar-brand {
+            .img-brand {
+                width: 45%;
+            }
+        }
+    }
 }
