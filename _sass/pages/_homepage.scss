@@ -128,20 +128,6 @@
         .owl-item.active.center {
             .goal-wrp {
                 opacity: 1;
-
-                // &::after {
-                //     content: ''; 
-                //     box-sizing: border-box;
-                //     position: absolute;
-                //     top: 0;
-                //     left: 0;
-                //     width: 100%;
-                //     height: 90%;
-                //     background-color: $alchemist-sky-1;
-                //     opacity: .2;
-                //     border-radius: 10px;
-
-                // }
             }
         }
         .goal-wrp {
@@ -197,7 +183,7 @@
         .progress-bar {
             background-image:
                 linear-gradient(to right,
-                    #7AC7C4 calc(var(--progress) * 1%),
+                     $alchemist-victoria-1 calc(var(--progress) * 1%),
                     white calc(var(--progress) * 1%),
                     white);
             border-radius: 20px;
