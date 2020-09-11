@@ -48,20 +48,23 @@
         }
 
 
-
         @include media-breakpoint-down(sm) {
-            min-height: 800px;
+            min-height: 850px;
             background-size: cover;
-            background-position-x: 70%;
+            background-position-x: 65%;
             
             .header-block {
-                margin-top: 1rem;
+                margin-top: 2rem;
+                padding-left: 0%;
+                .desc {
+                    text-align: left;
+                }
             }
             
             .phone {
                 top: 50%;
                 left: 50%;
-                transform: translate(-65%, 10%);
+                transform: translate(-65%, 6%);
 
                 img {
                     max-width: 130%;

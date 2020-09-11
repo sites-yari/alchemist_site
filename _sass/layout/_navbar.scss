@@ -1,9 +1,12 @@
 .navbar-light {
     position: absolute;
-
     padding-top: 2rem;
     min-height: 70px;
 
+
+    .navbar-brand {
+        margin-right: 0;
+    }
 
     .nav-link {
         padding: .375rem 2rem;
@@ -17,8 +20,32 @@
 
     @include media-breakpoint-down(sm) {
         .navbar-brand {
+            width: 80%;
+        }
+
+        .navbar-brand {
             .img-brand {
                 width: 45%;
+            }
+        }
+
+        .form-inline {
+            background-color: rgba(0, 0, 0, 0.65);
+            border-radius: 20px;
+
+            .navbar-nav {
+                width: 100%;
+            }
+
+            .nav-link,
+            .nav-item {
+                color: $white;
+                padding: 1rem;
+                text-align: center;
+
+                a {
+                    width: 100%;
+                }
             }
         }
     }

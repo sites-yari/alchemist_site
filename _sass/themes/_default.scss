@@ -2,35 +2,32 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
-$yari-colors: (
-    "primary": $alchemist-sky-2,
-    "secondary": $alchemist-victoria-1,
-    "danger": $alchemist-status-warning,
-    "warning": $alchemist-status-error,
-    "success": $alchemist-status-success,
-    "info": $alchemist-status-info,
-    "light": $alchemist-gray-100,
-    "dark": $alchemist-gray-800,
+$yari-colors: ("primary": $alchemist-sky-2,
+  "secondary": $alchemist-victoria-1,
+  "danger": $alchemist-status-warning,
+  "warning": $alchemist-status-error,
+  "success": $alchemist-status-success,
+  "info": $alchemist-status-info,
+  "light": $alchemist-gray-100,
+  "dark": $alchemist-gray-800,
 );
 
 // Boostrap variables to override
 $body-bg: #fff;
 $body-color: #000;
 
-$theme-colors: (
-    "primary": yari-color(primary),
-    "secondary": yari-color(secondary),
-    "danger": yari-color(danger),
-    "success": yari-color(success),
-    "info": yari-color(info),
-    "warning": yari-color(warning),
-    "light": yari-color(light),
-    "dark": yari-color(dark),
+$theme-colors: ("primary": yari-color(primary),
+  "secondary": yari-color(secondary),
+  "danger": yari-color(danger),
+  "success": yari-color(success),
+  "info": yari-color(info),
+  "warning": yari-color(warning),
+  "light": yari-color(light),
+  "dark": yari-color(dark),
 );
 
 
-$colors: (
-  "blue": yari-color(primary),
+$colors: ("blue": yari-color(primary),
   "red": yari-color(danger),
   "gray": $alchemist-gray-600,
   "gray-dark": yari-color(dark),
@@ -41,7 +38,13 @@ $border-radius: .75rem;
 $border-width: 1px;
 
 
-$font-family-monospace: 'Montserrat-Regular',  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: 'Montserrat-Regular',
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
 $font-family-base: $font-family-monospace;
 
 
@@ -60,8 +63,7 @@ $spacers: map-merge((0: 0,
     9: ($spacer * 7.5), //120px
     10: ($spacer * 9.375), //150px
     11: ($spacer * 10),
-    12: ($spacer * 11)
-  ),
+    12: ($spacer * 11)),
   $spacers);
 
 
@@ -73,6 +75,8 @@ body {
   font-family: "Montserrat-Regular";
   color: $alchemist-gray-800;
   font-size: 1rem;
+
+
 }
 
 // Override bootstrap
@@ -83,3 +87,14 @@ body {
 
 
 
+
+.no-gutters-xs {
+  margin-right: 0;
+  margin-left: 0;
+
+  >.col,
+  >[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
