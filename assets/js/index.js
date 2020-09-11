@@ -1,64 +1,184 @@
-var myStepper;
+// var myStepper;
+
+
+
+window.addEventListener('load', function () {})
 
 $(document).ready(function () {
     if (jQuery) {
-        // ================================== video
+        // owl-carousel
 
-        var $refreshButton = $('#refresh');
-        var $results = $('#css_result');
-        
-        function refresh(){
-          var css = $('style.cp-pen-styles').text();
-          $results.html(css);
-        }
-      
-        refresh();
-        $refreshButton.click(refresh);
-        
-        // Select all the contents when clicked
-        $results.click(function(){
-          $(this).select();
-        });
-        //===================================
+        var cleanOthers = function (parent, currentIndex) {
+            for (let i = 0; i < parent.length; i++) {
+                const element = parent[i];
 
+                if (i !== currentIndex && i !== currentIndex - 1) {
+                    var goal = $(element);
+                    var goalSaved = goal.find('.variable')
+                    var goalBar = goal.find('.progress-bar')
 
-
-
-        const stepper = $('section[data-stepper]');
-        const stepperAutoPlay = $(stepper).data('autoplay') || false;
-        const stepperTotal = $(stepper).data('total') || 1;
-        const stepperDelay = $(stepper).data('delay') || 3000;
-        const stepperId = $(stepper).attr('id');
-        if (stepperAutoPlay) {
-            myStepper = setInterval(myTimer, stepperDelay);
-            var c = 0;
-            function myTimer() {
-                c += 1;
-                if (c === stepperTotal) {
-                    c = 0;
+                    goalSaved[0].innerHTML = "0";
+                    goalBar[0].innerHTML = "0";
+                    goalBar[0].style.setProperty('--progress', 0);
                 }
-                stepperShow(stepperId, c, false);
             }
+
         }
 
-        // ====================================================== Sections data-bg
-        $("section.row-with-bg-1.data-bg").each(function (i) {
-            // $(this).attr('style','background-image: url('+ imagesArray[i] +'));
-            const elm = $(this);
-            const elmAttrDataBg = elm.attr("data-bg");
-            if (elmAttrDataBg.trim() !== "") {
-                elm.css("background-image", "url(" + elmAttrDataBg + ")");
+        var animate = function (e) {
+            this.index = e.item.index;
+            this.stage = $(e.currentTarget).find(".owl-stage")
+
+            if (this.stage.length == 0) {
+                return;
+            } else {
+                // select first child
+                this.stage = this.stage[0];
+            }
+
+            // var goalWrp = $('figure.goal-wrp');
+            this.goalChildren = $(this.stage).children()
+            this.goal = this.goalChildren.eq(this.index) // $('.owl-item.active.center')
+
+            if (goal.length === 0) {
+                return;
+            }
+            this.goalSaved = goal.find('.variable')
+            this.goalTotal = goal.find('.total')
+            this.goalBar = goal.find('.progress-bar')
+
+            this.objGoal = {
+                charged: '0%',
+                progress: 0,
+            }
+
+            this._total = parseInt(goalTotal[0].innerHTML)
+            if (typeof (_total) != "number") {
+                this._total = '100%';
+            } else {
+                this._total = this._total + '%';
+            }
+
+            anime({
+                targets: objGoal,
+                charged: _total,
+                progress: 100,
+                round: 1,
+                easing: 'linear',
+                update: ((function () {
+                    this.goalSaved[0].innerHTML = JSON.stringify(parseInt(this.objGoal.charged));
+                    this.goalBar[0].innerHTML = JSON.stringify(parseInt(this.objGoal.charged));
+                    this.goalBar[0].style.setProperty('--progress', this.objGoal.progress);
+                }).bind(this))
+            });
+
+            cleanOthers(this.goalChildren, this.index);
+        }
+
+
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+            center: true,
+            items: 3,
+            loop: true,
+            margin: 0,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            lazyLoad: true,
+            mouseDrag: false,
+            // responsive: {
+            //     600: {
+            //         items: 3
+            //     }
+            // },
+            nav: false,
+            dots: false,
+            drag: false,
+            onChanged: function (e) {
+                return animate(e);
             }
         });
 
-        $("section.row-with-bg-1.data-bg-color").each(function (i) {
-            // $(this).attr('style','background-image: url('+ imagesArray[i] +'));
-            const elm = $(this);
-            const elmAttrDataBg = elm.attr("data-bg-color");
-            if (elmAttrDataBg.trim() !== "") {
-                elm.css("background-color", elmAttrDataBg);
-            }
-        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // // ================================== video
+
+        // var $refreshButton = $('#refresh');
+        // var $results = $('#css_result');
+
+        // function refresh(){
+        //   var css = $('style.cp-pen-styles').text();
+        //   $results.html(css);
+        // }
+
+        // refresh();
+        // $refreshButton.click(refresh);
+
+        // // Select all the contents when clicked
+        // $results.click(function(){
+        //   $(this).select();
+        // });
+        // //===================================
+
+
+
+
+        // const stepper = $('section[data-stepper]');
+        // const stepperAutoPlay = $(stepper).data('autoplay') || false;
+        // const stepperTotal = $(stepper).data('total') || 1;
+        // const stepperDelay = $(stepper).data('delay') || 3000;
+        // const stepperId = $(stepper).attr('id');
+        // if (stepperAutoPlay) {
+        //     myStepper = setInterval(myTimer, stepperDelay);
+        //     var c = 0;
+        //     function myTimer() {
+        //         c += 1;
+        //         if (c === stepperTotal) {
+        //             c = 0;
+        //         }
+        //         stepperShow(stepperId, c, false);
+        //     }
+        // }
+
+        // // ====================================================== Sections data-bg
+        // $("section.row-with-bg-1.data-bg").each(function (i) {
+        //     // $(this).attr('style','background-image: url('+ imagesArray[i] +'));
+        //     const elm = $(this);
+        //     const elmAttrDataBg = elm.attr("data-bg");
+        //     if (elmAttrDataBg.trim() !== "") {
+        //         elm.css("background-image", "url(" + elmAttrDataBg + ")");
+        //     }
+        // });
+
+        // $("section.row-with-bg-1.data-bg-color").each(function (i) {
+        //     // $(this).attr('style','background-image: url('+ imagesArray[i] +'));
+        //     const elm = $(this);
+        //     const elmAttrDataBg = elm.attr("data-bg-color");
+        //     if (elmAttrDataBg.trim() !== "") {
+        //         elm.css("background-color", elmAttrDataBg);
+        //     }
+        // });
         // ====================================================== End Sections data-bg
 
 
@@ -102,60 +222,60 @@ $(document).ready(function () {
         //     });
         // });
         // ====================================================== End Video actions
-        
+
     } else {
         alert("Need javascript to run properly this page");
     }
 });
 
-var stepperShow = function (stepper, stepIndex, stop = true) {
-    if (stop) {
-        clearInterval(myStepper);
-    }
-    const _rootStepperPath = "#" + stepper;
-    // const _stepper = $(_rootStepperPath);
+// var stepperShow = function (stepper, stepIndex, stop = true) {
+//     if (stop) {
+//         clearInterval(myStepper);
+//     }
+//     const _rootStepperPath = "#" + stepper;
+//     // const _stepper = $(_rootStepperPath);
 
-    const _mediaId = _rootStepperPath + "-media-" + stepIndex;
-    const _mediaPath = _rootStepperPath + " " + _mediaId;
-    const _media = $(_mediaPath);
-
-
-    const _descriptionId = _rootStepperPath + "-desc-" + stepIndex;
-    const _descriptionPath = _rootStepperPath + " " + _descriptionId;
-    const _description = $(_descriptionPath);
-
-    const _stepperButtonId = _rootStepperPath + "-step-button-" + stepIndex;
-    const _stepperButtonPath = _rootStepperPath + " " + _stepperButtonId;
-    const _stepperButton = $(_stepperButtonPath);
+//     const _mediaId = _rootStepperPath + "-media-" + stepIndex;
+//     const _mediaPath = _rootStepperPath + " " + _mediaId;
+//     const _media = $(_mediaPath);
 
 
-    // get childrens
-    const childrenStepNavPath = _rootStepperPath + " .stepper-nav";
-    var childrenStepNav = $(childrenStepNavPath).children();
+//     const _descriptionId = _rootStepperPath + "-desc-" + stepIndex;
+//     const _descriptionPath = _rootStepperPath + " " + _descriptionId;
+//     const _description = $(_descriptionPath);
 
-    for (let i = 0; i < childrenStepNav.length; i++) {
-        const element = childrenStepNav[i];
-        $(element).removeClass('active');
-    }
-    _stepperButton.addClass("active");
-
-    const childrenStepMediaPath = _rootStepperPath + " .content-wrp";
-    var childrenStepMedia = $(childrenStepMediaPath).children();
-
-    for (let i = 0; i < childrenStepMedia.length; i++) {
-        const element = childrenStepMedia[i];
-        $(element).removeClass('active');
-    }
-    _media.addClass("active");
+//     const _stepperButtonId = _rootStepperPath + "-step-button-" + stepIndex;
+//     const _stepperButtonPath = _rootStepperPath + " " + _stepperButtonId;
+//     const _stepperButton = $(_stepperButtonPath);
 
 
-    const childrenStepDescPath = _rootStepperPath + " #" + stepper + "-desc-wrp";
-    var childrenStepDesc = $(childrenStepDescPath).children();
+//     // get childrens
+//     const childrenStepNavPath = _rootStepperPath + " .stepper-nav";
+//     var childrenStepNav = $(childrenStepNavPath).children();
 
-    for (let i = 0; i < childrenStepDesc.length; i++) {
-        const element = childrenStepDesc[i];
-        $(element).removeClass('active');
-    }
-    _description.addClass("active");
+//     for (let i = 0; i < childrenStepNav.length; i++) {
+//         const element = childrenStepNav[i];
+//         $(element).removeClass('active');
+//     }
+//     _stepperButton.addClass("active");
 
-}
+//     const childrenStepMediaPath = _rootStepperPath + " .content-wrp";
+//     var childrenStepMedia = $(childrenStepMediaPath).children();
+
+//     for (let i = 0; i < childrenStepMedia.length; i++) {
+//         const element = childrenStepMedia[i];
+//         $(element).removeClass('active');
+//     }
+//     _media.addClass("active");
+
+
+//     const childrenStepDescPath = _rootStepperPath + " #" + stepper + "-desc-wrp";
+//     var childrenStepDesc = $(childrenStepDescPath).children();
+
+//     for (let i = 0; i < childrenStepDesc.length; i++) {
+//         const element = childrenStepDesc[i];
+//         $(element).removeClass('active');
+//     }
+//     _description.addClass("active");
+
+// }

@@ -95,9 +95,11 @@
             .btn {
                 padding: .375rem 1.5rem;
             }
+
             span {
                 font-weight: bold;
             }
+
             img {
                 width: 22px;
                 margin-right: .5rem;
@@ -122,7 +124,89 @@
     }
 
 
-    
+    .slider-wrp {
+        .owl-item.active:not(.center) {
+            .goal-wrp {
+                &::after {
+                    content: ''; 
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 90%;
+                    background-color: $alchemist-sky-1;
+                    opacity: .2;
+                    border-radius: 10px;
+
+                }
+            }
+        }
+        .goal-wrp {
+            @extend %noselect;
+            position: relative;
+            border-radius: 20px;
+            box-sizing: border-box;
+            max-width: 350px;
+            height: 200px;
+            color: $white;
+            margin: 0 1em;
+            transition: all 1s ease-in;
+ 
+            img {
+                width: 100%;
+            }
+
+            .top-left {
+                position: absolute;
+                top: 18px;
+                left: 16px;
+            }
+
+            .bottom-right {
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+            }
+
+            .saved-wrp {
+                position: absolute;
+                bottom: 20px;
+                left: 10px;
+                width: 95%;
+                .content {
+                    text-align: right;
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        .progress-bar-wrp {
+            display: flex;
+            width: 100%;
+            height: 8px;
+            justify-content: center;
+            align-items: center;
+            background-color: $alchemist-gray-300;
+            border-radius: 20px;
+        }
+
+        .progress-bar {
+            background-image:
+                linear-gradient(to right,
+                    #7AC7C4 calc(var(--progress) * 1%),
+                    white calc(var(--progress) * 1%),
+                    white);
+            border-radius: 20px;
+            color: rgba($color: #000000, $alpha: .001);
+            font-size: 10px;
+            text-align: center;
+            line-height: 8px;
+            width: 100%;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {}
 }
 
 // .homepage {
