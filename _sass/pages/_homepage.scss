@@ -2,6 +2,35 @@
     font-family: "Montserrat-Regular";
     text-align: justify;
 
+    .default-section {
+        .title {
+            font-size: 2.55rem;
+            font-weight: bold;
+            padding: 2rem 0;
+            color: $alchemist-gray-800;
+        }
+
+        .desc {
+            font-size: .85rem;
+            color: $alchemist-gray-800;
+        }
+    }
+
+
+    @include media-breakpoint-down(sm) {
+        .default-section {
+            .title {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .desc {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+
     .header {
         position: relative;
         min-height: 600px;
@@ -79,18 +108,6 @@
 
 
     .left-img-section {
-        .title {
-            font-size: 2.55rem;
-            font-weight: bold;
-            padding: 2rem 0;
-            color: $alchemist-gray-800;
-        }
-
-        .desc {
-            font-size: .85rem;
-            color: $alchemist-gray-800;
-        }
-
         .btn-wrp {
             .btn {
                 padding: .375rem 1.5rem;
@@ -108,15 +125,6 @@
         }
 
         @include media-breakpoint-down(sm) {
-            .title {
-                font-size: 2rem;
-                text-align: center;
-            }
-
-            .desc {
-                font-size: 0.95rem;
-            }
-
             .btn-wrp {
                 text-align: center;
             }
@@ -134,7 +142,7 @@
             height: 250px;
         }
     }
-    
+
     .slider-wrp {
         position: absolute;
         box-sizing: border-box;
@@ -146,6 +154,8 @@
         font-size: 100%;
 
         .title {
+            font-size: 1rem;
+            color: $white;
             font-weight: bold;
         }
 
@@ -205,6 +215,7 @@
                 left: 3%;
                 width: 95%;
                 z-index: 10;
+
                 .content,
                 .content-saved {
                     // font-family: "Tahoma, Arial";
@@ -241,7 +252,7 @@
             background-image:
                 linear-gradient(to right,
                     $alchemist-sky-2 calc(var(--progress) * 1%),
-                 rgba(255, 255, 255, 0.342) calc(var(--progress) * 1%));
+                    rgba(255, 255, 255, 0.342) calc(var(--progress) * 1%));
             border-radius: 10px;
             color: rgba($color: #000000, $alpha: .001) !important;
             font-size: 10%;
@@ -266,6 +277,95 @@
         }
     }
 
+
+    .set-rules-wrp {
+        padding-bottom: 150px;
+        text-align: center;
+        position: relative;
+        .title {
+            text-align: left;
+        }
+
+        .desc {
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        .rules-box-wrp {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin-bottom: 200px;
+        }
+
+        .rules-box {
+            max-width: 200px;
+            height: 270px;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px solid $alchemist-gray-100;
+            border-radius: 25px;
+            padding: 0.7rem;
+            color: $alchemist-gray-800;
+            background-color: $white;
+            box-sizing: border-box;
+
+            img {
+                height: 80px;
+                margin: 2rem auto;
+            }
+
+            .rule-type {
+                font-weight: bold;
+                font-size: 1rem;
+                padding: 0.6rem 0;
+                text-align: left;
+            }
+
+            .rule-desc {
+                font-size: 0.75rem;
+                text-align: left;
+            }
+        }
+
+        @include media-breakpoint-down(xs) {
+            padding-bottom: 750px;
+
+            .rules-box-wrp {
+                padding: 0;
+            }
+
+            .rules-box {
+                max-width: 300px;
+                margin: 0 auto;
+                margin-bottom: 2.5rem;
+                width: 100%;
+                img {
+                    height: 90px;
+                    margin: 1.35rem auto;
+                }
+                .rule-type {
+                    font-size: 1rem;
+                    text-align: center;
+                }
+
+                .rule-desc {
+                    font-size: 0.95rem;
+                    text-align: center;
+                }
+            }
+
+        }
+
+    }
+
+
+    .stepper-wrp {
+        height: 500px;
+        background-image: url("../imgs/g394.png");
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 // .homepage {
