@@ -9,20 +9,22 @@ $(document).ready(function () {
         // owl-carousel
 
         var cleanOthers = function (parent, currentIndex) {
-            for (let i = 0; i < parent.length; i++) {
+            const totalItems = parent.length
+            for (let i = 0; i < totalItems; i++) {
                 const element = parent[i];
-
-                if (i !== currentIndex && i !== currentIndex - 1) {
+                if (currentIndex !== i && (currentIndex - 1) !== i) {
                     var goal = $(element);
                     var goalSaved = goal.find('.variable')
                     var goalBar = goal.find('.progress-bar')
-
+                    var content = goal.find('.content-saved')
                     goalSaved[0].innerHTML = "0";
                     goalBar[0].innerHTML = "0";
                     goalBar[0].style.setProperty('--progress', 0);
+                    
+                    content.removeClass('completed');
+                    goalBar.removeClass('completed');
                 }
             }
-
         }
 
         var animate = function (e) {
@@ -43,6 +45,7 @@ $(document).ready(function () {
             if (goal.length === 0) {
                 return;
             }
+            this.content = goal.find('.content-saved')
             this.goalSaved = goal.find('.variable')
             this.goalTotal = goal.find('.total')
             this.goalBar = goal.find('.progress-bar')
@@ -64,14 +67,18 @@ $(document).ready(function () {
                 charged: _total,
                 progress: 100,
                 round: 1,
-                easing: 'linear',
+                easing: 'easeInOutExpo',
+                duration: 1500,
                 update: ((function () {
                     this.goalSaved[0].innerHTML = JSON.stringify(parseInt(this.objGoal.charged));
                     this.goalBar[0].innerHTML = JSON.stringify(parseInt(this.objGoal.charged));
                     this.goalBar[0].style.setProperty('--progress', this.objGoal.progress);
+                    if (this.objGoal.progress === 100) {
+                        this.content.addClass('completed');
+                        this.goalBar.addClass('completed');
+                    }
                 }).bind(this))
             });
-
             cleanOthers(this.goalChildren, this.index);
         }
 
@@ -98,11 +105,6 @@ $(document).ready(function () {
                 return animate(e);
             }
         });
-
-
-
-
-
 
 
 
