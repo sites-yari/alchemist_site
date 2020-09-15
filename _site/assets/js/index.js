@@ -4,6 +4,10 @@
 
 window.addEventListener('load', function () {})
 
+
+
+
+
 $(document).ready(function () {
     if (jQuery) {
         // owl-carousel
@@ -20,7 +24,7 @@ $(document).ready(function () {
                     goalSaved[0].innerHTML = "0";
                     goalBar[0].innerHTML = "0";
                     goalBar[0].style.setProperty('--progress', 0);
-                    
+
                     content.removeClass('completed');
                     goalBar.removeClass('completed');
                 }
@@ -107,6 +111,24 @@ $(document).ready(function () {
         });
 
 
+
+
+
+
+        $('.stepper-app').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            // cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 1000,
+            arrows: false,
+            appendDots: $("#stepper-wrp")[0],
+            customPaging: function (slick, index) {
+                return index + 1;
+            }
+        });
 
 
 

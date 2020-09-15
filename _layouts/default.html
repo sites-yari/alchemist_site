@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 {% include head.html %}
 
-<body>
+<body class="layout-body">
   <div>
-    <div>
-      {% include header.html %}
-    </div>
-    <div>
-      {{ content }}
-    </div>
-    <div>
-      {% include footer.html %}
-    </div>
+    {% include header.html %}
   </div>
-
+  <div>
+    {{ content }}
+  </div>
+  <div>
+    {% include footer.html %}
+  </div>
   <!-- Javascripts -->
   <!-- <script>
       function hideAndShow() {

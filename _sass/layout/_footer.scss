@@ -1,3 +1,59 @@
 .footer-custom {
     background-color: $alchemist-white-100;
+    text-align: left;
+    z-index: -10;
+    position: relative;
+    max-width: 100%;
+
+    .links-wrp {}
+
+    .img-wrp {
+
+        // border: 1px solid red;
+        img {
+            height: 120px;
+        }
+    }
+
+    .sitemap,
+    .social {
+        overflow: hidden;
+
+        .nav-link {
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+
+            font-weight: 600;
+            color: $alchemist-gray-600;
+
+            padding: .3rem;
+            text-align: center;
+            display: flex;
+            
+            a {
+                width: 100%;
+            }
+            i {
+                text-align: center;
+                width: 1.3rem;
+                line-height: 1.5rem;
+                margin-right: .5rem;
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    margin-top: 70px;
+}
+
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: $alchemist-gray-600;
+
+    img {
+        height: 1rem;
+    }
 }

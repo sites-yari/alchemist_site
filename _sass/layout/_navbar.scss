@@ -26,6 +26,7 @@
         .navbar-brand {
             .img-brand {
                 width: 45%;
+                height: auto;
             }
         }
 
@@ -48,5 +49,22 @@
                 }
             }
         }
+    }
+
+
+    @include media-breakpoint-up(xl) {
+        max-width: 1980px !important;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .layout-header {
+        max-width: 1980px!important;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
     }
 }
