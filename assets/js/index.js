@@ -104,10 +104,6 @@ $(document).ready(function () {
         });
 
 
-
-
-
-
         var sliderSlick = $('.stepper-app').slick({
             dots: true,
             infinite: true,
@@ -124,15 +120,11 @@ $(document).ready(function () {
         });
 
 
-
-
         sliderSlick.on('afterChange', function (event, slick, currentSlide, nextSlide) {
             if (debug == true) {
                 console.log("event", event)
             }
         });
-
-
 
         $('#playPresentation').on('click', function () {
             if (debug == true) {
@@ -201,13 +193,14 @@ $(document).ready(function () {
             var $title = $(this).data('title');
             var $size = $(this).data('size');
             $('#quickview .modal-title').text($title);
+            
             if ($size) {
                 $('#quickview .modal-dialog').addClass('modal-' + $size);
             }
             if ($image) {
                 $('#quickview .modal-body').html('<div class="text-center"><img class="img-fluid" src="' + $image + '" alt="' + $title + '"></div>');
             } else if ($video) {
-                $('#quickview .modal-body').html('<div style = "padding:56.25% 0 0 0;position:relative;"><iframe src = "https://player.vimeo.com/video/' + $video + '?color=ff9933&title=0&byline=0&portrait=0" style = "position:absolute;top:0;left:0;width:100%;height:100%;" frameborder = "0" allow = "autoplay; fullscreen" allowfullscreen></iframe></div>');
+                $('#quickview .modal-body').html('<div class="embed-responsive embed-responsive-21by9"><iframe src="https://player.vimeo.com/video/' + $video + '?color=ff9933&title=0&byline=0&portrait=0&autoplay=1&autopause=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>');
             }
             // < div class= "embed-responsive embed-responsive-16by9" > <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/'+$video+'?autoplay=1&theme=dark&controls=0&disablekb=0&rel=0&showinfo=0&modestbranding=1&color=red" allowfullscreen></iframe></div > ');
             if ($page) {
