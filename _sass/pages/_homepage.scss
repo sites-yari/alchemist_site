@@ -86,13 +86,28 @@
     background-position-x: 70%;
     margin-bottom: 220px;
 
+    height: 900px;
+
     @include media-breakpoint-up(sm) {
         background-position-x: 0%;
-        min-height: 600px;
+        height: auto;
+        min-height: 500px;
         background-size: 90% 100%;
         background-color: $white;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
+
+
+    @include media-breakpoint-up(md) {
+        min-height: 750px;
+    }
+
+    @include media-breakpoint-up(lg) {
+    }
+
+    @include media-breakpoint-up(xl) {
+    }
+
 
     @include media-breakpoint-up(md) {
         background-size: 70% 100%;
@@ -156,15 +171,22 @@
         right: 0%;
         margin: 0 auto;
         position: relative;
-        bottom: 25%;
+        bottom: 45%;
         transform: translate(0%, 50%);
-        width: 80%;
+        width: 55%;
+        max-width: 250px;
 
+        @media (max-width: 350px) {
+            width: 60%;
+        }
+        
         @include media-breakpoint-up(sm) {
             position: absolute;
             bottom: 15%;
             left: 25%;
-            width: 90%;
+            width: 80%;
+            max-width: 345px;
+
         }
 
         @include media-breakpoint-up(md) {
