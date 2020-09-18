@@ -480,12 +480,30 @@
         background-color: $white;
         box-sizing: border-box;
         overflow: hidden;
-        
+
+
         img {
-            max-height: 12rem;
+            max-height: 10rem;
             max-width: 50%;
             margin: 2rem auto;
+        
+            @include media-breakpoint-up(sm) {
+                max-height: 12rem;
+            }
         }
+
+
+        .img-wrp-rules {
+
+            @include media-breakpoint-up(sm) {
+                max-height: 7rem;
+            }
+
+            @include media-breakpoint-up(md) {
+                max-height: 12rem;
+            }
+        }
+
 
         .rule-type {
             font-weight: bold;
@@ -505,10 +523,10 @@
 
         @include media-breakpoint-up(sm) {
             width: 87%;
-            height: 400px;
+            height: 350px;
         }
 
-        }
+    }
 
     @include media-breakpoint-down(xs) {
         padding-bottom: 750px;
