@@ -248,24 +248,24 @@
     font-size: 100%;
 
     .title {
-        font-size: 1rem;
+        font-size: .95rem;
         color: $white;
         font-weight: bold;
 
         @include media-breakpoint-up(sm) {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         @include media-breakpoint-up(md) {
-            font-size: 1.3rem;
+            font-size: 1.05rem;
         }
 
         @include media-breakpoint-up(lg) {
-            font-size: 1.4rem;
+            font-size: 1.10rem;
         }
 
         @include media-breakpoint-up(xl) {
-            font-size: 1.7rem;
+            font-size: 1.15rem;
         }
     }
 
@@ -325,22 +325,22 @@
 
             .content,
             .content-saved {
-                font-size: 100%;
+                font-size: 90%;
                 text-align: right;
                 padding-right: 5%;
                 font-weight: 600;
                 transition: color .2s ease-in;
 
                 @include media-breakpoint-up(md) {
-                    font-size: 120%;
+                    font-size: 95%;
                 }
 
                 @include media-breakpoint-up(lg) {
-                    font-size: 130%;
+                    font-size: 100%;
                 }
 
                 @include media-breakpoint-up(xl) {
-                    font-size: 140%;
+                    font-size: 105%;
                 }
             }
 
@@ -386,15 +386,15 @@
 
 
         @include media-breakpoint-up(md) {
-            font-size: 0.5rem;
+            font-size: 0.4rem;
         }
 
         @include media-breakpoint-up(lg) {
-            font-size: 0.6rem;
+            font-size: 0.5rem;
         }
 
         @include media-breakpoint-up(xl) {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
     }
 
