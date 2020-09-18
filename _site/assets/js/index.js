@@ -1,12 +1,5 @@
 // var myStepper;
-
-
-
-window.addEventListener('load', function () {})
-
-
-
-
+window.debug = false;
 
 $(document).ready(function () {
     if (jQuery) {
@@ -115,7 +108,7 @@ $(document).ready(function () {
 
 
 
-        $('.stepper-app').slick({
+        var sliderSlick = $('.stepper-app').slick({
             dots: true,
             infinite: true,
             speed: 500,
@@ -133,12 +126,11 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
+        sliderSlick.on('afterChange', function(event, slick, currentSlide, nextSlide){
+            if (debug == true) {
+                console.log("event", event)
+            }
+        });
 
 
 
@@ -164,26 +156,6 @@ $(document).ready(function () {
         //   $(this).select();
         // });
         // //===================================
-
-
-
-
-        // const stepper = $('section[data-stepper]');
-        // const stepperAutoPlay = $(stepper).data('autoplay') || false;
-        // const stepperTotal = $(stepper).data('total') || 1;
-        // const stepperDelay = $(stepper).data('delay') || 3000;
-        // const stepperId = $(stepper).attr('id');
-        // if (stepperAutoPlay) {
-        //     myStepper = setInterval(myTimer, stepperDelay);
-        //     var c = 0;
-        //     function myTimer() {
-        //         c += 1;
-        //         if (c === stepperTotal) {
-        //             c = 0;
-        //         }
-        //         stepperShow(stepperId, c, false);
-        //     }
-        // }
 
         // // ====================================================== Sections data-bg
         // $("section.row-with-bg-1.data-bg").each(function (i) {
@@ -251,55 +223,3 @@ $(document).ready(function () {
         alert("Need javascript to run properly this page");
     }
 });
-
-// var stepperShow = function (stepper, stepIndex, stop = true) {
-//     if (stop) {
-//         clearInterval(myStepper);
-//     }
-//     const _rootStepperPath = "#" + stepper;
-//     // const _stepper = $(_rootStepperPath);
-
-//     const _mediaId = _rootStepperPath + "-media-" + stepIndex;
-//     const _mediaPath = _rootStepperPath + " " + _mediaId;
-//     const _media = $(_mediaPath);
-
-
-//     const _descriptionId = _rootStepperPath + "-desc-" + stepIndex;
-//     const _descriptionPath = _rootStepperPath + " " + _descriptionId;
-//     const _description = $(_descriptionPath);
-
-//     const _stepperButtonId = _rootStepperPath + "-step-button-" + stepIndex;
-//     const _stepperButtonPath = _rootStepperPath + " " + _stepperButtonId;
-//     const _stepperButton = $(_stepperButtonPath);
-
-
-//     // get childrens
-//     const childrenStepNavPath = _rootStepperPath + " .stepper-nav";
-//     var childrenStepNav = $(childrenStepNavPath).children();
-
-//     for (let i = 0; i < childrenStepNav.length; i++) {
-//         const element = childrenStepNav[i];
-//         $(element).removeClass('active');
-//     }
-//     _stepperButton.addClass("active");
-
-//     const childrenStepMediaPath = _rootStepperPath + " .content-wrp";
-//     var childrenStepMedia = $(childrenStepMediaPath).children();
-
-//     for (let i = 0; i < childrenStepMedia.length; i++) {
-//         const element = childrenStepMedia[i];
-//         $(element).removeClass('active');
-//     }
-//     _media.addClass("active");
-
-
-//     const childrenStepDescPath = _rootStepperPath + " #" + stepper + "-desc-wrp";
-//     var childrenStepDesc = $(childrenStepDescPath).children();
-
-//     for (let i = 0; i < childrenStepDesc.length; i++) {
-//         const element = childrenStepDesc[i];
-//         $(element).removeClass('active');
-//     }
-//     _description.addClass("active");
-
-// }
