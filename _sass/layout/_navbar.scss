@@ -1,14 +1,14 @@
 .navbar-light {
     position: absolute;
     padding-top: 2rem;
-    min-height: 70px;
-
+    max-height: 12rem;
 
     .navbar-brand {
         margin-right: 0;
         .img-brand {
-            width: 45%;
             height: auto;
+            min-width: 12rem;
+            max-height: 8rem;
         }
     }
 
