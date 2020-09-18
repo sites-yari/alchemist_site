@@ -102,11 +102,9 @@
         min-height: 750px;
     }
 
-    @include media-breakpoint-up(lg) {
-    }
+    @include media-breakpoint-up(lg) {}
 
-    @include media-breakpoint-up(xl) {
-    }
+    @include media-breakpoint-up(xl) {}
 
 
     @include media-breakpoint-up(md) {
@@ -140,9 +138,11 @@
         .title {
             color: white;
             font-size: 3rem;
+
             span {
                 color: $alchemist-gold-3;
             }
+
             margin: 2%;
 
 
@@ -179,7 +179,7 @@
         @media (max-width: 350px) {
             width: 60%;
         }
-        
+
         @include media-breakpoint-up(sm) {
             position: absolute;
             bottom: 15%;
@@ -678,6 +678,7 @@
     position: relative;
     overflow: visible;
     z-index: 100;
+
     .slide {
         margin: 0 2%;
 
@@ -1069,18 +1070,33 @@
 
         .title {
             text-align: left;
-            font-size: 3rem;
             font-weight: bold;
-            padding: 2rem 0;
+            padding: 3rem 0;
             color: $alchemist-gold-5;
+            font-size: 1.5rem;
+
+            @include media-breakpoint-up(sm) {
+                padding: 1.5rem 0;
+                font-size: 1.75rem;
+            }
+
+            @include media-breakpoint-up(md) {
+                font-size: 2rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: 2.5rem;
+            }
         }
 
         .desc {
-            font-size: 0.85rem;
             color: $alchemist-sea-sky-7;
-            text-align: left;
             font-weight: 500;
             width: 90%;
+
+            @include media-breakpoint-up(sm) {
+                text-align: center;
+            }
         }
 
         .downloads {
@@ -1095,7 +1111,7 @@
         }
     }
 
-    .phone {
+    .phone-download {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -1103,6 +1119,7 @@
         margin: 0 auto;
         left: 0;
         right: 0;
+        max-height: 65vh;
 
         @include media-breakpoint-up(sm) {
             transform: translateY(-45%);
