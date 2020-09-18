@@ -2,6 +2,9 @@
     position: absolute;
     padding-top: 2rem;
     max-height: 12rem;
+    
+    @media (max-width: 750px) {
+    }
 
     .navbar-brand {
         margin-right: 0;
@@ -9,6 +12,9 @@
             height: auto;
             min-width: 12rem;
             max-height: 8rem;
+            @media (max-width: 750px) {
+                 min-width: 8rem;
+            }
         }
     }
 
@@ -24,14 +30,7 @@
 
     @include media-breakpoint-down(sm) {
         .navbar-brand {
-            width: 80%;
-        }
-
-        .navbar-brand {
-            .img-brand {
-                width: 45%;
-                height: auto;
-            }
+            width: 50%;
         }
 
         .form-inline {

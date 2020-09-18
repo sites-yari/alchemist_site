@@ -124,13 +124,17 @@
 
         .title {
             color: white;
-
+            font-size: 3rem;
             span {
                 color: $alchemist-gold-3;
             }
+            margin: 2%;
+
+
         }
 
         .desc {
+            margin: 2%;
             color: $alchemist-gray-500;
         }
 
