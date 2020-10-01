@@ -83,7 +83,7 @@ body {
 .btn {
   font-size: 0.75rem;
   padding: .375rem 2rem;
-  -webkit-appearance: none!important;
+  -webkit-appearance: none !important;
 }
 
 
@@ -145,24 +145,25 @@ body {
   overflow-x: hidden;
 
   @media (min-width: 1400px) {
-    max-width: 1980px!important;
+    max-width: 1980px !important;
     margin: 0 auto;
   }
 }
 
 
 .form-no-input-outline {
+
   input:focus,
   select:focus,
   textarea:focus,
   button:focus {
-      outline: none;
-      background: transparent!important;
+    outline: none;
+    background: transparent !important;
   }
 
   input:-webkit-autofill {
     -webkit-text-fill-color: black !important;
-    background: transparent!important;
+    background: transparent !important;
 
   }
 }
@@ -173,4 +174,12 @@ body {
 
 body {
   position: relative;
+}
+
+
+.default-wrp-page {
+  position: relative;
+  font-family: "Montserrat-Regular";
+  text-align: justify;
+  overflow: hidden;
 }

@@ -13,6 +13,11 @@ function paramsToObject(entries) {
 
 $(document).ready(function () {
     if (jQuery) {
+        // tabs terms page
+        $('#terms-tab-nav-btn').on('click', function () {
+            $(this).toggleClass('hide');
+        });
+
         // inline forms 
         var postCaForm = function (form, serialized, cb) {
             if (debug) {
@@ -32,7 +37,7 @@ $(document).ready(function () {
             //     alert("Thank you!");
             //     cb();
             // });
- 
+
             $.post(form.attr("action"), (new URLSearchParams(params)).toString()).then(function () {
                 alert("Thank you!");
                 cb();
@@ -46,7 +51,7 @@ $(document).ready(function () {
                 }, 3000);
             });
 
-         
+
         }
 
         var inlineForms = [$("#ca-join-form-inline"), $("#ca-join-form-inline-footer")];
@@ -55,9 +60,11 @@ $(document).ready(function () {
                 return this._caJoinInline.find(".indicator")[0].setAttribute("data-content", "For submit hit enter");
             }
 
-            for (var i = 0; i < inlineForms.length; i++) {
-                var caJoinInline = inlineForms[i];
-                caJoinInline.find("input")[0].addEventListener("input", inputListener.bind({_caJoinInline: caJoinInline}));
+            for (var j = 0; j < inlineForms.length; j++) {
+                var caJoinInline = inlineForms[j];
+                caJoinInline.find("input")[0].addEventListener("input", inputListener.bind({
+                    _caJoinInline: caJoinInline
+                }));
 
                 caJoinInline.submit(function (e) {
                     e.preventDefault();
@@ -90,7 +97,7 @@ $(document).ready(function () {
         // owl-carousel
         var cleanOthers = function (parent, currentIndex) {
             const totalItems = parent.length
-            for (let i = 0; i < totalItems; i++) {
+            for (var i = 0; i < totalItems; i++) {
                 const element = parent[i];
                 if (currentIndex !== i && (currentIndex - 1) !== i) {
                     var goal = $(element);
