@@ -1,10 +1,91 @@
 // var myStepper;
 window.debug = false;
 
+
+function paramsToObject(entries) {
+    let result = {}
+    for (let entry of entries) {
+        const [key, value] = entry;
+        result[key] = value;
+    }
+    return result;
+}
+
 $(document).ready(function () {
     if (jQuery) {
-        // owl-carousel
+        // inline forms 
+        var postCaForm = function (form, serialized, cb) {
+            if (debug) {
+                console.log("postCaForm -> form", form)
+                console.log("postCaForm -> serialized", serialized)
+            }
+            const urlParams = new URLSearchParams(serialized);
+            const entries = urlParams.entries();
+            const params = paramsToObject(entries);
 
+            // zapier hook
+            // var hook = "https://hooks.zapier.com/hooks/catch/7118809/ogojvwh/";
+            // $.post(hook, params).then(function (response) {
+            //     console.log("postCaForm -> response", response)
+            //     alert("Thank you!");
+            //     cb();
+            // });
+ 
+            $.post(form.attr("action"), serialized).then(function () {
+                alert("Thank you!");
+                cb();
+            }).catch(function (error) {
+                if (debug) {
+                    console.error("post form: ", error)
+                }
+
+                setTimeout(() => {
+                    cb();
+                }, 3000);
+            });
+
+         
+        }
+
+        var inlineForms = [$("#ca-join-form-inline"), $("#ca-join-form-inline-footer")];
+        if (inlineForms.length) {
+            var inputListener = function () {
+                return this._caJoinInline.find(".indicator")[0].setAttribute("data-content", "For submit hit enter");
+            }
+
+            for (var i = 0; i < inlineForms.length; i++) {
+                var caJoinInline = inlineForms[i];
+                caJoinInline.find("input")[0].addEventListener("input", inputListener.bind({_caJoinInline: caJoinInline}));
+
+                caJoinInline.submit(function (e) {
+                    e.preventDefault();
+                    var $form = $(this);
+
+                    $form.find(".indicator")[0].setAttribute("data-content", "Saving...")
+                    $($form.find("input")[0]).addClass("full")
+
+                    const postSubmitCB = function () {
+                        $form.find(".indicator")[0].setAttribute("data-content", "You've been subscribed!")
+                        $($form.find(".loader")[0]).addClass("done")
+                        $($form.find("input")[0]).addClass("full")
+                        $($form.find("input")[0]).val("")
+                    }
+                    postCaForm($form, $form.serialize(), postSubmitCB);
+                });
+            }
+        }
+
+        // Modal form
+        $("#ca-join").find("#ca-join-form").submit(function (e) {
+            e.preventDefault();
+            var $form = $(this);
+            postCaForm($form, $form.serialize(), function () {
+                $('#ca-join').modal('toggle');
+            });
+        });
+
+
+        // owl-carousel
         var cleanOthers = function (parent, currentIndex) {
             const totalItems = parent.length
             for (let i = 0; i < totalItems; i++) {
@@ -193,7 +274,7 @@ $(document).ready(function () {
             var $title = $(this).data('title');
             var $size = $(this).data('size');
             $('#quickview .modal-title').text($title);
-            
+
             if ($size) {
                 $('#quickview .modal-dialog').addClass('modal-' + $size);
             }

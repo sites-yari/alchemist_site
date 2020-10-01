@@ -6,6 +6,222 @@
 }
 
 
+
+
+.ctr {
+    display: block;
+    position: relative;
+    width: 90%;
+
+    input {
+        outline: 0;
+        line-height: 3rem;
+        width: 100%;
+        font-size: 1rem;
+        padding: 0 20px;
+        border: none;
+        cursor: pointer;
+        color: blue;
+        position: relative;
+        z-index: 10;
+        background: transparent;
+        color: transparent;
+        font-weight: 300;
+        -webkit-transition: .3s all ease;
+        transition: .3s all ease;
+        font-family: 'Roboto', sans-serif;
+
+        &.full {
+            pointer-events: none !important;
+            width: 0%;
+        }
+    }
+
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.15);
+        width: 0%;
+        z-index: 99;
+        pointer-events: none;
+        -webkit-transition: 3s all ease;
+        transition: 3s all ease;
+
+        &.full {
+            width: 100%;
+        }
+
+        &.done {
+            background: $alchemist-gold-3;
+            -webkit-transition: .3s all ease;
+            transition: .3s all ease;
+            height: 0;
+        }
+    }
+
+    .indicator {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 5px;
+        background: $alchemist-gold-1;
+        -webkit-transition: .3s all ease;
+        transition: .3s all ease;
+        z-index: 9;
+        // font-family: 'Roboto', sans-serif;
+
+        &:after {
+            content: attr(data-content);
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: $alchemist-gray-600;
+            -webkit-transition: inherit;
+            transition: inherit;
+            font-size: 1rem;
+            z-index: 999;
+            text-align: left;
+            font-weight: 300;
+        }
+    }
+
+    input {
+        &:focus {
+            color: white;
+
+            +.indicator {
+                height: 100%;
+            }
+        }
+
+        &.full:focus+.indicator {
+            height: 5px;
+            color: $alchemist-gold-1;
+        }
+
+        &:focus+.indicator:after {
+            color: $alchemist-gold-1;
+        }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+.ca-join {
+    .modal-dialog {
+        margin: 0;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .modal-body {
+        width: 100%;
+        overflow: visible;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include media-breakpoint-up(sm) {
+            width: 65%;
+        }
+
+    }
+
+    .ca-join-form {
+        text-align: center;
+    }
+
+    background-color: rgba(19, 18, 18, 0.692);
+
+    .email-label,
+    .updates-label {
+        color: $white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .updates-label,
+    .updates {
+        display: inline-block;
+        color: $white;
+        font-size: 0.8rem;
+    }
+
+    #email,
+    #name {
+        border-radius: 10px;
+        border-color: $alchemist-gold-1;
+        width: 45%;
+        line-height: 2rem;
+        padding-left: 1rem;
+        color: white;
+        background-color: black;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 1rem;
+
+
+        width: 90%;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+}
+
+.ca-join-btn {
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    width: 90%;
+
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+        radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: $white;
+    box-shadow: 0 0 20px $alchemist-gold-1;
+    display: block;
+    border-color: $alchemist-gold-1;
+
+    &:hover {
+        background-position: right center;
+        border-color: $alchemist-gold-1;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &.ca-join-btn-inline {
+        display: inline-block;
+        padding: 0.5rem 1.2rem;
+        border-radius: 10px;
+    }
+
+
+}
+
+
 .default-section {
     word-wrap: break-word;
     text-align: left;
@@ -486,7 +702,7 @@
             max-height: 10rem;
             max-width: 50%;
             margin: 2rem auto;
-        
+
             @include media-breakpoint-up(sm) {
                 max-height: 12rem;
             }
@@ -1059,12 +1275,16 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+
+
     @include media-breakpoint-up(sm) {
         min-height: 400px;
+        margin-bottom: 100px;
     }
 
     @include media-breakpoint-up(md) {
         min-height: 450px;
+        margin-bottom: 0;
     }
 
     @include media-breakpoint-up(lg) {
@@ -1143,18 +1363,20 @@
         margin: 0 auto;
         left: 0;
         right: 0;
-        max-height: 65vh;
+        max-height: 450px;
+        z-index: 500;
 
         @include media-breakpoint-up(sm) {
             transform: translateY(-45%);
             top: 43%;
             width: 70%;
+            min-height: 550px;
+            width: auto !important;
         }
 
         @include media-breakpoint-up(md) {
             transform: translateY(-45%);
-            width: 80%;
-
+            min-height: 650px;
         }
 
         @include media-breakpoint-up(lg) {

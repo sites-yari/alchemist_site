@@ -151,6 +151,22 @@ body {
 }
 
 
+.form-no-input-outline {
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+      outline: none;
+      background: transparent!important;
+  }
+
+  input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+    background: transparent!important;
+
+  }
+}
+
 // html {
 //   height: 100%;
 // }
@@ -158,4 +174,3 @@ body {
 body {
   position: relative;
 }
- 

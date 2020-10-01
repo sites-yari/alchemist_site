@@ -27,7 +27,7 @@
             </div> -->
 
 
-            <div class="downloads-wrp  pt-5 pb-4 pt-sm-7">
+            <!-- <div class="downloads-wrp  pt-5 pb-4 pt-sm-7">
               <div class="flex social-btns">
                 <a class="app-btn blu flex vert" href="#">
                   <i class="fab fa-apple"></i>
@@ -37,6 +37,48 @@
                 <a class="app-btn blu flex vert" href="#">
                   <i class="fab fa-google-play"></i>
                   <p><strong>Get it on </strong><br /> <span class="big-txt">Google Play</span></p>
+                </a>
+              </div>
+            </div> -->
+
+            <div class="downloads-wrp">
+              <!-- call to action for waiting list -->
+              <div class="row">
+                <div class="col text-center mt-4 py-1 py-md-3 d-flex align-content-center flex-wrap">
+                  <form autocomplete="off" class="desc ctr" id="ca-join-form-inline" name="contact" method="POST"
+                    data-netlify="true">
+                    <div class="loader"></div>
+                    <input type="email" id="email" name="email">
+                    <div class="indicator" data-content="Join in the waiting list"></div>
+
+
+                    <input type="hidden" id="name" name="name" value="empty">
+                    <input type="hidden" id="updates" name="updates" value="on">
+
+                  </form>
+
+                  <!-- <form class="ca-join form-no-input-outline" id="ca-join-form-inline" name="contact" method="POST" data-netlify="true">
+                    <label for="email" class="email-label">Join the waiting list:</label><br>
+                    <input type="email" id="email" name="email" placeholder="email">
+                    <button type="submit" value="Submit"
+                      class="btn btn-primary ca-join-btn ca-join-btn-inline">
+                      Join
+                    </button>
+                  </form> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="downloads-wrp  pt-5 pb-4 pt-sm-7">
+              <div class="flex social-btns">
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-apple"></i>
+                  <p>Available soon on <br /> <span class="big-txt">App Store</span></p>
+                </a>
+
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-google-play"></i>
+                  <p>Available soon on<br /> <span class="big-txt">Google Play</span></p>
                 </a>
               </div>
             </div>
@@ -462,8 +504,8 @@
     <div class="row mx-sm-5 mx-lg-10 ">
 
       <div class="col-sm-5">
-        <div class="phone-download d-flex justify-content-center">
-          <img class="img-fluid" src="./assets/imgs/download-phone.png" alt="phone">
+        <div class="d-flex justify-content-center">
+          <img class="img-fluid phone-download  " src="./assets/imgs/download-phone.png" alt="phone">
         </div>
       </div>
 
@@ -472,12 +514,12 @@
         <div class="block mr-sm-5 d-flex flex-column justify-content-center align-items-center ">
 
           <div class="title p-3">
-            Download now
+            Download soon
           </div>
           <div class="desc p-3 pt-sm-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet fringilla tristique mattis
-            purus, nec ultricies velit dignissim sed.
+            Subscribe to waiting list for get updates...
           </div>
+
           <!-- <div class="downloads p-3 pt-sm-5 d-flex justify-content-around justify-content-sm-start">
             <a href="#">
               <img class="img-fluid" src="./assets/imgs/playstore.png" alt="app store download">
@@ -488,19 +530,34 @@
             </a>
           </div> -->
 
-          <div class="downloads-wrp p-3 pb-7 pt-sm-5 d-flex justify-content-around justify-content-sm-start">
-            <div class="flex">
+          <div class="row">
+            <div class="col text-center mt-4 py-1 py-md-3">
+              <form autocomplete="off" class="ctr " id="ca-join-form-inline-footer" name="contact" method="POST"
+                data-netlify="true">
+                <div class="loader"></div>
+                <input type="email" id="email" name="email">
+                <div class="indicator" data-content="Join in the waiting list"></div>
+
+                <input type="hidden" id="name" name="name" value="empty">
+                <input type="hidden" id="updates" name="updates" value="on">
+
+              </form>
+            </div>
+          </div>
+
+          <!-- <div class="downloads-wrp p-3 pb-7 pt-sm-5 d-flex justify-content-around justify-content-sm-start">
+            <div class="flex social-btns">
               <a class="app-btn blu flex vert" href="#">
                 <i class="fab fa-apple"></i>
-                <p>Download on the <br /> <span class="big-txt">App Store</span></p>
+                <p>Available soon on <br /> <span class="big-txt">App Store</span></p>
               </a>
 
               <a class="app-btn blu flex vert" href="#">
                 <i class="fab fa-google-play"></i>
-                <p><strong>Get it on </strong><br /> <span class="big-txt">Google Play</span></p>
+                <p>Available soon on<br /> <span class="big-txt">Google Play</span></p>
               </a>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
