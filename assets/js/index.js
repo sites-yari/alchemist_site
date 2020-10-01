@@ -22,7 +22,9 @@ $(document).ready(function () {
             const urlParams = new URLSearchParams(serialized);
             const entries = urlParams.entries();
             const params = paramsToObject(entries);
-
+            if (params.name == "empty") {
+                params.name = params.email;
+            }
             // zapier hook
             // var hook = "https://hooks.zapier.com/hooks/catch/7118809/ogojvwh/";
             // $.post(hook, params).then(function (response) {
@@ -31,7 +33,7 @@ $(document).ready(function () {
             //     cb();
             // });
  
-            $.post(form.attr("action"), serialized).then(function () {
+            $.post(form.attr("action"), (new URLSearchParams(params)).toString()).then(function () {
                 alert("Thank you!");
                 cb();
             }).catch(function (error) {
@@ -48,7 +50,7 @@ $(document).ready(function () {
         }
 
         var inlineForms = [$("#ca-join-form-inline"), $("#ca-join-form-inline-footer")];
-        if (inlineForms.length) {
+        if ($.trim(inlineForms[0].html) == '') {
             var inputListener = function () {
                 return this._caJoinInline.find(".indicator")[0].setAttribute("data-content", "For submit hit enter");
             }
