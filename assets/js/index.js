@@ -96,35 +96,36 @@ $(document).ready(function () {
 
     }
 
-    var inlineForms = [$("#ca-join-form-inline"), $("#ca-join-form-inline-footer")];
-    if ($.trim(inlineForms[0].html) == '') {
-      var inputListener = function () {
-        return this._caJoinInline.find(".indicator")[0].setAttribute("data-content", "For submit hit enter");
-      }
-
-      for (var j = 0; j < inlineForms.length; j++) {
-        var caJoinInline = inlineForms[j];
-        caJoinInline.find("input")[0].addEventListener("input", inputListener.bind({
-          _caJoinInline: caJoinInline
-        }));
-
-        caJoinInline.submit(function (e) {
-          e.preventDefault();
-          var $form = $(this);
-
-          $form.find(".indicator")[0].setAttribute("data-content", "Saving...")
-          $($form.find("input")[0]).addClass("full")
-
-          const postSubmitCB = function () {
-            $form.find(".indicator")[0].setAttribute("data-content", "You've been subscribed!")
-            $($form.find(".loader")[0]).addClass("done")
-            $($form.find("input")[0]).addClass("full")
-            $($form.find("input")[0]).val("")
-          }
-          postCaForm($form, $form.serialize(), postSubmitCB);
-        });
-      }
+    var inputListener = function () {
+      return this._caJoinInline.find(".indicator")[0].setAttribute("data-content", "For submit hit enter");
     }
+
+    $("#ca-join-form-inline, #ca-join-form-inline-footer").each(function () {
+      var caJoinInline = $(this);
+      caJoinInline.find("input")[0].addEventListener("input", inputListener.bind({
+        _caJoinInline: caJoinInline
+      }));
+
+      caJoinInline.submit(function (e) {
+        e.preventDefault();
+        var $form = $(this);
+
+        $form.find(".indicator")[0].setAttribute("data-content", "Saving...")
+        $($form.find("input")[0]).addClass("full")
+
+        const postSubmitCB = function () {
+          $form.find(".indicator")[0].setAttribute("data-content", "You've been subscribed!")
+          $($form.find(".loader")[0]).addClass("done")
+          $($form.find("input")[0]).addClass("full")
+          $($form.find("input")[0]).val("")
+        }
+        postCaForm($form, $form.serialize(), postSubmitCB);
+      });
+    })
+
+
+
+
 
     // Modal form
     $("#ca-join").find("#ca-join-form").submit(function (e) {
