@@ -1,73 +1,75 @@
 .navbar-light {
-    position: absolute;
-    padding-top: 2rem;
-    max-height: 12rem;
-    
-    @media (max-width: 750px) {
-    }
+  position: absolute;
+  padding-top: 2rem;
+  max-height: 12rem;
 
+  @media (max-width: 750px) {}
+
+  .navbar-brand {
+    margin-right: 0;
+
+    .img-brand {
+      height: auto;
+      min-width: 12rem;
+      max-height: 8rem;
+
+      @media (max-width: 750px) {
+        min-width: 8rem;
+      }
+    }
+  }
+
+  .nav-link {
+    padding: .375rem 2rem;
+    font-size: .875rem;
+  }
+
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  @include media-breakpoint-down(sm) {
     .navbar-brand {
-        margin-right: 0;
-        .img-brand {
-            height: auto;
-            min-width: 12rem;
-            max-height: 8rem;
-            @media (max-width: 750px) {
-                 min-width: 8rem;
-            }
-        }
+      width: 50%;
     }
 
-    .nav-link {
-        padding: .375rem 2rem;
-        font-size: .875rem;
-    }
+    .form-inline {
+      background-color: rgba(0, 0, 0, 0.65);
+      border-radius: 20px;
 
+      .navbar-nav {
+        width: 100%;
+      }
 
-    .navbar-toggler {
-        border: none;
-    }
+      .nav-link,
+      .nav-item {
+        color: $white;
+        padding: 1rem;
+        text-align: center;
 
-    @include media-breakpoint-down(sm) {
-        .navbar-brand {
-            width: 50%;
+        a {
+          width: 100%;
         }
 
-        .form-inline {
-            background-color: rgba(0, 0, 0, 0.65);
-            border-radius: 20px;
-
-            .navbar-nav {
-                width: 100%;
-            }
-
-            .nav-link,
-            .nav-item {
-                color: $white;
-                padding: 1rem;
-                text-align: center;
-
-                a {
-                    width: 100%;
-                }
-            }
-        }
+      }
     }
+  }
 
 
-    @include media-breakpoint-up(xl) {
-        max-width: 1980px !important;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
+  @include media-breakpoint-up(xl) {
+    max-width: 1980px !important;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 }
 
 @include media-breakpoint-up(xl) {
-    .layout-header {
-        max-width: 1980px!important;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-    }
+  .layout-header {
+    max-width: 1980px !important;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
 }

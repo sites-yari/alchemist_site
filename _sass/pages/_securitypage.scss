@@ -1,3 +1,60 @@
-.security-page {
-  
+.security-page {}
+
+.header-security {
+  @extend .default-section;
+  position: relative;
+  height: 500px;
+  padding-top: 10rem;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 100px;
+    left: 120px;
+    width: 350px;
+    height: 350px;
+    background-image: url('../imgs/gold-vault-2.png');
+    background-repeat: no-repeat;
+    background-size: 350px;
+    z-index: -1;
+  }
+
+  .title {
+    z-index: 100;
+  }
+}
+
+
+.topics {
+  .box {
+    margin: 1rem;
+  }
+
+  .topic-title {
+    font-weight: bold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: $alchemist-gray-800;
+
+  }
+
+  .topic-desc {
+    color: $alchemist-gray-600;
+  }
+
+  .fas {
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 32px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #FFF;
+    border-color:$alchemist-gold-2;
+    color: $alchemist-gold-1;
+  }
 }
