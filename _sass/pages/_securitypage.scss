@@ -3,6 +3,7 @@
 .header-security {
   @extend .default-section;
   position: relative;
+  width: 100%;
   height: 500px;
   padding-top: 10rem;
 
@@ -10,18 +11,31 @@
     position: absolute;
     content: '';
     top: 100px;
-    left: 120px;
-    width: 350px;
-    height: 350px;
+    left: -10rem;
+    width: 500px;
+    height: calc(35% + 120px);
+    max-height: 500px;
     background-image: url('../imgs/gold-vault-2.png');
     background-repeat: no-repeat;
     background-size: 350px;
     z-index: -1;
+
+    @include media-breakpoint-down(sm) {
+      display: none
+    }
   }
 
-  .title {
+  .title,
+  .sub {
+    width: 80%;
+
+    @include media-breakpoint-up(sm) {
+      width: 65%;
+    }
+
     z-index: 100;
   }
+
 }
 
 
@@ -54,7 +68,7 @@
     border-style: solid;
     border-width: 1px;
     background-color: #FFF;
-    border-color:$alchemist-gold-2;
+    border-color: $alchemist-gold-2;
     color: $alchemist-gold-1;
   }
 }
