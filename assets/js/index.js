@@ -237,20 +237,26 @@ $(document).ready(function () {
     });
 
 
-    var sliderSlick = $('.stepper-app').slick({
-      dots: true,
-      infinite: true,
-      speed: 500,
-      fade: true,
-      // cssEase: 'linear',
-      autoplay: true,
-      autoplaySpeed: 1000,
-      arrows: false,
-      appendDots: $("#stepper-wrp")[0],
-      customPaging: function (slick, index) {
-        return index + 1;
-      }
-    });
+    var sliderSlick =
+      $('.stepper-app')
+      .on('init', function (slick) {
+        $('.slick-dots').on('click', function () {
+          $('.stepper-app').slick('slickPause');
+        });
+      }).slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        // cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        appendDots: $("#stepper-wrp")[0],
+        customPaging: function (slick, index) {
+          return index + 1;
+        }
+      });
 
 
     sliderSlick.on('afterChange', function (event, slick, currentSlide, nextSlide) {
@@ -258,6 +264,7 @@ $(document).ready(function () {
         console.log("event", event)
       }
     });
+
 
     $('#playPresentation').on('click', function () {
       if (debug == true) {
