@@ -344,7 +344,8 @@
         .title {
             color: white;
             font-size: 3rem;
-
+            animation: fadeIn;
+            animation-duration: 3s;
             span {
                 color: $alchemist-gold-3;
             }
@@ -355,6 +356,8 @@
         }
 
         .desc {
+          animation: fadeIn;
+          animation-duration: 3.5s;
             margin: 2%;
             color: $alchemist-gray-500;
         }
@@ -381,6 +384,8 @@
         transform: translate(0%, 50%);
         width: 55%;
         max-width: 250px;
+        animation: fadeIn;
+        animation-duration: 1.5s;
 
         @media (max-width: 350px) {
             width: 60%;
