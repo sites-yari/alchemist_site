@@ -25,30 +25,41 @@ $(document).ready(function () {
 
     $('#search').keyup(function (e) {
       var s = $(this).val().trim().toLowerCase();
-      // if (s === '') {
-      //   $('.group-topics li').each(function () {
-      //     $(this).show()
-      //   });
-      // }
+      if (s === '') {
+        $('.group-topics li').each(function () {
+          $(this).show();
+          $('.group').show();
+        });
+      }
 
       $('.group-topics li').filter(function () {
         var reg = new RegExp(s, "g");
         var elem = $(this);
+        console.log("elem", elem)
         reg.test(elem.text().toLowerCase()) ? elem.show() : elem.hide();
       })
 
       // hide title on topics
       $('.group-topics').each(function () {
         var group = $(this);
-        $(':visible', group).length == 0 ? group.siblings().hide() : group.siblings().show();
+
+        if ($(':visible', group).length == 0) {
+          group.siblings().hide();
+          group.parent().hide();
+        } else {
+          group.parent().show();
+          group.siblings().show();
+        }
       })
 
       return true;
     });
 
+
     $("#search").on('focus', function () {
       $(this).parent('label').addClass('active');
     });
+
 
     $("#search").on('blur', function () {
       if ($(this).val().length == 0)
@@ -56,6 +67,7 @@ $(document).ready(function () {
     });
 
     // tabs terms page
+
     $('#terms-tab-nav-btn').on('click', function () {
       $(this).toggleClass('hide');
     });
