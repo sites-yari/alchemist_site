@@ -72,3 +72,53 @@
     color: $alchemist-gold-1;
   }
 }
+
+
+.section-blockchain {
+  margin-top: 10rem;
+  background-color: $alchemist-gray-300;
+  height: 350px;
+  color: $alchemist-gray-900;
+  background-image: url("../imgs/blockchain-bg1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @extend .default-section;
+
+  .title {
+    color: white;
+    text-align: center;
+  }
+
+  .desc {
+    color: white;
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: 550px;
+  }
+
+  .content-box {
+    padding: 1.3rem;
+    background: rgba(0, 0, 0, 0.3);
+    width: calc(100% - 4rem);
+    min-height: 300px;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      width: calc(55% - 4rem);
+      margin-right: 3rem;
+      bottom: 5rem;
+      padding: 1rem;
+      right: 0;
+      min-height: 400px;
+    }
+  }
+
+}
