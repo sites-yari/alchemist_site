@@ -91,23 +91,24 @@
   color: $alchemist-gray-900;
   background-image: url("../imgs/blockchain-bg2.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 0 50%;
+  background-size: 60%;
+  background-position: 0 30%;
   position: relative;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
 
   .title {
-    color: $white;
     text-align: center;
   }
 
   .desc {
-    color: $white;
+  }
+
+  @include media-breakpoint-down(sm) {
+    background: none;
   }
 
   @include media-breakpoint-up(md) {
@@ -118,14 +119,13 @@
 
   .content-box {
     padding: 1.3rem;
-    background: $alchemist-sky-2;
     width: calc(100% - 4rem);
     min-height: 250px;
 
     @include media-breakpoint-up(md) {
       position: absolute;
       padding: 1rem;
-      width: calc(55% - 4rem);
+      width: calc(45% - 4rem);
       margin-right: 3rem;
       right: 0;
       min-height: 390px;
