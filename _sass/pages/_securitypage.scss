@@ -87,13 +87,12 @@
 
 .section-blockchain {
   @extend .default-section;
-  background-color: $alchemist-gray-300;
   height: 350px;
   color: $alchemist-gray-900;
-  background-image: url("../imgs/blockchain-bg1.png");
+  background-image: url("../imgs/blockchain-bg2.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-size: contain;
+  background-position: 0 50%;
   position: relative;
   width: 100%;
 
@@ -119,7 +118,7 @@
 
   .content-box {
     padding: 1.3rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: $alchemist-sky-2;
     width: calc(100% - 4rem);
     min-height: 250px;
 
