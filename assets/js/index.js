@@ -13,28 +13,82 @@ function paramsToObject(entries) {
 $(document).ready(function () {
   if (jQuery) {
     // rules slider
+    var animateRules = function (e) {
+      if (debug) {
+        console.log("animateRules -> e", e)
+      }
+
+      this.index = e.item.index;
+      this.stage = $(e.currentTarget).find(".owl-stage")
+
+      if (this.stage.length == 0) {
+        return;
+      } else {
+        this.stage = this.stage[0];
+      }
+
+      this.ruleChildren = $(this.stage).children()
+      this.rule = this.ruleChildren.eq(this.index)
+
+      this.image = this.rule.find('.featured-image')
+      this.ruleType = this.rule.find('.rules-content')
+      this.example = this.rule.find('.example')
+
+      this.image.addClass('animate__animated animate__tada')
+      this.ruleType.addClass('animate__animated animate__bounceIn')
+      this.example.addClass('animate__animated animate__fadeIn')
+
+      var image = this.image;
+      var ruleType = this.ruleType;
+      var example = this.example;
+
+      setTimeout(function () {
+        image.removeClass('animate__animated animate__tada')
+        ruleType.removeClass('animate__animated animate__bounceIn')
+        example.removeClass('animate__animated animate__fadeIn')
+      }, 1000);
+    }
 
     var sliderSlickRules =
-      $('.slider-rules').owlCarousel({
-        loop:true,
-        margin:10,
-        responsiveClass:true,
-        responsive:{
-            0:{
-                items:1,
-                nav:true
-            },
-            600:{
-                items:3,
-                nav:false
-            },
-            1000:{
-                items:5,
-                nav:true,
-                loop:false
-            }
+      $('#slider-rules').owlCarousel({
+        items: 2,
+        margin: 100,
+        loop: true,
+        center: true,
+        URLhashListener: true,
+        autoplayHoverPause: true,
+        startPosition: 'URLHash',
+        autoplay: true,
+        autoplayTimeout: 5000,
+        onChanged: function (e) {
+          return animateRules(e);
+        },
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            margin: 100,
+          },
+          // 576: {
+          //   items: 1,
+          //   margin: 100,
+          // },
+          768: {
+            items: 2,
+            margin: 100,
+          },
+          // 992: {
+          //   items: 2,
+          //   margin: 100,
+          // },
+          // 1200: {
+          //   items: 2,
+          //   margin: 100,
+          // }
         }
-    })
+      });
+
+
 
     // faq page
     $('li strong').click(function (e) {
@@ -268,11 +322,17 @@ $(document).ready(function () {
       autoplayTimeout: 2000,
       lazyLoad: true,
       mouseDrag: false,
-      // responsive: {
-      //     600: {
-      //         items: 3
-      //     }
-      // },
+      responsive: {
+        350: {
+          items: 1
+        },
+        400: {
+          items: 2
+        },
+        600: {
+          items: 2
+        }
+      },
       nav: false,
       dots: false,
       drag: false,
