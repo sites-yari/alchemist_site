@@ -239,9 +239,19 @@ $(document).ready(function () {
           this.goalSaved[0].innerHTML = JSON.stringify(parseInt(this.objGoal.charged));
           this.goalBar[0].innerHTML = JSON.stringify(parseInt(this.objGoal.charged));
           this.goalBar[0].style.setProperty('--progress', this.objGoal.progress);
+          if (this.objGoal.progress === 0) {
+            this.content.removeClass('completed');
+            this.goalBar.removeClass('completed');
+            this.goalBar.removeClass('blink_me');
+            this.content.removeClass('animate__animated');
+            this.content.removeClass('animate__headShake');
+          }
           if (this.objGoal.progress === 100) {
             this.content.addClass('completed');
             this.goalBar.addClass('completed');
+            this.goalBar.addClass('blink_me');
+            this.content.addClass('animate__animated');
+            this.content.addClass('animate__headShake');
           }
         }).bind(this))
       });
