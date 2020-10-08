@@ -12,6 +12,30 @@ function paramsToObject(entries) {
 
 $(document).ready(function () {
   if (jQuery) {
+    // rules slider
+
+    var sliderSlickRules =
+      $('.slider-rules').owlCarousel({
+        loop:true,
+        margin:10,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            1000:{
+                items:5,
+                nav:true,
+                loop:false
+            }
+        }
+    })
+
     // faq page
     $('li strong').click(function (e) {
       e.preventDefault(); // disable text selection
@@ -227,8 +251,7 @@ $(document).ready(function () {
 
     var owl = $(".owl-carousel");
     owl.owlCarousel({
-      center: true,
-      items: 3,
+      items: 2,
       loop: true,
       margin: 0,
       autoplay: true,
@@ -243,6 +266,7 @@ $(document).ready(function () {
       nav: false,
       dots: false,
       drag: false,
+      center: true,
       onChanged: function (e) {
         return animate(e);
       }
