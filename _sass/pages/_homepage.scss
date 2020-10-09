@@ -6,7 +6,20 @@
 }
 
 
+.counter-wrp {
+  color: $alchemist-gray-600;
+  margin-left: 1rem;
+  animation: fadeIn;
+  animation-duration: 3s;
+  .counter {
+    color: $alchemist-gold-3;
+    font-weight: bold;
+  }
 
+  .joinned {
+    color: $alchemist-status-blender-3;
+  }
+}
 
 .ctr {
   display: block;
@@ -168,11 +181,12 @@
 
     border-color: $alchemist-gray-300;
     background-color: $alchemist-gray-100;
-    color: $alchemist-gray-800!important;
+    color: $alchemist-gray-800 !important;
     -webkit-text-fill-color: $alchemist-gray-800;
     font-size: 1rem;
     font-weight: bold;
     box-sizing: border-box;
+
     &:focus {
       border: 1.3px solid;
       border-color: $alchemist-sky-1;

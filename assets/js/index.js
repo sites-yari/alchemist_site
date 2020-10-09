@@ -12,6 +12,20 @@ function paramsToObject(entries) {
 
 $(document).ready(function () {
   if (jQuery) {
+    $('.counter').counterUp({
+      delay: 10,
+      time: 2000
+    });
+
+
+
+    var postURL = "https://mercury.alchemist.gold/waitinglist";
+    // $.get(postURL, function (data) {
+    //   console.log("postCaForm -> data", data)
+    // });
+
+    // $('.counter').addClass('animated fadeInDownBig');
+
     // rules slider
     var animateRules = function (e) {
       if (debug) {
@@ -170,7 +184,6 @@ $(document).ready(function () {
       //     alert("Thank you!");
       //     cbSuccess();
       // });
-      var postURL = "https://mercury.alchemist.gold/waitinglist";
 
       $.post(postURL, params, function (data) {
           cbSuccess();
@@ -192,6 +205,7 @@ $(document).ready(function () {
     var inputListenerReset = function () {
       $(this._caJoinInline.find(".loader")[0]).removeClass("done")
       $(this._caJoinInline.find(".indicator")[0]).removeClass("done error")
+      $(this._caJoinInline.find(".indicator")[0]).setAttribute("data-content", "");
       $(this._caJoinInline.find("input")[0]).removeClass("full")
       return true;
     }
