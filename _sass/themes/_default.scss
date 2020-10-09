@@ -75,8 +75,6 @@ body {
   font-family: "Montserrat-Regular";
   color: $alchemist-gray-800;
   font-size: 1rem;
-
-
 }
 
 // Override bootstrap
@@ -85,7 +83,6 @@ body {
   padding: .375rem 2rem;
   -webkit-appearance: none !important;
 }
-
 
 
 
@@ -158,14 +155,12 @@ body {
   textarea:focus,
   button:focus {
     outline: none;
-    background: transparent !important;
   }
 
-  input:-webkit-autofill {
-    -webkit-text-fill-color: black !important;
-    background: transparent !important;
-
-  }
+  // input:-webkit-autofill {
+  //   -webkit-text-fill-color: black !important;
+  //   background: transparent !important;
+  // }
 }
 
 // html {

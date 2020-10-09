@@ -189,8 +189,20 @@ $(document).ready(function () {
       return this._caJoinInline.find(".indicator")[0].setAttribute("data-content", "For submit hit enter");
     }
 
+    var inputListenerReset = function () {
+      $(this._caJoinInline.find(".loader")[0]).removeClass("done")
+      $(this._caJoinInline.find(".indicator")[0]).removeClass("done error")
+      $(this._caJoinInline.find("input")[0]).removeClass("full")
+      return true;
+    }
+
     $("#ca-join-form-inline, #ca-join-form-inline-footer").each(function () {
       var caJoinInline = $(this);
+
+      caJoinInline.click(inputListenerReset.bind({
+        _caJoinInline: caJoinInline
+      }));
+
       caJoinInline.find("input")[0].addEventListener("input", inputListener.bind({
         _caJoinInline: caJoinInline
       }));
@@ -211,7 +223,7 @@ $(document).ready(function () {
 
         const postSubmitErrorCB = function (errorMessage) {
           $form.find(".indicator")[0].setAttribute("data-content", errorMessage)
-          $($form.find(".loader")[0]).addClass("error")
+          $($form.find(".indicator")[0]).addClass("error")
           // $($form.find("input")[0]).addClass("full")
           // $($form.find("input")[0]).val("")
         }
