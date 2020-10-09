@@ -60,6 +60,8 @@
             transition: .3s all ease;
             height: 0;
         }
+
+
     }
 
     .indicator {
@@ -88,6 +90,10 @@
             z-index: 999;
             text-align: left;
             font-weight: 300;
+        }
+
+        &.error {
+          background-color: $alchemist-status-error;
         }
     }
 

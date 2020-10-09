@@ -151,39 +151,38 @@ $(document).ready(function () {
     });
 
     // inline forms
-    var postCaForm = function (form, serialized, cb) {
+    var postCaForm = function (form, serialized, cbSuccess, cbError) {
       if (debug) {
         console.log("postCaForm -> form", form)
         console.log("postCaForm -> serialized", serialized)
       }
       const urlParams = new URLSearchParams(serialized);
       const entries = urlParams.entries();
-      const params = paramsToObject(entries);
+      var params = paramsToObject(entries);
       if (params.name == "empty") {
         params.name = params.email;
       }
+      params.updates = params.hasOwnProperty("updates") && params.updates === "on" ? true : false;
       // zapier hook
       // var hook = "https://hooks.zapier.com/hooks/catch/7118809/ogojvwh/";
       // $.post(hook, params).then(function (response) {
       //     console.log("postCaForm -> response", response)
       //     alert("Thank you!");
-      //     cb();
+      //     cbSuccess();
       // });
+      var postURL = "https://mercury.alchemist.gold/waitinglist";
 
-      $.post(form.attr("action"), (new URLSearchParams(params)).toString()).then(function () {
-        alert("Thank you!");
-        cb();
-      }).catch(function (error) {
-        if (debug) {
-          console.error("post form: ", error)
-        }
-
-        setTimeout(() => {
-          cb();
-        }, 3000);
-      });
-
-
+      $.post(postURL, params, function (data) {
+          cbSuccess();
+        })
+        .fail(function (data) {
+          if (data.status === 422 || data.status === 409) {
+            cbError("You have been already subscribed!")
+          } else {
+            cbError("Ups something went wrong, please contact support.");
+          }
+        })
+        .always(function () {});
     }
 
     var inputListener = function () {
@@ -209,11 +208,17 @@ $(document).ready(function () {
           $($form.find("input")[0]).addClass("full")
           $($form.find("input")[0]).val("")
         }
-        postCaForm($form, $form.serialize(), postSubmitCB);
+
+        const postSubmitErrorCB = function (errorMessage) {
+          $form.find(".indicator")[0].setAttribute("data-content", errorMessage)
+          $($form.find(".loader")[0]).addClass("error")
+          // $($form.find("input")[0]).addClass("full")
+          // $($form.find("input")[0]).val("")
+        }
+
+        postCaForm($form, $form.serialize(), postSubmitCB, postSubmitErrorCB);
       });
     })
-
-
 
 
 
@@ -222,8 +227,11 @@ $(document).ready(function () {
       e.preventDefault();
       var $form = $(this);
       postCaForm($form, $form.serialize(), function () {
-        $('#ca-join').modal('toggle');
-      });
+          $('#ca-join').modal('toggle');
+        },
+        function (errorMessage) {
+          alert(errorMessage);
+        });
     });
 
 
