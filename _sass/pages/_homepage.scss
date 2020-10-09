@@ -457,9 +457,10 @@
 
 .slider-zoom {
     position: relative;
-    margin: 30px 0;
     overflow: hidden;
     box-sizing: border-box;
+    padding: 0;
+    width: 100%;
 }
 
 .slider-wrp {
