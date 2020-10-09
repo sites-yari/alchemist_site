@@ -12,19 +12,23 @@ function paramsToObject(entries) {
 
 $(document).ready(function () {
   if (jQuery) {
-    $('.counter').counterUp({
-      delay: 10,
-      time: 2000
+    var mainCounter = $('.counter');
+
+    var postURL = "https://mercury.alchemist.gold/waitinglist";
+
+    $.get(postURL, function (data) {
+
+      mainCounter.html(data.size);
+      mainCounter.counterUp({
+        delay: 10,
+        time: 1000
+      });
+
     });
 
 
 
-    var postURL = "https://mercury.alchemist.gold/waitinglist";
-    // $.get(postURL, function (data) {
-    //   console.log("postCaForm -> data", data)
-    // });
-
-    // $('.counter').addClass('animated fadeInDownBig');
+    $('.counter').addClass('animated fadeInDownBig');
 
     // rules slider
     var animateRules = function (e) {
@@ -205,7 +209,6 @@ $(document).ready(function () {
     var inputListenerReset = function () {
       $(this._caJoinInline.find(".loader")[0]).removeClass("done")
       $(this._caJoinInline.find(".indicator")[0]).removeClass("done error")
-      $(this._caJoinInline.find(".indicator")[0]).setAttribute("data-content", "");
       $(this._caJoinInline.find("input")[0]).removeClass("full")
       return true;
     }
@@ -229,10 +232,22 @@ $(document).ready(function () {
         $($form.find("input")[0]).addClass("full")
 
         const postSubmitCB = function () {
-          $form.find(".indicator")[0].setAttribute("data-content", "You've been subscribed!")
+          var currentCounter = parseInt(mainCounter.text()) + 1;
+
+          mainCounter.html(currentCounter.toString());
+          mainCounter.counterUp({
+            delay: 10,
+            time: 1000
+          });
+
+
+          $form.find(".indicator")[0].setAttribute("data-content", "Thank you! You're pioneer number " + currentCounter + ". We'll let you know when we launch!");
           $($form.find(".loader")[0]).addClass("done")
           $($form.find("input")[0]).addClass("full")
           $($form.find("input")[0]).val("")
+
+          mainCounter.addClass("joinned")
+
         }
 
         const postSubmitErrorCB = function (errorMessage) {
