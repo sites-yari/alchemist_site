@@ -11,6 +11,7 @@
   margin-left: 1rem;
   animation: fadeIn;
   animation-duration: 3s;
+  transition: all 0.3s ease-in;
   .counter {
     color: $alchemist-gold-3;
     font-weight: bold;
@@ -18,6 +19,10 @@
 
   .joinned {
     color: $alchemist-status-blender-3;
+  }
+
+  &.white-bg {
+    color: $alchemist-gray-800;
   }
 }
 

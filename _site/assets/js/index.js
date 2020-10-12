@@ -194,7 +194,7 @@ $(document).ready(function () {
         })
         .fail(function (data) {
           if (data.status === 422 || data.status === 409) {
-            cbError("You have been already subscribed!")
+            cbError("You’re already on the waiting list.")
           } else {
             cbError("Ups something went wrong, please contact support.");
           }
