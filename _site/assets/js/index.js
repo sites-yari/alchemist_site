@@ -131,7 +131,6 @@ $(document).ready(function () {
       $('.group-topics li').filter(function () {
         var reg = new RegExp(s, "g");
         var elem = $(this);
-        console.log("elem", elem)
         reg.test(elem.text().toLowerCase()) ? elem.show() : elem.hide();
       })
 
@@ -346,16 +345,18 @@ $(document).ready(function () {
             this.content.removeClass('completed');
             this.goalBar.removeClass('completed');
             this.goalBar.removeClass('blink_me');
-            this.content.removeClass('animate__animated');
-            this.content.removeClass('animate__headShake');
+            this.content.removeClass('animate__animated animate__headShake');
+            this.goal.removeClass('animate__animated animate__flash');
           }
+
           if (this.objGoal.progress === 100) {
             this.content.addClass('completed');
             this.goalBar.addClass('completed');
             this.goalBar.addClass('blink_me');
-            this.content.addClass('animate__animated');
-            this.content.addClass('animate__headShake');
+            this.content.addClass('animate__animated animate__headShake');
+            this.goal.addClass('animate__animated animate__flash');
           }
+
         }).bind(this))
       });
       cleanOthers(this.goalChildren, this.index);
