@@ -1,4 +1,6 @@
-.securitypage {}
+.securitypage {
+  position: relative;
+}
 
 .header-security {
   @extend .default-section;
@@ -83,7 +85,7 @@
   left: 0;
 
   @include media-breakpoint-up(sm) {
-    top: -10rem;
+    top: -15rem;
     padding-top: 15rem;
   }
 
@@ -163,7 +165,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0rem;
+  top: -10rem;
 
   .title {
     text-align: center;
@@ -181,7 +183,7 @@
 
   @include media-breakpoint-up(md) {
     height: 700px;
-    top: -15rem;
+    top: -20rem;
     z-index: 1;
   }
 
@@ -204,8 +206,35 @@
 }
 
 
+
+
 .section-open-banking {
   @extend .default-section;
   position: relative;
-  top: -10rem;
+  top: -15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  .title {}
+
+  .desc {}
+
+  @include media-breakpoint-down(sm) {
+    top: 0;
+  }
+
+  .img-fluid {
+    width: 120%;
+    max-width: 600px;
+  }
+
+  .content-box {
+    padding: 1.3rem;
+    width: calc(100% - 4rem);
+    min-height: 250px;
+
+    @include media-breakpoint-up(md) {}
+  }
 }
