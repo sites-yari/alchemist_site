@@ -12,6 +12,7 @@
   animation: fadeIn;
   animation-duration: 3s;
   transition: all 0.3s ease-in;
+
   .counter {
     color: $alchemist-gold-3;
     font-weight: bold;
@@ -30,6 +31,12 @@
   display: block;
   position: relative;
   width: 90%;
+  &.ctr-lighter {
+    &>.indicator::after {
+      color: $alchemist-gray-400;
+    }
+  }
+
 
   input {
     outline: 0;
@@ -53,6 +60,7 @@
       pointer-events: none !important;
       width: 0%;
     }
+
   }
 
   .loader {
@@ -106,12 +114,16 @@
       z-index: 999;
       text-align: left;
       font-weight: 300;
+
+
     }
 
     &.error {
       background: $alchemist-status-error;
       color: $alchemist-status-error;
     }
+
+
   }
 
   input {

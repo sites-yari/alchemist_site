@@ -405,7 +405,7 @@ $(document).ready(function () {
         fade: true,
         // cssEase: 'linear',
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 3000,
         arrows: false,
         appendDots: $("#stepper-wrp")[0],
         customPaging: function (slick, index) {
