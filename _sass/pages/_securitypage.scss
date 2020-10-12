@@ -72,6 +72,28 @@
   }
 }
 
+.section-our-tech {
+  @extend .default-section;
+
+  .title {
+    text-align: center;
+  }
+
+  .desc {
+    text-align: center;
+  }
+
+
+  .our-tech-topic-title,
+  .our-tech-topic-desc {
+    color: $alchemist-gray-700;
+  }
+
+  .our-tech-topic-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
 
 .section-blockchain {
   @extend .default-section;
@@ -87,20 +109,18 @@
   align-items: center;
   justify-content: center;
 
-
   .title {
     text-align: center;
   }
 
-  .desc {
-  }
+  .desc {}
 
   @include media-breakpoint-down(sm) {
     background: none;
   }
 
   @include media-breakpoint-up(md) {
-    height: 850px;
+    height: 750px;
     top: -10rem;
     z-index: 1;
   }

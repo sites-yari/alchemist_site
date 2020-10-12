@@ -1,5 +1,5 @@
 // var myStepper;
-window.debug = false;
+window.debug = true;
 
 function paramsToObject(entries) {
   let result = {}
@@ -10,8 +10,65 @@ function paramsToObject(entries) {
   return result;
 }
 
+
+
+function activateWaypointsAnimations( items, trigger ) {
+  items.each( function() {
+    var element = $(this),
+    osAnimationClass = element.data("animation"),
+    osAnimationDelay = element.attr('data-animation-delay');
+
+    element.addClass("animate__animated");
+
+    element.css({
+        '-webkit-animation-delay':  osAnimationDelay,
+        '-moz-animation-delay':     osAnimationDelay,
+        'animation-delay':          osAnimationDelay
+    });
+
+    var trigger = ( trigger ) ? trigger : element;
+
+    trigger.waypoint(function() {
+        element.addClass('animated').addClass(osAnimationClass);
+    },{
+        offset: '80%'
+    });
+  });
+}
+
+
+
 $(document).ready(function () {
   if (jQuery) {
+    // scroll to animate
+    activateWaypointsAnimations($('.section-scroll-animate'));
+
+  //   $('.section-scroll-animate').waypoint({
+  //     handler: function (direction) {
+  //       if (debug) {
+  //         console.log("section animate when scroll -> direction", direction, this)
+  //       }
+  //       if (direction === 'down') {
+  //         var container = $(this);
+
+  //         var left = container.children(".animate-left");
+  //         var right = container.children(".animate-right");
+
+  //         right.addClass("animate__animated animate__slideInRight")
+  //         left.addClass("animate__animated animate__slideInLeft")
+  //         console.log("right", right)
+  //         console.log("left", left)
+
+  //         container.addClass('animate__animated animate__fadeInLeft');
+
+  //       }
+  //     }
+  //   },{
+  //      offset: '80%'
+  //  });
+
+
+    // Counters
     var mainCounter = $('.counter');
 
     var postURL = "https://mercury.alchemist.gold/waitinglist";
