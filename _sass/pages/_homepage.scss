@@ -994,14 +994,13 @@
       }
 
       .box-img {
-        padding-top: 12%;
-
+        width: 130px;
+        height: 130px;
         img {
           width: 100px;
 
           @include media-breakpoint-down(md) {
             width: 80px;
-            padding-top: 0;
           }
         }
 

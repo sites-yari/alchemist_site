@@ -1,5 +1,5 @@
 // var myStepper;
-window.debug = true;
+window.debug = false;
 
 function paramsToObject(entries) {
   let result = {}
