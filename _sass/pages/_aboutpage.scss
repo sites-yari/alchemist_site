@@ -27,6 +27,7 @@
   position: relative;
   z-index: 10;
   margin-top: 5rem;
+  margin-bottom: 5rem;
 
   @include media-breakpoint-down(sm) {
     margin-top: 10rem;
@@ -147,7 +148,8 @@
 
 
 
-.section-fees {
+.section-fees,
+.section-trust {
   @extend .default-section;
   @extend %content-box;
 
@@ -159,6 +161,22 @@
 
   .box-withdrawal {
     @extend %default-box-1;
+    background-color: $alchemist-gray-700;
+    color: $white;
   }
 
+  .box-image {
+    img {
+      max-width: 200px;
+    }
+
+  }
+}
+
+.section-trust {
+  background-color: $alchemist-sea-sky-2;
+  color: $white;
+  .title, .desc {
+    color: $white;
+  }
 }
