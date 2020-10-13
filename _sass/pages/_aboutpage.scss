@@ -87,6 +87,7 @@
       max-height: 10rem;
       max-width: 10rem;
       margin: 2rem auto;
+
       @include media-breakpoint-up(sm) {
         max-height: 12rem;
       }
@@ -141,5 +142,23 @@
     }
   }
 
+
+}
+
+
+
+.section-fees {
+  @extend .default-section;
+  @extend %content-box;
+
+  .box {
+    @extend %default-box;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .box-withdrawal {
+    @extend %default-box-1;
+  }
 
 }
