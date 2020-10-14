@@ -1155,6 +1155,7 @@
       width: 10%;
     }
 
+
     img {
       overflow: hidden;
       display: block;
@@ -1176,9 +1177,10 @@
       }
 
       @include media-breakpoint-up(lg) {
-        position: absolute;
-        left: -100%;
-        top: -220px;
+        position: relative;
+        left: 0;
+        right: 120%;
+        top: -250px;
         width: auto;
         height: 550px !important;
       }
