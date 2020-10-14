@@ -403,7 +403,6 @@ $(document).ready(function () {
             this.goalBar.removeClass('completed');
             this.goalBar.removeClass('blink_me');
             this.content.removeClass('animate__animated animate__headShake');
-            this.goal.removeClass('animate__animated animate__flash');
           }
 
           if (this.objGoal.progress === 100) {
@@ -411,7 +410,6 @@ $(document).ready(function () {
             this.goalBar.addClass('completed');
             this.goalBar.addClass('blink_me');
             this.content.addClass('animate__animated animate__headShake');
-            this.goal.addClass('animate__animated animate__flash');
           }
 
         }).bind(this))
