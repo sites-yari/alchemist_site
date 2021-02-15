@@ -1,598 +1,778 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>  </title>
 
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <!-- netlify -->
   <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
-  
+
   <link href="../assets/css/styles.css" media="screen" rel="stylesheet" type="text/css">
 
-  <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
-
+  <!-- <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" /> -->
   <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+
+  <!-- OWL -->
+  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Slick -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
 </head>
 
 
-<body>
+<body class="layout-body">
   <div>
-    <div>
-      <header>
-  <nav class="navbar navbar-expand-md fixed-top navbar-light navbar-shadow" aria-label="navbar brand">
+    <header class="layout-header">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light mx-3 mx-sm-4 mx-md-7 mx-lg-10 mx-xs-12"
+    aria-label="navbar brand">
     <div class="container-fluid">
-      <a class="navbar-brand text-dark d-flex align-content-center " href="/">
-        <img src="../assets/imgs/alchemist_logo_simple.png" width="30" height="30">
-        <div class="m-auto pl-2">
-          <strong>ALCHEMIST</strong>
-        </div>
-      </a>
+
+      <div class="navbar-header">
+        <a class="navbar-brand text-dark align-content-center" href="/">
+          
+
+          
+          <img class="img-brand" src="./assets/imgs/H_gold.svg">
+          
+        </a>
+      </div>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon navbar-burger"></span>
       </button>
+
+
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          
-          
         </ul>
         <div class="form-inline mt-2 mt-md-0">
           <ul class="navbar-nav nav-flex-icons">
-            
-            
-              
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="">
-                  Help</a>
-              </li>
-              
-            
-              
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="">
-                  Contacts</a>
-              </li>
-              
-            
-              
-                <li class="nav-item pl-3 my-auto">
-                  <a class="btn btn-outline-dark" href="">Download now!</a>
-                </li>
-              
-            
+            <a class="nav-link" href="about">About</a>
+            <a class="nav-link" href="security">Security</a>
+            <a class="nav-link" href="blog">Blog</a>
+            <a class="nav-link" href="faq">Help</a>
+
+            <li class="nav-item pl-3 my-auto">
+              <a class="btn btn-primary text-white" data-toggle="modal" data-target="#ca-join" href="#">Download</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
-  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
+
+  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
       <div class="modal-content">
-        <!-- <div class="modal-header">
+        <div class="modal-header">
           <h5 class="modal-title"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
               aria-hidden="true">&times;</span></button>
-        </div> -->
+        </div>
         <div class="modal-body"></div>
       </div>
     </div>
   </div>
 </header>
 
+
+<!-- Modals -->
+<div class="modal fade ca-join" id="ca-join" tabindex="-1" role="dialog" aria-labelledby="ca-joinModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="ca-joinModalLabel">Join in the waiting list</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body text-center">
+        <form id="ca-join-form" name="contact" method="POST" data-netlify="true">
+
+          <div class="form-group form-no-input-outline">
+            <label for="email" class="email-label">Enter your email to become a pioneer:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your name">
+            <input type="email" id="email" name="email" placeholder="Email" required="required">
+          </div>
+
+          <div class="form-group">
+            <!-- <div>
+              <input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox" checked>
+              <label for="checkbox-1" class="checkbox-custom-label">First Choice</label>
+            </div> -->
+            <input type="checkbox" id="updates" name="updates" class="checkbox-custom" checked>
+            <label for="updates" class="checkbox-custom-label updates-label disable-selection">
+              I agree to receive promotional emails and updates.
+            </label>
+          </div>
+
+
+          <div class="counter-wrp white-bg">
+            Join the other <span class="counter">0</span> future alchemists
+          </div>
+
+
+          <div class="form-group">
+            <button class="btn ca-join-btn btn-primary" type="submit" value="Submit">Join</button></br>
+          </div>
+
+        </form>
+      </div>
     </div>
-    <div>
-      <div id="homepage" class="homepage">
-  <!-- CONTENT 1 -->
-  <section class="content-promotional pt-7 d-flex justify-content-center text-center">
-    <div class="row no-gutters ">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center text-center">
-        <div class="m-auto pl-sm-4 pl-lg-8">
-          <h1 class="title">
-            Aim for
-            <span> gold</span>
-            
-          </h1>
-          <br>
-          <p class="pb-5 mx-3 desc">Be a modern Alchemist and achieve your goals with simple automated investments in gold. You set the rules and we make the magic!</p>
-          <div class="col-xs-12 col-sm-7"></div>
-          <div class="download-app-store">
-   <a class="img-btn" href="https://www.apple.com/pt/ios/app-store/" target="_blank">
-     <img class="img-fluid m-3 m-sm-1" alt="Download to app store"
-       src="../assets/imgs/app_store_btn.png">
-   </a>
-   <a class="img-btn" href="https://play.google.com/store" target="_blank">
-     <img class="img-fluid m-3 m-sm-1" alt="Download to app store"
-       src="../assets/imgs/play_store_btn.png">
-   </a>
+  </div>
 </div>
 
-        </div>
-      </div>
+  </div>
+  <div>
+    <div id="homepage" class="homepage">
+  <section class="header pt-10">
+    <div class="row no-gutters mx-sm-3 mx-xl-8 justify-content-center">
+      <div class="col-12 col-sm-5 col-md-6">
+        <div class="header-block d-flex align-content-center flex-wrap">
 
-      <div class="col-md-5 d-flex justify-content-center text-center d-none-mobile">
-        <div class="phone-img my-auto pr-sm-4 pr-lg-8">
-          <img class="img-fluid" alt="promotion img" src="../assets/imgs/d_1.png">
+          <div class="default-section mx-1 mx-md-5 pr-md-3">
+            <div class="title">
+              Aim for <span>gold</span>
+            </div>
+            <div class="desc">
+              Be a modern Alchemist and achieve your goals
+              with simple automated investments in gold.
+              You set the rules and we make the magic.
+            </div>
+
+            <!-- <div class="downloads pt-5 pb-4 pt-sm-7">
+              <div class="d-flex justify-content-around">
+                <a href="#" class="px-sm-2">
+                  <img class="img-fluid" src="./assets/imgs/playstore.png" alt="app store download">
+                </a>
+
+                <a href="#" class="px-sm-2">
+                  <img class="img-fluid" src="./assets/imgs/playstore.png" alt="play store download">
+                </a>
+              </div>
+            </div> -->
+
+
+            <!-- <div class="downloads-wrp  pt-5 pb-4 pt-sm-7">
+              <div class="flex social-btns">
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-apple"></i>
+                  <p>Download on the <br /> <span class="big-txt">App Store</span></p>
+                </a>
+
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-google-play"></i>
+                  <p><strong>Get it on </strong><br /> <span class="big-txt">Google Play</span></p>
+                </a>
+              </div>
+            </div> -->
+
+            <div class="downloads-wrp">
+              <!-- call to action for waiting list -->
+              <div class="row">
+                <div class="col text-center mt-4 py-1 py-md-3 d-flex align-content-center flex-wrap">
+
+                  <form autocomplete="off" class="desc ctr" id="ca-join-form-inline" name="contact" method="POST"
+                    data-netlify="true">
+                    <div class="loader"></div>
+                    <input type="email" id="email" name="email">
+                    <div class="indicator" data-content="Enter your email to become a pioneer"></div>
+
+                    <input type="hidden" id="name" name="name" value="empty">
+                    <input type="hidden" id="updates" name="updates" value="on">
+                  </form>
+
+                  <div class="counter-wrp">
+                    Join the other <span class="counter">0</span> future alchemists
+                  </div>
+
+                  <!-- <form class="ca-join form-no-input-outline" id="ca-join-form-inline" name="contact" method="POST" data-netlify="true">
+                    <label for="email" class="email-label">Join the waiting list:</label><br>
+                    <input type="email" id="email" name="email" placeholder="email">
+                    <button type="submit" value="Submit"
+                      class="btn btn-primary ca-join-btn ca-join-btn-inline">
+                      Join
+                    </button>
+                  </form> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="downloads-wrp  pt-5 pb-4 pt-sm-7">
+              <div class="flex social-btns">
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-apple"></i>
+                  <p>Available soon on <br /> <span class="big-txt">App Store</span></p>
+                </a>
+
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-google-play"></i>
+                  <p>Available soon on<br /> <span class="big-txt">Google Play</span></p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-12 col-sm-5 col-md-4">
+        <div class="phone d-flex align-items-center">
+          <img class="img-fluid" src="./assets/imgs/phone-1-min.png" alt="phone">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTENT 2  -->
-  
-  <section class="row no-gutters row-with-bg-1 ">
-    <div class="col-sm-12 col-xs-12">
-      <h2>Why Alchemist?</h2>
-    </div>
+  <section class="left-img-section pt-4 pt-sm-1">
+    <div class="row no-gutters">
+      <div class="col-12 col-sm-6 d-flex align-content-center flex-wrap">
+        <div class="image-wrp">
+          <img class="img-fluid" alt="image of parachute goal" src="./assets/imgs/g3092-min.png">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 d-flex align-content-center flex-wrap">
 
-    <div class="col-sm-6 col-xs-6 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="../assets/imgs/gold_chart.png">
+        <div class="p-2 mt-sm-8 p-sm-5">
+          <div class="default-section section-scroll-animate" data-animation="animate__fadeIn">
+            <div class="title p-4 p-sm-1 pr-lg-5 text-center text-sm-left">
+              Why Alchemist?
+            </div>
+            <div class="desc p-4 p-sm-1 pr-lg-5">
+              Alchemist will help you to save in Gold and
+              get the budget for going on holidays, making
+              that travel trip, buying that unique gadget or
+              simply investing for a rainy day.
+            </div>
+
+            <div class="btn-wrp p-4 mt-1 mt-sm-5 p-sm-1 pr-lg-5">
+              <div class="d-flex align-content-center flex-wrap">
+                <a id="playPresentation" data-size="xl" data-modal data-video="466553921" data-title="" type="button"
+                  class="btn btn-primary shadow text-white">
+                  <img alt="play presentation" src="./assets/imgs/play_gold-min.png">
+                  <span>Watch video presentation</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="container-fluid slider-zoom" draggable="false">
+    <section class="slider-wrp" id="slider-wrp">
+      <div class="owl-carousel owl-theme">
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-10-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Mini
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">4500</span> / <span class="total">24900</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:1;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-1-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Paul's Guitar
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">100</span> / <span class="total">3799</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:1;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-2-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Portugal holidays
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">10</span> / £ <span class="total">2000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-4-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Shark Diving in Azores
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">300</span> / £ <span class="total">1249</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-5-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Metal 3D printer
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">5000</span> / £ <span class="total">60000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-6-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Rainy day saving
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">7000</span> / £ <span class="total">10000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-7-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Festival
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">50</span> / £ <span class="total">510</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-8-min.png">
+          <div class="content">
+            <div class="title top-left">
+              iPhone 12 Pro Max
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">150</span> / £ <span class="total">1449</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-9-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Parachuting in Dubai
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">50</span> / £ <span class="total">5000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+      </div>
+    </section>
+  </section>
+
+  <section class="set-rules-wrp mt-1 mt-md-2 pt-lg-8 mx-2 mx-sm-8 mx-md-10 mx-lg-12 mb-1 mb-sm-4 mb-md-6">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10 col-sm-8 col-md-9">
+
+        <div class="default-section section-scroll-animate" data-animation="animate__fadeIn">
+          <div class="title">
+            Set your goals and rules, we’ll do the rest.
+          </div>
+          <div class="desc px-1 px-lg-1 px-xl-3 pb-1 pb-md-4 pt-lg-8 ">
+            Investing with a purpose is powerful.
+            Set your Goals and funding Rules and
+            let our automatic investment methods
+            buy you grams of Gold in small increments with zero impact in your lifestyle.
+            Invest every day with your purchases,
+            income or whenever you decide. You’ll
+            reach your goals before you know it.
+          </div>
+
+        </div>
       </div>
     </div>
 
-    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-      <div class="my-auto desc">
-        <p>Alchemist will help you to save in Gold and get the budget for going on holidays, making that travel trip, buying that unique gadget or simply investing for a rainy day.</p>
-<h3 id="learn-more-about"><a href="#">Learn more about</a></h3>
+    <div class="rules-box-wrp row justify-content-center no-gutters ">
+      <div class="col-12 col-sm-4">
+        <figure class="rules-box shadow-lg section-scroll-animate" data-animation="animate__slideInUp">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-12 img-wrp-rules">
+              <img src="./assets/imgs/roundup-min.png">
+            </div>
+            <div class="col-12">
+              <div class="rule-type">Round Up</div>
+            </div>
+            <div class="col-12">
+              <div class="rule-desc">Round up each time you use your card.</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+      <div class="col-12 col-sm-4">
+        <figure class="rules-box shadow-lg section-scroll-animate" data-animation="animate__slideInUp">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-12 img-wrp-rules">
+              <img src="./assets/imgs/retention-min.png">
+            </div>
+            <div class="col-12">
+              <div class="rule-type">Retention</div>
+            </div>
+            <div class="col-12">
+              <div class="rule-desc">Save part of your paycheck automatically.</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+      <div class="col-12 col-sm-4">
+        <figure class="rules-box shadow-lg section-scroll-animate" data-animation="animate__slideInUp">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-12 img-wrp-rules">
+              <img src="./assets/imgs/setandforget-min.png">
+            </div>
+            <div class="col-12">
+              <div class="rule-type">Set and Forget</div>
+            </div>
+            <div class="col-12">
+              <div class="rule-desc">Save on auto-pilot with recurring deposits.</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="stepper-wrp" class="stepper-wrp default-section">
+    <div class="row no-gutters">
+      <div class="col">
+        <div class="title">How get started</div>
+      </div>
+    </div>
+
+    <div class="stepper-app d-flex justify-content-center align-items-stretch flex-wrap">
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepNewGoal-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/1_addgoal-min.png">
+            </div>
+            <div class="title">Add your own goals</div>
+            <div class="desc">Your goals tailored by you, this way you can save as much money as you
+              want for your own objectives.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepBanks-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/2_link_account-min.png">
+            </div>
+            <div class="title">Link your account</div>
+            <div class="desc">Link your account with a brand new and secure technology. With open
+              banking you can connect your bank account, and allow us to invest your
+              money according to your needs and funding rules.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepFundingRules-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/3_save-min.png">
+            </div>
+            <div class="title">Save and Invest automatically</div>
+            <div class="desc"> With Alchemist you can just sit down and relax! Select the methods you
+              want to use and let us help you reach your goals.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepSophia-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/4_done-min.png">
+            </div>
+            <div class="title">Already done?</div>
+            <div class="desc">Yes, it is that simple! Now you can monitor your goals and investments
+              and check your progress any time.</div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="white-space"></section>
+
+
+  <section class="invest-gold-wrp default-section">
+    <div class="rules-box-wrp">
+      <div class="rules-box shadow-lg p-3 p-sm-4 p-md-5 p-lg-6">
+
+        <div
+          class="d-flex flex-row-reverse flex-md-row align-items-start justify-content-around flex-wrap-reverse flex-lg-nowrap">
+          <div class="content align-self-center">
+            <div class="title">
+              Why should you invest in gold?
+            </div>
+            <div class="desc">
+              <p>Physical gold is the ultimate storage of wealth. </p>
+              <p>A stable currency, immune to inflation, bank collapses and financial risks. It shines bright in
+                uncertain times and is one of the safest and smartest
+                ways to invest and build wealth.</p>
+              <p>Alchemist lets you invest in 99.99% investment-grade physical gold from amounts as small
+                as 1 milligram, and you have access to professional
+                market rates with prices updated every 5 seconds
+                and guaranteed low costs.
+              </p>
+            </div>
+          </div>
+
+          <div class="gold-vault">
+            <img src="./assets/imgs/vault-min.png">
+          </div>
+        </div>
+
+
+        <div
+          class="d-flex flex-row-reverse flex-md-row align-items-start justify-content-around flex-wrap-reverse flex-lg-nowrap">
+
+          <div class="content align-self-center">
+            <div class="title subtitle">
+              Physical Gold
+              Redemption (soon)
+            </div>
+            <div class="desc">
+              <p>Invest in physical gold and get it delivered to your door.</p>
+            </div>
+          </div>
+
+          <div class="gold-box section-scroll-animate" data-animation="animate__slideInUp">
+            <img src="./assets/imgs/gold-box.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="extended">
+      <div class="row justify-content-center">
+
+        <div class="col-12 col-sm-5 col-md-4">
+          <div class="mt-3 p-4 p-sm-0 mt-sm-6 d-flex align-content-stretch flex-wrap section-scroll-animate" data-animation="animate__slideInLeft">
+            <div class="title mt-3">It’s secure.</div>
+            <div class="desc">
+              <p>
+                We’ve done the extra mile to make all your
+                data, your money and your gold protected at
+                all times.
+              </p>
+              <p>
+                <strong>Your data is secured with 256-bit encryption.</strong>
+                That’s the same level of security as the military.
+              </p>
+            </div>
+            <div class="btn-wrp">
+              <button type="button" class="btn btn-primary shadow">
+                learn more
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-12 col-sm-5 col-md-4">
+          <div class="mt-3 p-4 p-sm-0 mt-sm-6 d-flex align-content-stretch flex-wrap section-scroll-animate" data-animation="animate__slideInRight">
+
+            <hr class="line-separator d-block d-sm-none">
+
+            <div class="title mt-3">
+              It’s free.
+            </div>
+            <div class="desc">
+              <p>Automated investment in gold with our
+                innovative methods won’t cost you anything, it’s free!
+              </p>
+              <p>We charge a <strong>transparent trading fee of 1%</strong>
+                which is among the lowest in the market.
+              </p>
+            </div>
+            <div class="btn-wrp">
+              <button type="button" class="btn btn-primary shadow">
+                learn more
+              </button>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- CONTENT 7  -->
-  
-  <section class="row no-gutters row-with-bg-1 data-bg-color" data-bg-color="#ffb304">
-    <div class="col-sm-5 col-xs-5 d-flex justify-content-center text-center">
-      <div class="my-auto pl-3 text-center">
-        <h2 class="text-white">Add your own goals</h2>
-        <br>
-        <div class="h3 text-white">
-          <p>And let the app take you there!</p>
 
+  <section class="download-now">
+    <div class="row mx-sm-5 mx-lg-10 ">
+
+      <div class="col-sm-5">
+        <div class="d-flex justify-content-center">
+          <img class="img-fluid phone-download  " src="./assets/imgs/iphonexTripCuba-min.png" alt="phone">
         </div>
       </div>
+
+
+      <div class="col-12 col-sm-7 ">
+        <div class="block mr-sm-5 d-flex flex-column justify-content-center align-items-center ">
+
+          <div class="title p-3">
+            Download soon
+          </div>
+          <div class="desc p-3 pt-sm-2">
+            <!-- Subscribe to waiting list for get updates... -->
+          </div>
+
+          <!-- <div class="downloads p-3 pt-sm-5 d-flex justify-content-around justify-content-sm-start">
+            <a href="#">
+              <img class="img-fluid" src="./assets/imgs/playstore.png" alt="app store download">
+            </a>
+
+            <a href="#" class="ml-sm-4">
+              <img class="img-fluid" src="./assets/imgs/playstore.png" alt="play store download">
+            </a>
+          </div> -->
+
+
+
+          <!-- <div class="downloads-wrp p-3 pb-7 pt-sm-5 d-flex justify-content-around justify-content-sm-start">
+            <div class="flex social-btns">
+              <a class="app-btn blu flex vert" href="#">
+                <i class="fab fa-apple"></i>
+                <p>Available soon on <br /> <span class="big-txt">App Store</span></p>
+              </a>
+
+              <a class="app-btn blu flex vert" href="#">
+                <i class="fab fa-google-play"></i>
+                <p>Available soon on<br /> <span class="big-txt">Google Play</span></p>
+              </a>
+            </div>
+          </div> -->
+          <div style="width:70%; text-align: center;">
+            <div class="row">
+              <div class="col text-center mt-4 py-1 py-md-3 ">
+                <form autocomplete="off" class="desc ctr ctr-lighter" id="ca-join-form-inline-footer" name="contact" method="POST"
+                  data-netlify="true" style="width:100%;">
+                  <div class="loader"></div>
+                  <input type="email" id="email" name="email">
+                  <div class="indicator" data-content="Enter your email to become a pioneer"></div>
+
+                  <input type="hidden" id="name" name="name" value="empty">
+                  <input type="hidden" id="updates" name="updates" value="on">
+                </form>
+
+                <div class="counter-wrp text-left mt-1 mt-sm-3 mt-mb-5 ml-0 text-white">
+                Join the other <span class="counter">0</span> future alchemists
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="col-sm-7 col-xs-7 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="../assets/imgs/add_goals.png">
-      </div>
-    </div>
   </section>
-
-  <!-- CONTENT 8  -->
-  
-  <section class="row no-gutters row-with-bg-1 data-bg-color" data-bg-color="#fffff">
-    <div class="col-sm-7 col-xs-7 d-flex justify-content-center text-center">
-      <div class="my-auto p-2 p-sm-3 p-md-4 text-center">
-        <h2 class="text-dark text-center">Goals you can actually achieve</h2>
-        <br>
-        <div class="desc text-dark text-justify">
-          <p>Investing with a purpose is powerful.
-Set your Goals and funding Rules and let our automatic investment methods buy you grams of Gold in small increments with zero impact in your lifestyle. Invest every day with your purchases, income or whenever you decide, and before you know it, you’ll have reached your goals.</p>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-5 col-xs-5 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="../assets/imgs/d_1.png">
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTENT 3  -->
-  
-  <section class="row no-gutters row-with-bg-1 " data-bg="../assets/imgs/bg-wire-1.png">
-
-    <div class="col-sm-6 col-xs-6 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="../assets/imgs/gold_nugget_2.png">
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-      <div class="row no-gutters">
-
-        <div class="col-sm-12 col-xs-12">
-          <h2>Why Gold?</h2>
-        </div>
-        <div class="col-sm-12 col-xs-12">
-
-          <div class="my-auto desc">
-            <p>Physical gold is the ultimate storage of wealth. A stable currency, immune to inflation, bank collapses and financial risks. It shines bright in uncertain times and is one of the safest and smartest ways to invest and build wealth.</p>
-
-<p>Alchemist lets you invest in 99.99% investment-grade physical gold from amounts as small as 1 milligram, and you have access to professional market rates with prices updated every 5 seconds and guaranteed low costs.</p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-</div>
-
-</section>
-
-<!-- CONTENT 4  -->
-
-<section class="row no-gutters row-with-bg-1 bg-center data-bg" data-bg="../assets/imgs/bg-wire-2.png">
-  <div class="col-sm-12 col-xs-12">
-    <h2>Bullet Proof Security</h2>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-    <div class="my-auto desc">
-      <p>We’ve done the extra mile to make all your data, your money and your gold protected at all times.</p>
-
-<p><strong>Your data is secured by 256-bit encryption.</strong> That’s the same level of security as the military.</p>
-
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 text-center">
-    <div class="featured-img">
-      <img alt="img" class="img-fluid" src="../assets/imgs/bulletproffsec_3.png">
-    </div>
-  </div>
-</section>
-
-
- <!-- CONTENT 9  -->
- 
- <section class="row no-gutters row-with-bg-1 ">
-   <div class="col-sm-12 col-xs-12">
-     <h2>Physical Gold Redemption (soon) </h2>
-   </div>
-
-   <div class="col-sm-6 col-xs-6 text-center">
-     <div class="featured-img">
-       <img alt="img" class="img-fluid" src="../assets/imgs/delivery_gold.png">
-     </div>
-   </div>
-
-   <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-     <div class="my-auto desc">
-       <h3 id="invest-in-physical-gold-and-get-it-delivered-to-your-door">Invest in physical gold and get it delivered to your door!</h3>
-
-     </div>
-   </div>
- </section>
-
-<!-- Stepper -->
-
-
-
-
-<section id="howto1" class="stepper pt-4 pb-4 pt-sm-7 pb-sm-7" data-stepper data-autoplay="true"
-  data-total="4" data-delay="3000">
-  <h2 class="text-center pb-4 pb-sm-6 main-title"> How to get started </h2>
-
-  
-  
-
-  <div class="row">
-    <div class="col-xs-12 col-md-5">
-      
-      <div class="content-wrp">
-        <div class="description-mobile p-2">
-          <div class="row align-items-start">
-            <div class="col-12">
-              <h2 class="steps-title pt-5"> Add your own goals </h2>
-            </div>
-            <div class="col-12 pb-3 pb-sm-8">
-            </div>
-            <div class="col-12 p-3">
-              <div class="desc">
-                Your goals tailored by you, this way you can save as much money as you want for your own objectives.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="howto1-media-0"
-          class="media-wrp  active  ">
-          <img alt="step image" src="../assets/imgs/stepper/1.png" class="img-fluid img" />
-          <img alt="step image mask" src="../assets/imgs/stepper/iphone.png" class="img-fluid img-mask" />
-        </div>
-      </div>
-
-      
-      <div class="content-wrp">
-        <div class="description-mobile p-2">
-          <div class="row align-items-start">
-            <div class="col-12">
-              <h2 class="steps-title pt-5"> Link your account </h2>
-            </div>
-            <div class="col-12 pb-3 pb-sm-8">
-            </div>
-            <div class="col-12 p-3">
-              <div class="desc">
-                Link your account with a brand new and secure technology. With open banking  you can connect your bank account, and allow us to invest your money according to your needs and funding rules.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="howto1-media-1"
-          class="media-wrp   hide-mobile ">
-          <img alt="step image" src="../assets/imgs/stepper/2.png" class="img-fluid img" />
-          <img alt="step image mask" src="../assets/imgs/stepper/iphone.png" class="img-fluid img-mask" />
-        </div>
-      </div>
-
-      
-      <div class="content-wrp">
-        <div class="description-mobile p-2">
-          <div class="row align-items-start">
-            <div class="col-12">
-              <h2 class="steps-title pt-5"> Save and Invest automatically </h2>
-            </div>
-            <div class="col-12 pb-3 pb-sm-8">
-            </div>
-            <div class="col-12 p-3">
-              <div class="desc">
-                With Alchemist you can just sit down and relax! Select the methods you want to use and let us help you reach your goals.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="howto1-media-2"
-          class="media-wrp   hide-mobile ">
-          <img alt="step image" src="../assets/imgs/stepper/3.png" class="img-fluid img" />
-          <img alt="step image mask" src="../assets/imgs/stepper/iphone.png" class="img-fluid img-mask" />
-        </div>
-      </div>
-
-      
-      <div class="content-wrp">
-        <div class="description-mobile p-2">
-          <div class="row align-items-start">
-            <div class="col-12">
-              <h2 class="steps-title pt-5"> Already done? </h2>
-            </div>
-            <div class="col-12 pb-3 pb-sm-8">
-            </div>
-            <div class="col-12 p-3">
-              <div class="desc">
-                Yes, it is that simple! Now you can monitor your goals and investments and check your progress any time.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="howto1-media-3"
-          class="media-wrp   hide-mobile ">
-          <img alt="step image" src="../assets/imgs/stepper/4.png" class="img-fluid img" />
-          <img alt="step image mask" src="../assets/imgs/stepper/iphone.png" class="img-fluid img-mask" />
-        </div>
-      </div>
-
-      
-    </div>
-    <div class="d-none d-md-block col-md-1">
-      <!-- stepper buttons -->
-      <div class="stepper-nav">
-        
-        <a id="howto1-step-button-0" class="step-button  active "
-          onclick='stepperShow("howto1", "0")'>
-          <div class="index">
-            
-            1
-            
-          </div>
-        </a>
-        
-        <a id="howto1-step-button-1" class="step-button "
-          onclick='stepperShow("howto1", "1")'>
-          <div class="index">
-            
-            2
-            
-          </div>
-        </a>
-        
-        <a id="howto1-step-button-2" class="step-button "
-          onclick='stepperShow("howto1", "2")'>
-          <div class="index">
-            
-            3
-            
-          </div>
-        </a>
-        
-        <a id="howto1-step-button-3" class="step-button "
-          onclick='stepperShow("howto1", "3")'>
-          <div class="index">
-            
-            4
-            
-          </div>
-        </a>
-        
-      </div>
-    </div>
-    <div id="howto1-desc-wrp" class="col-xs-12 col-md-5">
-      <!-- only descriptions -->
-      
-      <div id="howto1-desc-0" class="description   active  ">
-        <div class="row align-items-start">
-          <div class="col-12">
-            <h2 class="steps-title"> Add your own goals </h2>
-          </div>
-          <div class="col-12 pb-1 pb-sm-5">
-          </div>
-          <div class="col-12">
-            <div class="desc">
-              Your goals tailored by you, this way you can save as much money as you want for your own objectives.
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div id="howto1-desc-1" class="description   ">
-        <div class="row align-items-start">
-          <div class="col-12">
-            <h2 class="steps-title"> Link your account </h2>
-          </div>
-          <div class="col-12 pb-1 pb-sm-5">
-          </div>
-          <div class="col-12">
-            <div class="desc">
-              Link your account with a brand new and secure technology. With open banking  you can connect your bank account, and allow us to invest your money according to your needs and funding rules.
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div id="howto1-desc-2" class="description   ">
-        <div class="row align-items-start">
-          <div class="col-12">
-            <h2 class="steps-title"> Save and Invest automatically </h2>
-          </div>
-          <div class="col-12 pb-1 pb-sm-5">
-          </div>
-          <div class="col-12">
-            <div class="desc">
-              With Alchemist you can just sit down and relax! Select the methods you want to use and let us help you reach your goals.
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div id="howto1-desc-3" class="description   ">
-        <div class="row align-items-start">
-          <div class="col-12">
-            <h2 class="steps-title"> Already done? </h2>
-          </div>
-          <div class="col-12 pb-1 pb-sm-5">
-          </div>
-          <div class="col-12">
-            <div class="desc">
-              Yes, it is that simple! Now you can monitor your goals and investments and check your progress any time.
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-</section>
-
-
-<!-- CONTENT 5  -->
-
-<section class="row no-gutters row-with-bg-1 data-bg-color" data-bg-color="#5f657e">
-  <div class="col-12 justify-content-center text-center">
-    <h2 class="highlighted text-white">Alchemist is <span>free of charge</span></h2>
-  </div>
-
-  <div class="col-12 text-center text-white">
-    <div class="h2 p-2 p-sm-5">
-      <p>Automated investment in gold with our innovative methods won’t cost you anything, it’s free! 
-We charge a <strong>transparent</strong> trading fee of 1% which is among the lowest in the market.</p>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- CONTENT 6  -->
-
-
-<div class="pt-2 py-sm-8 embed-responsive-21by9">
-  <video id="Video_1" class="video-js vjs-default-skin" controls preload="none"
-    poster='../assets/imgs/videoposter.png' data-setup='{ "aspectRatio":"1280:720", "playbackRates": [1, 1.5, 2] }'>
-
-    <source src="https://www.dropbox.com/s/5s3fxr9883gjoia/Promo_Square_v18.mp4?dl=1" type='video/mp4' />
-    <source src="https://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
-
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-    </p>
-  </video>
-</div>
-
-<!-- 
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/?theme=dark&controls=0&disablekb=0&enablejsapi=0&rel=0&showinfo=0&modestbranding=1&color=white"
-      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-      frameborder="0" scrolling="no"></iframe>
-  </div> -->
-<!-- <section class="row-only-video">
-    <a href="javascript:;" class="" data-modal data-video=""
-      data-title="Video_1" data-size="xxl">
-      <div class="video-overlay-play-button "></div>
-    </a>
-    <img class="img-fluid" src="../assets/imgs/videoposter.png" alt="Video featured image - Video_1" />
-  </section> -->
-
-
-<!-- CONTENT Dynamic  -->
-
-
-
-<!--  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="section-downloads" class="my-5 row-with-bg-1 bg-center">
-  <div class="row no-gutters">
-    <div class="col-12 d-flex justify-content-center text-center">
-      <div class="my-auto desc">
-        <h2>
-          Download now!
-        </h2>
-        
-
-      </div>
-    </div>
-    <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
-      <div class="my-auto desc">
-        
-        <div class="download-app-store">
-   <a class="img-btn" href="https://www.apple.com/pt/ios/app-store/" target="_blank">
-     <img class="img-fluid m-3 m-sm-1" alt="Download to app store"
-       src="../assets/imgs/app_store_btn.png">
-   </a>
-   <a class="img-btn" href="https://play.google.com/store" target="_blank">
-     <img class="img-fluid m-3 m-sm-1" alt="Download to app store"
-       src="../assets/imgs/play_store_btn.png">
-   </a>
-</div>
-
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
+  <div class="mb-md-10 mb-lg-12"></div>
 
 </div>
 
@@ -610,130 +790,105 @@ We charge a <strong>transparent</strong> trading fee of 1% which is among the lo
   }
 </script>
 
-    </div>
-    <div>
-      <!-- Footer -->
-<footer class="page-footer footer-custom">
+  </div>
+  <div>
+    <!-- Footer -->
+<footer class="footer-custom mt-1 mt-sm-2 mt-md-3">
   <!-- Footer Links -->
   <div class="container">
 
-    <!-- Grid row-->
-    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+    <div class="row no-gutters justify-content-center ">
+      <div class="col-12">
+        <div class="sitemap row no-gutters">
 
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a class="color-primary" href="#!">About us</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
 
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a class="color-primary" href="./security.html">Security</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
+          <div class="col-6 col-md-3 img-wrp">
+            <img src="./assets/imgs/alchemist_logo_simple.png" alt="yarilabs logo">
+          </div>
 
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3 no-mobile">
-        <img src="../assets/imgs/alchemist_logo_simple.png" width="50" height="50">
-      </div>
-      <!-- Grid column -->
+          <div class="col-6 col-md-3">
+            <a class="nav-link" target="_blank" rel="noopener noreferrer"
+              href="https://www.instagram.com/alchemist_app">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/alchemistapp">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/alchemist_app">
+              <i class="fab fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+            <a class="nav-link" target="_blank" rel="noopener noreferrer"
+              href="https://www.youtube.com/channel/UC4cltOMmvBCX-Mn6AsuBH8g">
+              <i class="fab fa-youtube"></i>
+              <span>Youtube</span>
+            </a>
+          </div>
 
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a class="color-primary" href="#!">FAQ</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
 
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a class="color-primary" href="#!">Terms</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
+          <div class="col-6 col-md-3">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="security">Security</a>
+          </div>
 
-    </div>
-    <!-- Grid row-->
-    <hr class="rgba-white-light" style="margin: 0 15%;">
-
-    <!-- Grid row-->
-    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-
-      <!-- Grid column -->
-      <div class="col-md-8 col-12 mt-5">
-        <p style="line-height: 1.7rem">- Address of Alchemist -</p>
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row-->
-    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-
-    <!-- Grid row-->
-    <div class="row pb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-12">
-
-        <div class="mb-5 flex-center">
-
-          <!-- Twitter -->
-          <a class="tw-ic" href="#">
-            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic" href="#">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic" href="#">
-            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
-          </a>
-
+          <div class="col-6 col-md-3">
+            <a class="nav-link" href="blog">Blog</a>
+            <a class="nav-link" href="faq">Help</a>
+            <a class="nav-link" href="service_terms">Terms and Privacy</a>
+          </div>
         </div>
 
+
+
+
       </div>
-      <!-- Grid column -->
-
     </div>
-    <!-- Grid row-->
 
+
+    <!-- Footer Links -->
+    <div class="line-separator"></div>
   </div>
-  <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://www.yarilabs.com/">yarilabs.com</a>
+  <div class="footer-copyright text-center py-3">
+    <span class="mx-1">© 2020 All rights reserved</span>
+    <span class="d-none d-sm-inline-block">|</span>
+    <a class="mx-1" href="https://www.yarilabs.com/">
+      <img src="./assets/imgs/yarilabs-footer.png" alt="yarilabs logo">
+    </a>
   </div>
   <!-- Copyright -->
 
-
-  <!-- alchemist -->
-
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
+  <!-- alchemist js-->
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
 
-  <script type="text/javascript" src="../assets/js/index.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <script type="text/javascript" src="../assets/js/index.js"></script>
 </footer>
 <!-- Footer -->
 
-    </div>
   </div>
-
   <!-- Javascripts -->
   <!-- <script>
       function hideAndShow() {
@@ -749,8 +904,7 @@ We charge a <strong>transparent</strong> trading fee of 1% which is among the lo
         }
       }
       </script> -->
-  <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-
+  <!-- <script src="https://vjs.zencdn.net/7.8.4/video.js"></script> -->
 </body>
 
 </html>

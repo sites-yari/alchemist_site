@@ -1,62 +1,104 @@
-<header>
-  <nav class="navbar navbar-expand-md fixed-top navbar-light navbar-shadow" aria-label="navbar brand">
+<header class="layout-header">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light mx-3 mx-sm-4 mx-md-7 mx-lg-10 mx-xs-12"
+    aria-label="navbar brand">
     <div class="container-fluid">
-      <a class="navbar-brand text-dark d-flex align-content-center " href="{{site.data.header.link_title}}">
-        <img src="{{ site.data.header.img }}" width="30" height="30">
-        <div class="m-auto pl-2">
-          <strong>{{site.data.header.title}}</strong>
-        </div>
-      </a>
+
+      <div class="navbar-header">
+        <a class="navbar-brand text-dark align-content-center" href="{{site.data.header.link_title}}">
+          {% assign blueBrandPages = "about,security,blog,faq,terms" | split:"," %}
+
+          {% if blueBrandPages contains page.nameId %}
+          <img class="img-brand" src="./assets/imgs/H_blue.svg">
+          {% else %}
+          <img class="img-brand" src="./assets/imgs/H_gold.svg">
+          {% endif %}
+        </a>
+      </div>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon navbar-burger"></span>
       </button>
+
+
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          {% assign nav_left = site.data.header.left %}
-          {% for nav_link in nav_left %}
-            {% if nav_link.type == "default" %}
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="{{nav_link.link}}">
-                {{nav_link.text}}</a>
-            </li>
-            {% else %}
-              <li class="nav-item pl-3 my-auto">
-                <a class="btn btn-outline-dark" href="{{nav_link.link}}">{{nav_link.text}}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
         </ul>
         <div class="form-inline mt-2 mt-md-0">
           <ul class="navbar-nav nav-flex-icons">
-            {% assign nav_right = site.data.header.right %}
-            {% for nav_link in nav_right %}
-              {% if nav_link.type == "default" %}
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="{{nav_link.link}}">
-                  {{nav_link.text}}</a>
-              </li>
-              {% else %}
-                <li class="nav-item pl-3 my-auto">
-                  <a class="btn btn-outline-dark" href="{{nav_link.link}}">{{nav_link.text}}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
+            <a class="nav-link" href="about">About</a>
+            <a class="nav-link" href="security">Security</a>
+            <a class="nav-link" href="blog">Blog</a>
+            <a class="nav-link" href="faq">Help</a>
+
+            <li class="nav-item pl-3 my-auto">
+              <a class="btn btn-primary text-white" data-toggle="modal" data-target="#ca-join" href="#">Download</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
-  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
+
+  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
       <div class="modal-content">
-        <!-- <div class="modal-header">
+        <div class="modal-header">
           <h5 class="modal-title"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
               aria-hidden="true">&times;</span></button>
-        </div> -->
+        </div>
         <div class="modal-body"></div>
       </div>
     </div>
   </div>
 </header>
+
+
+<!-- Modals -->
+<div class="modal fade ca-join" id="ca-join" tabindex="-1" role="dialog" aria-labelledby="ca-joinModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="ca-joinModalLabel">Join in the waiting list</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body text-center">
+        <form id="ca-join-form" name="contact" method="POST" data-netlify="true">
+
+          <div class="form-group form-no-input-outline">
+            <label for="email" class="email-label">Enter your email to become a pioneer:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your name">
+            <input type="email" id="email" name="email" placeholder="Email" required="required">
+          </div>
+
+          <div class="form-group">
+            <!-- <div>
+              <input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox" checked>
+              <label for="checkbox-1" class="checkbox-custom-label">First Choice</label>
+            </div> -->
+            <input type="checkbox" id="updates" name="updates" class="checkbox-custom" checked>
+            <label for="updates" class="checkbox-custom-label updates-label disable-selection">
+              I agree to receive promotional emails and updates.
+            </label>
+          </div>
+
+
+          <div class="counter-wrp white-bg">
+            Join the other <span class="counter">0</span> future alchemists
+          </div>
+
+
+          <div class="form-group">
+            <button class="btn ca-join-btn btn-primary" type="submit" value="Submit">Join</button></br>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Alchemist blog
+class: blog
+nameId: blog
+---
+{% include blog.html %}
+
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>

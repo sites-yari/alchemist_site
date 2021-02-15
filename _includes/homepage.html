@@ -1,448 +1,626 @@
 <div id="homepage" class="homepage">
-  <!-- CONTENT 1 -->
-  <section class="content-promotional pt-7 d-flex justify-content-center text-center">
-    <div class="row no-gutters ">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center text-center">
-        <div class="m-auto pl-sm-4 pl-lg-8">
-          <h1 class="title">
-            {{site.data.homepage.section_1.title_part1}}
-            <span> {{site.data.homepage.section_1.gold_title}}</span>
-            {{site.data.homepage.section_1.title_part2}}
-          </h1>
-          <br>
-          <p class="pb-5 mx-3 desc">{{site.data.homepage.section_1.desc}}</p>
-          <div class="col-xs-12 col-sm-7"></div>
-          {% include downloads.html %}
-        </div>
-      </div>
+  <section class="header pt-10">
+    <div class="row no-gutters mx-sm-3 mx-xl-8 justify-content-center">
+      <div class="col-12 col-sm-5 col-md-6">
+        <div class="header-block d-flex align-content-center flex-wrap">
 
-      <div class="col-md-5 d-flex justify-content-center text-center d-none-mobile">
-        <div class="phone-img my-auto pr-sm-4 pr-lg-8">
-          <img class="img-fluid" alt="promotion img" src="{{site.data.homepage.section_1.img}}">
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="default-section mx-1 mx-md-5 pr-md-3">
+            <div class="title">
+              Aim for <span>gold</span>
+            </div>
+            <div class="desc">
+              Be a modern Alchemist and achieve your goals
+              with simple automated investments in gold.
+              You set the rules and we make the magic.
+            </div>
 
-  <!-- CONTENT 2  -->
-  {% assign section_2 = site.data.homepage.section_2 %}
-  <section class="row no-gutters row-with-bg-1 ">
-    <div class="col-sm-12 col-xs-12">
-      <h2>{{ section_2.title }}</h2>
-    </div>
+            <!-- <div class="downloads pt-5 pb-4 pt-sm-7">
+              <div class="d-flex justify-content-around">
+                <a href="#" class="px-sm-2">
+                  <img class="img-fluid" src="./assets/imgs/playstore.png" alt="app store download">
+                </a>
 
-    <div class="col-sm-6 col-xs-6 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="{{ section_2.img }}">
-      </div>
-    </div>
+                <a href="#" class="px-sm-2">
+                  <img class="img-fluid" src="./assets/imgs/playstore.png" alt="play store download">
+                </a>
+              </div>
+            </div> -->
 
-    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-      <div class="my-auto desc">
-        {{ section_2.desc | markdownify }}
-      </div>
-    </div>
-  </section>
 
-  <!-- CONTENT 7  -->
-  {% assign section_7 = site.data.homepage.section_7 %}
-  <section class="row no-gutters row-with-bg-1 data-bg-color" data-bg-color="{{ section_7.bg_data_color }}">
-    <div class="col-sm-5 col-xs-5 d-flex justify-content-center text-center">
-      <div class="my-auto pl-3 text-center">
-        <h2 class="text-white">{{ section_7.title }}</h2>
-        <br>
-        <div class="h3 text-white">
-          {{ section_7.desc | markdownify }}
-        </div>
-      </div>
-    </div>
+            <!-- <div class="downloads-wrp  pt-5 pb-4 pt-sm-7">
+              <div class="flex social-btns">
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-apple"></i>
+                  <p>Download on the <br /> <span class="big-txt">App Store</span></p>
+                </a>
 
-    <div class="col-sm-7 col-xs-7 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="{{ section_7.img }}">
-      </div>
-    </div>
-  </section>
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-google-play"></i>
+                  <p><strong>Get it on </strong><br /> <span class="big-txt">Google Play</span></p>
+                </a>
+              </div>
+            </div> -->
 
-  <!-- CONTENT 8  -->
-  {% assign section_8 = site.data.homepage.section_8 %}
-  <section class="row no-gutters row-with-bg-1 data-bg-color" data-bg-color="{{ section_8.bg_data_color }}">
-    <div class="col-sm-7 col-xs-7 d-flex justify-content-center text-center">
-      <div class="my-auto p-2 p-sm-3 p-md-4 text-center">
-        <h2 class="text-dark text-center">{{ section_8.title }}</h2>
-        <br>
-        <div class="desc text-dark text-justify">
-          {{ section_8.desc | markdownify }}
-        </div>
-      </div>
-    </div>
+            <div class="downloads-wrp">
+              <!-- call to action for waiting list -->
+              <div class="row">
+                <div class="col text-center mt-4 py-1 py-md-3 d-flex align-content-center flex-wrap">
 
-    <div class="col-sm-5 col-xs-5 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="{{ section_8.img }}">
-      </div>
-    </div>
-  </section>
+                  <form autocomplete="off" class="desc ctr" id="ca-join-form-inline" name="contact" method="POST"
+                    data-netlify="true">
+                    <div class="loader"></div>
+                    <input type="email" id="email" name="email">
+                    <div class="indicator" data-content="Enter your email to become a pioneer"></div>
 
-  <!-- CONTENT 3  -->
-  {% assign section_3 = site.data.homepage.section_3 %}
-  <section class="row no-gutters row-with-bg-1 " data-bg="{{ section_3.bg_data }}">
+                    <input type="hidden" id="name" name="name" value="empty">
+                    <input type="hidden" id="updates" name="updates" value="on">
+                  </form>
 
-    <div class="col-sm-6 col-xs-6 text-center">
-      <div class="featured-img">
-        <img alt="img" class="img-fluid" src="{{ section_3.img }}">
-      </div>
-    </div>
+                  <div class="counter-wrp">
+                    Join the other <span class="counter">0</span> future alchemists
+                  </div>
 
-    <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-      <div class="row no-gutters">
+                  <!-- <form class="ca-join form-no-input-outline" id="ca-join-form-inline" name="contact" method="POST" data-netlify="true">
+                    <label for="email" class="email-label">Join the waiting list:</label><br>
+                    <input type="email" id="email" name="email" placeholder="email">
+                    <button type="submit" value="Submit"
+                      class="btn btn-primary ca-join-btn ca-join-btn-inline">
+                      Join
+                    </button>
+                  </form> -->
+                </div>
+              </div>
+            </div>
 
-        <div class="col-sm-12 col-xs-12">
-          <h2>{{ section_3.title }}</h2>
-        </div>
-        <div class="col-sm-12 col-xs-12">
+            <div class="downloads-wrp  pt-5 pb-4 pt-sm-7">
+              <div class="flex social-btns">
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-apple"></i>
+                  <p>Available soon on <br /> <span class="big-txt">App Store</span></p>
+                </a>
 
-          <div class="my-auto desc">
-            {{ section_3.desc | markdownify }}
+                <a class="app-btn blu flex vert" href="#">
+                  <i class="fab fa-google-play"></i>
+                  <p>Available soon on<br /> <span class="big-txt">Google Play</span></p>
+                </a>
+              </div>
+            </div>
           </div>
+
+        </div>
+
+      </div>
+      <div class="col-12 col-sm-5 col-md-4">
+        <div class="phone d-flex align-items-center">
+          <img class="img-fluid" src="./assets/imgs/phone-1-min.png" alt="phone">
         </div>
       </div>
     </div>
+  </section>
 
-</div>
+  <section class="left-img-section pt-4 pt-sm-1">
+    <div class="row no-gutters">
+      <div class="col-12 col-sm-6 d-flex align-content-center flex-wrap">
+        <div class="image-wrp">
+          <img class="img-fluid" alt="image of parachute goal" src="./assets/imgs/g3092-min.png">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 d-flex align-content-center flex-wrap">
 
-</section>
-
-<!-- CONTENT 4  -->
-{% assign section_4 = site.data.homepage.section_4 %}
-<section class="row no-gutters row-with-bg-1 bg-center data-bg" data-bg="{{ section_4.bg_data }}">
-  <div class="col-sm-12 col-xs-12">
-    <h2>{{ section_4.title }}</h2>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-    <div class="my-auto desc">
-      {{ section_4.desc | markdownify }}
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 text-center">
-    <div class="featured-img">
-      <img alt="img" class="img-fluid" src="{{ section_4.img }}">
-    </div>
-  </div>
-</section>
-
-
- <!-- CONTENT 9  -->
- {% assign section_9 = site.data.homepage.section_9 %}
- <section class="row no-gutters row-with-bg-1 ">
-   <div class="col-sm-12 col-xs-12">
-     <h2>{{ section_9.title }}</h2>
-   </div>
-
-   <div class="col-sm-6 col-xs-6 text-center">
-     <div class="featured-img">
-       <img alt="img" class="img-fluid" src="{{ section_9.img }}">
-     </div>
-   </div>
-
-   <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-     <div class="my-auto desc">
-       {{ section_9.desc | markdownify }}
-     </div>
-   </div>
- </section>
-
-<!-- Stepper -->
-{% assign stepperhowTo = site.data.homepage.stepper %}
-{% assign id = stepperhowTo.id %}
-{% assign totalSteps = stepperhowTo.steps.size %}
-
-<section id="{{id}}" class="stepper pt-4 pb-4 pt-sm-7 pb-sm-7" data-stepper data-autoplay="{{stepperhowTo.autoplay}}"
-  data-total="{{totalSteps}}" data-delay="{{stepperhowTo.delay}}">
-  <h2 class="text-center pb-4 pb-sm-6 main-title"> {{ stepperhowTo.title }} </h2>
-
-  {% assign totalStepsFor = totalSteps | minus: 1 %}
-  {% assign steps = stepperhowTo.steps %}
-
-  <div class="row">
-    <div class="col-xs-12 col-md-5">
-      {% for i in (0..totalStepsFor) %}
-      <div class="content-wrp">
-        <div class="description-mobile p-2">
-          <div class="row align-items-start">
-            <div class="col-12">
-              <h2 class="steps-title pt-5"> {{steps[i].title}} </h2>
+        <div class="p-2 mt-sm-8 p-sm-5">
+          <div class="default-section section-scroll-animate" data-animation="animate__fadeIn">
+            <div class="title p-4 p-sm-1 pr-lg-5 text-center text-sm-left">
+              Why Alchemist?
             </div>
-            <div class="col-12 pb-3 pb-sm-8">
+            <div class="desc p-4 p-sm-1 pr-lg-5">
+              Alchemist will help you to save in Gold and
+              get the budget for going on holidays, making
+              that travel trip, buying that unique gadget or
+              simply investing for a rainy day.
             </div>
-            <div class="col-12 p-3">
-              <div class="desc">
-                {{ steps[i].description }}
+
+            <div class="btn-wrp p-4 mt-1 mt-sm-5 p-sm-1 pr-lg-5">
+              <div class="d-flex align-content-center flex-wrap">
+                <a id="playPresentation" data-size="xl" data-modal data-video="466553921" data-title="" type="button"
+                  class="btn btn-primary shadow text-white">
+                  <img alt="play presentation" src="./assets/imgs/play_gold-min.png">
+                  <span>Watch video presentation</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div id="{{id}}-media-{{i}}"
-          class="media-wrp {% if i == 0 %} active {% endif %} {% if steps[i].showImgMobile == false %} hide-mobile {% endif %}">
-          <img alt="step image" src="{{ steps[i].img }}" class="img-fluid img" />
-          <img alt="step image mask" src="{{ steps[i].imgMask }}" class="img-fluid img-mask" />
+
+  <section class="container-fluid slider-zoom" draggable="false">
+    <section class="slider-wrp" id="slider-wrp">
+      <div class="owl-carousel owl-theme">
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-10-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Mini
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">4500</span> / <span class="total">24900</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:1;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-1-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Paul's Guitar
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">100</span> / <span class="total">3799</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:1;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-2-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Portugal holidays
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">10</span> / £ <span class="total">2000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-4-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Shark Diving in Azores
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">300</span> / £ <span class="total">1249</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-5-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Metal 3D printer
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">5000</span> / £ <span class="total">60000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-6-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Rainy day saving
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">7000</span> / £ <span class="total">10000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-7-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Festival
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">50</span> / £ <span class="total">510</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-8-min.png">
+          <div class="content">
+            <div class="title top-left">
+              iPhone 12 Pro Max
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">150</span> / £ <span class="total">1449</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="item goal-wrp">
+          <img src="./assets/imgs/goal-ex-9-min.png">
+          <div class="content">
+            <div class="title top-left">
+              Parachuting in Dubai
+            </div>
+            <div class="saved-wrp">
+              <div class="content-saved">
+                Saved £ <span class="variable">50</span> / £ <span class="total">5000</span>
+              </div>
+              <div class="progress-bar-wrp">
+                <div class="progress-bar " style="--progress:10;"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+      </div>
+    </section>
+  </section>
+
+  <section class="set-rules-wrp mt-1 mt-md-2 pt-lg-8 mx-2 mx-sm-8 mx-md-10 mx-lg-12 mb-1 mb-sm-4 mb-md-6">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10 col-sm-8 col-md-9">
+
+        <div class="default-section section-scroll-animate" data-animation="animate__fadeIn">
+          <div class="title">
+            Set your goals and rules, we’ll do the rest.
+          </div>
+          <div class="desc px-1 px-lg-1 px-xl-3 pb-1 pb-md-4 pt-lg-8 ">
+            Investing with a purpose is powerful.
+            Set your Goals and funding Rules and
+            let our automatic investment methods
+            buy you grams of Gold in small increments with zero impact in your lifestyle.
+            Invest every day with your purchases,
+            income or whenever you decide. You’ll
+            reach your goals before you know it.
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="rules-box-wrp row justify-content-center no-gutters ">
+      <div class="col-12 col-sm-4">
+        <figure class="rules-box shadow-lg section-scroll-animate" data-animation="animate__slideInUp">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-12 img-wrp-rules">
+              <img src="./assets/imgs/roundup-min.png">
+            </div>
+            <div class="col-12">
+              <div class="rule-type">Round Up</div>
+            </div>
+            <div class="col-12">
+              <div class="rule-desc">Round up each time you use your card.</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+      <div class="col-12 col-sm-4">
+        <figure class="rules-box shadow-lg section-scroll-animate" data-animation="animate__slideInUp">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-12 img-wrp-rules">
+              <img src="./assets/imgs/retention-min.png">
+            </div>
+            <div class="col-12">
+              <div class="rule-type">Retention</div>
+            </div>
+            <div class="col-12">
+              <div class="rule-desc">Save part of your paycheck automatically.</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+      <div class="col-12 col-sm-4">
+        <figure class="rules-box shadow-lg section-scroll-animate" data-animation="animate__slideInUp">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-12 img-wrp-rules">
+              <img src="./assets/imgs/setandforget-min.png">
+            </div>
+            <div class="col-12">
+              <div class="rule-type">Set and Forget</div>
+            </div>
+            <div class="col-12">
+              <div class="rule-desc">Save on auto-pilot with recurring deposits.</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="stepper-wrp" class="stepper-wrp default-section">
+    <div class="row no-gutters">
+      <div class="col">
+        <div class="title">How get started</div>
+      </div>
+    </div>
+
+    <div class="stepper-app d-flex justify-content-center align-items-stretch flex-wrap">
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepNewGoal-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/1_addgoal-min.png">
+            </div>
+            <div class="title">Add your own goals</div>
+            <div class="desc">Your goals tailored by you, this way you can save as much money as you
+              want for your own objectives.</div>
+          </div>
         </div>
       </div>
 
-      {% endfor %}
-    </div>
-    <div class="d-none d-md-block col-md-1">
-      <!-- stepper buttons -->
-      <div class="stepper-nav">
-        {% for i in (0..totalStepsFor) %}
-        <a id="{{id}}-step-button-{{i}}" class="step-button {% if i == 0 %} active {% endif %}"
-          onclick='stepperShow("{{ id }}", "{{ i }}")'>
-          <div class="index">
-            {% if stepperhowTo.showStepNumbers == true %}
-            {{ i | plus: 1 }}
-            {% endif %}
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepBanks-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/2_link_account-min.png">
+            </div>
+            <div class="title">Link your account</div>
+            <div class="desc">Link your account with a brand new and secure technology. With open
+              banking you can connect your bank account, and allow us to invest your
+              money according to your needs and funding rules.</div>
           </div>
-        </a>
-        {% endfor %}
+        </div>
+      </div>
+
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepFundingRules-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/3_save-min.png">
+            </div>
+            <div class="title">Save and Invest automatically</div>
+            <div class="desc"> With Alchemist you can just sit down and relax! Select the methods you
+              want to use and let us help you reach your goals.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide d-flex flex-row-reverse flex-sm-row">
+        <div class="img-featured ">
+          <img src="./assets/imgs/phoneStepSophia-min.png">
+        </div>
+        <div class="box d-flex align-content-center flex-wrap">
+          <div>
+            <div class="box-img d-flex align-content-center justify-content-center flex-wrap">
+              <img src="./assets/imgs/4_done-min.png">
+            </div>
+            <div class="title">Already done?</div>
+            <div class="desc">Yes, it is that simple! Now you can monitor your goals and investments
+              and check your progress any time.</div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="white-space"></section>
+
+
+  <section class="invest-gold-wrp default-section">
+    <div class="rules-box-wrp">
+      <div class="rules-box shadow-lg p-3 p-sm-4 p-md-5 p-lg-6">
+
+        <div
+          class="d-flex flex-row-reverse flex-md-row align-items-start justify-content-around flex-wrap-reverse flex-lg-nowrap">
+          <div class="content align-self-center">
+            <div class="title">
+              Why should you invest in gold?
+            </div>
+            <div class="desc">
+              <p>Physical gold is the ultimate storage of wealth. </p>
+              <p>A stable currency, immune to inflation, bank collapses and financial risks. It shines bright in
+                uncertain times and is one of the safest and smartest
+                ways to invest and build wealth.</p>
+              <p>Alchemist lets you invest in 99.99% investment-grade physical gold from amounts as small
+                as 1 milligram, and you have access to professional
+                market rates with prices updated every 5 seconds
+                and guaranteed low costs.
+              </p>
+            </div>
+          </div>
+
+          <div class="gold-vault">
+            <img src="./assets/imgs/vault-min.png">
+          </div>
+        </div>
+
+
+        <div
+          class="d-flex flex-row-reverse flex-md-row align-items-start justify-content-around flex-wrap-reverse flex-lg-nowrap">
+
+          <div class="content align-self-center">
+            <div class="title subtitle">
+              Physical Gold
+              Redemption (soon)
+            </div>
+            <div class="desc">
+              <p>Invest in physical gold and get it delivered to your door.</p>
+            </div>
+          </div>
+
+          <div class="gold-box section-scroll-animate" data-animation="animate__slideInUp">
+            <img src="./assets/imgs/gold-box.png">
+          </div>
+        </div>
       </div>
     </div>
-    <div id="{{id}}-desc-wrp" class="col-xs-12 col-md-5">
-      <!-- only descriptions -->
-      {% for i in (0..totalStepsFor) %}
-      <div id="{{id}}-desc-{{i}}" class="description  {% if i == 0 %} active {% endif %} ">
-        <div class="row align-items-start">
-          <div class="col-12">
-            <h2 class="steps-title"> {{steps[i].title}} </h2>
-          </div>
-          <div class="col-12 pb-1 pb-sm-5">
-          </div>
-          <div class="col-12">
+
+    <div class="extended">
+      <div class="row justify-content-center">
+
+        <div class="col-12 col-sm-5 col-md-4">
+          <div class="mt-3 p-4 p-sm-0 mt-sm-6 d-flex align-content-stretch flex-wrap section-scroll-animate" data-animation="animate__slideInLeft">
+            <div class="title mt-3">It’s secure.</div>
             <div class="desc">
-              {{ steps[i].description }}
+              <p>
+                We’ve done the extra mile to make all your
+                data, your money and your gold protected at
+                all times.
+              </p>
+              <p>
+                <strong>Your data is secured with 256-bit encryption.</strong>
+                That’s the same level of security as the military.
+              </p>
+            </div>
+            <div class="btn-wrp">
+              <button type="button" class="btn btn-primary shadow">
+                learn more
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-12 col-sm-5 col-md-4">
+          <div class="mt-3 p-4 p-sm-0 mt-sm-6 d-flex align-content-stretch flex-wrap section-scroll-animate" data-animation="animate__slideInRight">
+
+            <hr class="line-separator d-block d-sm-none">
+
+            <div class="title mt-3">
+              It’s free.
+            </div>
+            <div class="desc">
+              <p>Automated investment in gold with our
+                innovative methods won’t cost you anything, it’s free!
+              </p>
+              <p>We charge a <strong>transparent trading fee of 1%</strong>
+                which is among the lowest in the market.
+              </p>
+            </div>
+            <div class="btn-wrp">
+              <button type="button" class="btn btn-primary shadow">
+                learn more
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="download-now">
+    <div class="row mx-sm-5 mx-lg-10 ">
+
+      <div class="col-sm-5">
+        <div class="d-flex justify-content-center">
+          <img class="img-fluid phone-download  " src="./assets/imgs/iphonexTripCuba-min.png" alt="phone">
+        </div>
+      </div>
+
+
+      <div class="col-12 col-sm-7 ">
+        <div class="block mr-sm-5 d-flex flex-column justify-content-center align-items-center ">
+
+          <div class="title p-3">
+            Download soon
+          </div>
+          <div class="desc p-3 pt-sm-2">
+            <!-- Subscribe to waiting list for get updates... -->
+          </div>
+
+          <!-- <div class="downloads p-3 pt-sm-5 d-flex justify-content-around justify-content-sm-start">
+            <a href="#">
+              <img class="img-fluid" src="./assets/imgs/playstore.png" alt="app store download">
+            </a>
+
+            <a href="#" class="ml-sm-4">
+              <img class="img-fluid" src="./assets/imgs/playstore.png" alt="play store download">
+            </a>
+          </div> -->
+
+
+
+          <!-- <div class="downloads-wrp p-3 pb-7 pt-sm-5 d-flex justify-content-around justify-content-sm-start">
+            <div class="flex social-btns">
+              <a class="app-btn blu flex vert" href="#">
+                <i class="fab fa-apple"></i>
+                <p>Available soon on <br /> <span class="big-txt">App Store</span></p>
+              </a>
+
+              <a class="app-btn blu flex vert" href="#">
+                <i class="fab fa-google-play"></i>
+                <p>Available soon on<br /> <span class="big-txt">Google Play</span></p>
+              </a>
+            </div>
+          </div> -->
+          <div style="width:70%; text-align: center;">
+            <div class="row">
+              <div class="col text-center mt-4 py-1 py-md-3 ">
+                <form autocomplete="off" class="desc ctr ctr-lighter" id="ca-join-form-inline-footer" name="contact" method="POST"
+                  data-netlify="true" style="width:100%;">
+                  <div class="loader"></div>
+                  <input type="email" id="email" name="email">
+                  <div class="indicator" data-content="Enter your email to become a pioneer"></div>
+
+                  <input type="hidden" id="name" name="name" value="empty">
+                  <input type="hidden" id="updates" name="updates" value="on">
+                </form>
+
+                <div class="counter-wrp text-left mt-1 mt-sm-3 mt-mb-5 ml-0 text-white">
+                Join the other <span class="counter">0</span> future alchemists
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {% endfor %}
-    </div>
-  </div>
 
-</section>
-
-
-<!-- CONTENT 5  -->
-{% assign section_5 = site.data.homepage.section_5 %}
-<section class="row no-gutters row-with-bg-1 data-bg-color" data-bg-color="{{ section_5.bg_data_color }}">
-  <div class="col-12 justify-content-center text-center">
-    <h2 class="highlighted text-white">{{ section_5.title }} <span>{{ section_5.title_2 }}</span></h2>
-  </div>
-
-  <div class="col-12 text-center text-white">
-    <div class="h2 p-2 p-sm-5">
-      {{ section_5.desc | markdownify }}
-    </div>
-  </div>
-</section>
-
-
-<!-- CONTENT 6  -->
-{% assign section_6 = site.data.homepage.section_6 %}
-
-<div class="pt-2 py-sm-8 embed-responsive-21by9">
-  <video id="{{section_6.title}}" class="video-js vjs-default-skin" controls preload="none"
-    poster='{{section_6.img}}' data-setup='{ "aspectRatio":"1280:720", "playbackRates": [1, 1.5, 2] }'>
-
-    <source src="{{section_6.v_mp4}}" type='video/mp4' />
-    <source src="{{section_6.v_webm}}" type='video/webm' />
-
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-    </p>
-  </video>
-</div>
-
-<!-- 
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/{{ section_6.youtube_embed_token }}?theme=dark&controls=0&disablekb=0&enablejsapi=0&rel=0&showinfo=0&modestbranding=1&color=white"
-      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-      frameborder="0" scrolling="no"></iframe>
-  </div> -->
-<!-- <section class="row-only-video">
-    <a href="javascript:;" class="" data-modal data-video="{{ section_6.youtube_embed_token }}"
-      data-title="{{ section_6.title }}" data-size="xxl">
-      <div class="video-overlay-play-button "></div>
-    </a>
-    <img class="img-fluid" src="{{ section_6.img }}" alt="Video featured image - {{ section_6.title }}" />
-  </section> -->
-
-
-<!-- CONTENT Dynamic  -->
-{% assign section_template = site.data.homepage.section_template %}
-
-{% assign section_n_types = "section-1,section-2,section-3" | split: ',' %}
-<!-- {% assign section_bg_wire_types = "bg-wire-left bg-wire-center bg-wire-right" | join: ' ' %} -->
-
-{% for s in section_template %}
-
-{% if s.section_type == "promotional" %}
-<section class="content-promotional d-flex justify-content-center text-center">
-  <div class="row no-gutters">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 d-flex justify-content-center text-center">
-      <div class="m-auto pl-sm-4 pl-lg-8">
-        <h1 class="title">
-          {{s.title}}
-          <span> {{s.title_2}}</span>
-        </h1>
-        <br>
-        <p class="pb-5 mx-3 desc">{{s.desc}}</p>
-        <div class="col-xs-12 col-sm-7"></div>
-        {% if s.include_relative != "" %}
-        {% include {{ s.include_relative }} %}
-        {% endif %}
-      </div>
     </div>
 
-    <div class="col-md-5 d-flex justify-content-center text-center d-none-mobile">
-      <div class="phone-img my-auto pr-sm-4 pr-lg-8">
-        <img class="img-fluid" alt="promotion img" src="{{s.img}}">
-      </div>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-
-{% if s.section_type == "bg-color" %}
-<section class="row no-gutters my-5 row-with-bg-1 data-bg-color" data-bg-color="{{ section_5.bg_data_color }}">
-  <div class="col-sm-12 col-xs-12">
-    <h2>{{ s.title }}</h2>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-    <div class="my-auto desc">
-      {{ s.desc | markdownify }}
-    </div>
-  </div>
-
-  {% if s.img != "" %}
-  <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
-    <div class="my-auto desc">
-      <img alt="img" class="img-fluid" src="{{ s.img }}">
-    </div>
-  </div>
-  {% endif %}
-
-  {% if s.include_relative != "" %}
-  <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
-    <div class="my-auto desc">
-      {% include {{ s.include_relative }} %}
-    </div>
-  </div>
-  {% endif %}
-</section>
-{% endif %}
-
-{% if s.section_type == "bg-color-title-highlighted" %}
-<section class="row no-gutters my-5 row-with-bg-1 data-bg-color" data-bg-color="{{ s.bg_data_color }}">
-  <div class="col-12 pb-4">
-    <h2 class="highlighted">{{ s.title }} <span>{{ s.title_2 }}</span></h2>
-  </div>
-
-  <div class="col-12 d-flex justify-content-center text-center pt-4 ">
-    <div class="my-auto desc">
-      {{ s.desc | markdownify }}
-    </div>
-  </div>
-
-  {% if s.include_relative != "" %}
-  <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
-    <div class="my-auto desc">
-      {% include {{ s.include_relative }} %}
-    </div>
-  </div>
-  {% endif %}
-</section>
-{% endif %}
-
-
-{% if section_n_types contains s.section_type %}
-{% case s.section_type %}
-{% when 'section-1' %}
-<section class="row no-gutters row-with-bg-1">
-  <div class="col-sm-12 col-xs-12">
-    <h2>{{ s.title }}</h2>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 text-center">
-    <div class="featured-img">
-      <img alt="img" class="img-fluid" src="{{ s.img }}">
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-    <div class="my-auto desc">
-      {{ s.desc | markdownify }}
-    </div>
-  </div>
-</section>
-{% when 'section-2' %}
-<section id="section-downloads" class="my-5 row-with-bg-1 bg-center">
-  <div class="row no-gutters">
-    <div class="col-12 d-flex justify-content-center text-center">
-      <div class="my-auto desc">
-        <h2>
-          {{ s.title }}
-        </h2>
-        {{ s.desc | markdownify }}
-      </div>
-    </div>
-    <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
-      <div class="my-auto desc">
-        {% if s.include_relative != "" %}
-        {% include {{ s.include_relative }} %}
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</section>
-{% else %}
-<section class="row no-gutters row-with-bg-1 bg-left">
-  <div class="col-sm-12 col-xs-12">
-    <h2>{{ s.title }}</h2>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 d-flex justify-content-center text-center">
-    <div class="my-auto desc">
-      {{ s.desc | markdownify }}
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-xs-6 text-center">
-    <div class="featured-img">
-      <img alt="img" class="img-fluid" src="{{ s.img }}">
-    </div>
-  </div>
-
-  <div class="col-12 pt-5 pt-sm-7 pt-md-8 pt-lg-10">
-    <div class="my-auto desc">
-      {% if s.include_relative != "" %}
-      {% include {{ s.include_relative }} %}
-      {% endif %}
-    </div>
-  </div>
-</section>
-{% endcase %}
-
-{% endif %}
-
-
-{% endfor %}
-
-
+  </section>
+  <div class="mb-md-10 mb-lg-12"></div>
 
 </div>

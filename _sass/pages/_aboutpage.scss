@@ -1,0 +1,182 @@
+.aboutpage {
+  overflow: hidden;
+}
+
+.header-about {
+  @extend .default-section;
+  position: relative;
+  width: 100%;
+  height: 350px;
+  padding-top: 10rem;
+
+  .title,
+  .sub {
+    width: 80%;
+
+    @include media-breakpoint-up(sm) {
+      width: 65%;
+    }
+
+    z-index: 100;
+  }
+
+
+}
+
+.slider-rules-wrp {
+  position: relative;
+  z-index: 10;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 10rem;
+  }
+}
+
+.slider-rules {
+  overflow: visible !important;
+  position: relative;
+  z-index: 11;
+  -webkit-font-smoothing: antialiased;
+
+  .owl-stage-outer {
+    overflow: visible !important;
+  }
+
+  .owl-item {
+    @include media-breakpoint-up(sm) {
+      opacity: .1;
+
+      &.active {}
+
+      &.center {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+
+
+.rule-box2 {
+  border: 2px solid $alchemist-gray-100;
+  border-radius: 25px;
+  padding: 0.7rem;
+  color: $alchemist-gray-800;
+  background-color: $white;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  overflow: visible;
+  min-height: 300px;
+
+  .featured-image {
+    position: absolute;
+    top: -10rem;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    @include media-breakpoint-up(sm) {
+      top: -5rem;
+      left: -100%;
+      right: 0rem;
+    }
+
+    img {
+      max-height: 10rem;
+      max-width: 10rem;
+      margin: 2rem auto;
+
+      @include media-breakpoint-up(sm) {
+        max-height: 12rem;
+      }
+    }
+  }
+
+  .rules-content {}
+
+  .rule-type {
+    font-weight: bold;
+    font-size: 120%;
+    padding: 10% 5%;
+    text-align: center;
+    color: $alchemist-gray-700;
+  }
+
+  .rule-desc {
+    font-size: 100%;
+    padding: 2% 5%;
+    text-align: center;
+    color: $alchemist-gray-600;
+    font-weight: 600;
+  }
+
+  .example {
+    .showcase {
+      .fas {
+        @extend %fas-rounded;
+        margin-right: 1rem;
+      }
+
+      margin: 1rem 0;
+    }
+
+    .price {
+      color: $alchemist-gray-600;
+      margin: 0 .5rem;
+    }
+
+    .retain {
+      margin: 0 .5rem;
+      border-radius: .5rem;
+      padding: 0.2rem;
+      border: 0.233rem solid $alchemist-gold-1;
+    }
+
+    .info {
+      width: 80%;
+      margin: 0 auto;
+      padding: .3rem;
+      border: 1px solid $alchemist-gray-100;
+    }
+  }
+
+
+}
+
+
+
+.section-fees,
+.section-trust {
+  @extend .default-section;
+  @extend %content-box;
+
+  .box {
+    @extend %default-box;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .box-withdrawal {
+    @extend %default-box-1;
+    background-color: $alchemist-gray-700;
+    color: $white;
+  }
+
+  .box-image {
+    img {
+      max-width: 200px;
+    }
+
+  }
+}
+
+.section-trust {
+  background-color: $alchemist-sea-sky-2;
+  color: $white;
+  .title, .desc {
+    color: $white;
+  }
+}

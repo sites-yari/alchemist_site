@@ -1,0 +1,161 @@
+.faq-page {
+  position: relative;
+  font-family: "Montserrat-Regular";
+  text-align: justify;
+  overflow: hidden;
+}
+
+
+#faq {
+  margin-top: 2rem;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 7rem;
+  }
+
+  em {
+    display: none;
+    margin-top: 1rem;
+    font-style: normal;
+    text-indent: 1rem;
+    padding-left: .5rem;
+    color: $alchemist-gray-600;
+  }
+
+  li strong {
+    color: $alchemist-gray-700;
+    cursor: pointer;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    padding: .5rem 0;
+    text-align: left;
+  }
+
+  .group-title {
+    position: relative;
+    text-align: center;
+
+    h1 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $alchemist-sky-1;
+      padding-bottom: .5rem;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -.5rem;
+        left: 0;
+        height: 1px;
+        border: 1px solid $alchemist-gray-200;
+        width: 100%;
+      }
+    }
+  }
+
+  .group-topics {
+    margin-top: 1.5rem;
+  }
+
+  .group {
+    margin: 1rem;
+    animation: fadeIn;
+    animation-duration: 2s;
+    @include media-breakpoint-up(sm) {
+      width: 100%;
+      min-width: 350px;
+      max-width: 450px;
+    }
+
+  }
+}
+
+
+.header-faq {
+  position: relative;
+  height: 250px;
+  max-height: 250px;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {}
+
+  .search-wrp {
+    position: relative;
+    bottom: -7rem;
+    width: 100%;
+    box-sizing: border-box;
+    animation: fadeIn;
+    animation-duration: 1s;
+  }
+
+   .search {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 7rem;
+      height: 7rem;
+      top: -4rem;
+      left: -5rem;
+      z-index: -1;
+      background-repeat: no-repeat;
+      background-size: auto 7rem;
+      background-image: url('../imgs/gold-box.png');
+    }
+
+
+    height: 2.5rem;
+    width: 2.5rem;
+    box-sizing: border-box;
+    padding: .23rem .37rem;
+    border: 3px solid $alchemist-gold-1;
+    border-radius: 25px;
+    transition: all 200ms ease;
+    cursor: text;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: .2rem;
+      height: 1.3rem;
+      right: -.33rem;
+      top: 1.5rem;
+      background: $alchemist-gold-1;
+      border-radius: 3px;
+      transform: rotate(-45deg);
+      transition: all 200ms ease;
+
+
+    }
+
+    &.active,
+    &:hover {
+      width: 200px;
+      margin-right: 0px;
+
+      &:after {
+        height: 0px;
+      }
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      box-sizing: border-box;
+      font-size: 1rem;
+      color: $alchemist-gray-600;
+      font-weight: bold;
+      background: transparent;
+      outline-width: 0;
+
+    }
+  }
+
+
+}

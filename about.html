@@ -1,0 +1,20 @@
+---
+layout: default
+title: Alchemist about
+class: about
+nameId: about
+---
+{% include about.html %}
+
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>

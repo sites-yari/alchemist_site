@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>  </title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- netlify -->
+  <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <link href="../assets/css/styles.css" media="screen" rel="stylesheet" type="text/css">
+
+  <!-- <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" /> -->
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+
+  <!-- OWL -->
+  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Slick -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
+</head>
+
+
+<body class="layout-body">
+  <div>
+    <header class="layout-header">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light mx-3 mx-sm-4 mx-md-7 mx-lg-10 mx-xs-12"
+    aria-label="navbar brand">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <a class="navbar-brand text-dark align-content-center" href="/">
+          
+
+          
+          <img class="img-brand" src="./assets/imgs/H_blue.svg">
+          
+        </a>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon navbar-burger"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+          <ul class="navbar-nav nav-flex-icons">
+            <a class="nav-link" href="about">About</a>
+            <a class="nav-link" href="security">Security</a>
+            <a class="nav-link" href="blog">Blog</a>
+            <a class="nav-link" href="faq">Help</a>
+
+            <li class="nav-item pl-3 my-auto">
+              <a class="btn btn-primary text-white" data-toggle="modal" data-target="#ca-join" href="#">Download</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal fade headless-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- Modals -->
+<div class="modal fade ca-join" id="ca-join" tabindex="-1" role="dialog" aria-labelledby="ca-joinModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="ca-joinModalLabel">Join in the waiting list</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body text-center">
+        <form id="ca-join-form" name="contact" method="POST" data-netlify="true">
+
+          <div class="form-group form-no-input-outline">
+            <label for="email" class="email-label">Enter your email to become a pioneer:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your name">
+            <input type="email" id="email" name="email" placeholder="Email" required="required">
+          </div>
+
+          <div class="form-group">
+            <!-- <div>
+              <input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox" checked>
+              <label for="checkbox-1" class="checkbox-custom-label">First Choice</label>
+            </div> -->
+            <input type="checkbox" id="updates" name="updates" class="checkbox-custom" checked>
+            <label for="updates" class="checkbox-custom-label updates-label disable-selection">
+              I agree to receive promotional emails and updates.
+            </label>
+          </div>
+
+
+          <div class="counter-wrp white-bg">
+            Join the other <span class="counter">0</span> future alchemists
+          </div>
+
+
+          <div class="form-group">
+            <button class="btn ca-join-btn btn-primary" type="submit" value="Submit">Join</button></br>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <div>
+    <div id="faq-page" class="container default-wrp-page faq-page">
+  <section class="header-faq d-flex align-content-center flex-wrap">
+    <div class="search-wrp">
+      <label class="search" for="search">
+        <input id="search" type="text" autocomplete="off" />
+      </label>
+    </div>
+  </section>
+
+  <section class="mb-2">
+    <div id="faq"
+      class="p-1 p-sm-4 d-flex flex-wrap flex-column flex-sm-row align-items-stretch justify-content-around">
+
+      <ul class="group">
+        <div class="group-title">
+          <h1>Welcome to Alchemist Gold</h1>
+        </div>
+
+        <div class="group-topics">
+          <li>
+            <strong>Why Alchemist?</strong>
+            <em>
+              Alchemist will help you to save in Gold and get the budget for going on
+              holidays, making that travel trip, buying that unique gadget or simply
+              investing for a rainy day.
+            </em>
+          </li>
+
+          <li>
+            <strong>Goals you can actually achieve?</strong>
+            <em>
+              Investing with a purpose is powerful.
+
+              Set your Goals and funding Rules and let our automatic investment methods
+              buy you grams of Gold in small increments with zero impact in your
+              lifestyle. Invest every day with your purchases, income or whenever you
+              decide, and before you know it, you'll have reached your goals.
+            </em>
+          </li>
+        </div>
+      </ul>
+
+      <ul class="group">
+        <div class="group-title">
+          <h1>Your personal data</h1>
+        </div>
+
+        <div class="group-topics">
+          <li>
+            <strong>Bullet Proof Security</strong>
+            <em>
+              We’ve done the extra mile to make all your data, your money and your gold
+              protected at all times.
+
+              **Your data is secured by 256-bit encryption.** That's the same level of
+              security as the military.
+            </em>
+          </li>
+
+
+        </div>
+      </ul>
+
+
+
+
+
+
+
+
+      <ul class="group">
+        <div class="group-title">
+          <h1>Deposits & withdrawals</h1>
+        </div>
+
+        <div class="group-topics">
+          <li>
+            <strong>Deposit money?</strong>
+            <em>
+              Alchemist will buy gold directly using your rules with your associated open banking account.
+            </em>
+          </li>
+          <li>
+            <strong>Withdrawal goal funds?</strong>
+            <em>
+              Lorem ipsum dolor sit...
+            </em>
+          </li>
+          <li>
+            <strong>Physical Gold Redemption (soon) </strong>
+            <em>
+              Invest in physical gold and get it delivered to your door!
+            </em>
+          </li>
+        </div>
+      </ul>
+
+    </div>
+  </section>
+</div>
+
+
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+  </div>
+  <div>
+    <!-- Footer -->
+<footer class="footer-custom mt-1 mt-sm-2 mt-md-3">
+  <!-- Footer Links -->
+  <div class="container">
+
+    <div class="row no-gutters justify-content-center ">
+      <div class="col-12">
+        <div class="sitemap row no-gutters">
+
+
+          <div class="col-6 col-md-3 img-wrp">
+            <img src="./assets/imgs/alchemist_logo_simple.png" alt="yarilabs logo">
+          </div>
+
+          <div class="col-6 col-md-3">
+            <a class="nav-link" target="_blank" rel="noopener noreferrer"
+              href="https://www.instagram.com/alchemist_app">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/alchemistapp">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://twitter.com/alchemist_app">
+              <i class="fab fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+            <a class="nav-link" target="_blank" rel="noopener noreferrer"
+              href="https://www.youtube.com/channel/UC4cltOMmvBCX-Mn6AsuBH8g">
+              <i class="fab fa-youtube"></i>
+              <span>Youtube</span>
+            </a>
+          </div>
+
+
+          <div class="col-6 col-md-3">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="security">Security</a>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <a class="nav-link" href="blog">Blog</a>
+            <a class="nav-link" href="faq">Help</a>
+            <a class="nav-link" href="service_terms">Terms and Privacy</a>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+
+    <!-- Footer Links -->
+    <div class="line-separator"></div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    <span class="mx-1">© 2020 All rights reserved</span>
+    <span class="d-none d-sm-inline-block">|</span>
+    <a class="mx-1" href="https://www.yarilabs.com/">
+      <img src="./assets/imgs/yarilabs-footer.png" alt="yarilabs logo">
+    </a>
+  </div>
+  <!-- Copyright -->
+
+  <!-- alchemist js-->
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <script type="text/javascript" src="../assets/js/index.js"></script>
+</footer>
+<!-- Footer -->
+
+  </div>
+  <!-- Javascripts -->
+  <!-- <script>
+      function hideAndShow() {
+        var policy = document.getElementById("privacy_policy");
+        var terms = document.getElementById("terms_condition");
+
+        if (policy.style.display === "none") {
+          policy.style.display = "block";
+          terms.style.display = "none";
+        } else {
+          policy.style.display = "none";
+          terms.style.display = "block";
+        }
+      }
+      </script> -->
+  <!-- <script src="https://vjs.zencdn.net/7.8.4/video.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.blog-page {
+  .blog-header {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 3rem;
+    .header-title {
+      font-size: 2.2rem;
+      padding-bottom: 1rem;
+    }
+  }
+}

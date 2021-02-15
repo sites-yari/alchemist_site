@@ -1,11 +1,240 @@
-.security-page {
-    %section-base {
-        .title {
-            font-size: 3em;
-        }
+.securitypage {
+  position: relative;
+}
 
+.header-security {
+  @extend .default-section;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  padding-top: 10rem;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 100px;
+    left: -10rem;
+    width: 500px;
+    height: calc(50% + 120px);
+    max-height: 500px;
+    background-image: url('../imgs/vault-min.png');
+    background-repeat: no-repeat;
+    background-size: 350px;
+    z-index: -1;
+
+    @include media-breakpoint-down(sm) {
+      display: none
     }
-    .section-1 {
-        @extend %section-base;
+  }
+
+  .title,
+  .sub {
+    width: 80%;
+
+    @include media-breakpoint-up(sm) {
+      width: 65%;
     }
+
+    z-index: 100;
+  }
+
+}
+
+
+.topics {
+  background-color: $white;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 3rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 3rem;
+    box-shadow: 0 0 1rem $alchemist-gray-200;
+  }
+
+  .box {
+    margin: 1rem;
+  }
+
+  .topic-title {
+    font-weight: bold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: $alchemist-gray-800;
+
+  }
+
+  .topic-desc {
+    color: $alchemist-gray-600;
+  }
+
+  .fas {
+    @extend %fas-rounded;
+  }
+}
+
+.section-our-tech {
+  @extend .default-section;
+  background-color: $alchemist-gray-100;
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  @include media-breakpoint-up(sm) {
+    top: -15rem;
+    padding-top: 15rem;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .desc {
+    text-align: center;
+  }
+
+  .brief {
+    padding: 5%;
+
+    @include media-breakpoint-up(sm) {
+      padding: 1%;
+    }
+  }
+
+  .our-tech-topic {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 5%;
+  }
+
+  .our-tech-topic-title {
+    @include media-breakpoint-down(md) {
+      text-align: center;
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  .our-tech-topic-title,
+  .our-tech-topic-desc {
+    color: $alchemist-gray-900;
+  }
+
+  .our-tech-topic-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+
+    .fas {
+      @extend %fas-rounded;
+      background-color: transparent;
+      color: $alchemist-status-blender-3;
+      border: none;
+      position: absolute;
+      top: -.63rem;
+      left: -3.2rem;
+
+      @include media-breakpoint-down(lg) {
+        display: block;
+        position: relative;
+        top: initial;
+        left: initial;
+        margin: 0 auto;
+      }
+    }
+
+    span {
+      padding-left: -1rem;
+    }
+  }
+}
+
+.section-blockchain {
+  @extend .default-section;
+  height: 350px;
+  color: $alchemist-gray-900;
+  background-image: url("../imgs/blockchain-bg2.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: 5% 10%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -10rem;
+
+  .title {
+    text-align: center;
+  }
+
+  .desc {
+    @include media-breakpoint-up(lg) {
+      margin-left: 2rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    background: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 700px;
+    top: -20rem;
+    z-index: 1;
+  }
+
+  .content-box {
+    padding: 1.3rem;
+    width: calc(100% - 4rem);
+    min-height: 250px;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      padding: 1rem;
+      width: calc(45% - 4rem);
+      margin-right: 3rem;
+      right: 0;
+      min-height: 390px;
+      bottom: 10rem;
+    }
+  }
+
+}
+
+
+
+
+.section-open-banking {
+  @extend .default-section;
+  position: relative;
+  top: -15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  .title {}
+
+  .desc {}
+
+  @include media-breakpoint-down(sm) {
+    top: 0;
+  }
+
+  .img-fluid {
+    width: 120%;
+    max-width: 600px;
+  }
+
+  .content-box {
+    padding: 1.3rem;
+    width: calc(100% - 4rem);
+    min-height: 250px;
+
+    @include media-breakpoint-up(md) {}
+  }
 }

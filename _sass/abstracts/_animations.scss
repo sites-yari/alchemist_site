@@ -20,3 +20,25 @@
     }
 
 }
+
+// animation: glow 1s ease-in-out infinite alternate;
+@-webkit-keyframes glow {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #837006, 0 0 40px #837006, 0 0 50px #837006, 0 0 60px #fde13e, 0 0 70px #d6b80c;
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px #dbd7c0, 0 0 40px #dbd7c0, 0 0 50px #dbd7c0, 0 0 60px #dbd7c0, 0 0 70px #dbd7c0, 0 0 80px #dbd7c0;
+  }
+}
+
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+.blink_me {
+  animation: blinker .3s linear;
+}

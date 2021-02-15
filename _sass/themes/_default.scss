@@ -2,35 +2,32 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
-$yari-colors: (
-    "primary": $alchemist-victoria-2,
-    "secondary": $alchemist-victoria-1,
-    "danger": $alchemist-status-warning,
-    "warning": $alchemist-status-error,
-    "success": $alchemist-status-success,
-    "info": $alchemist-status-info,
-    "light": $alchemist-gray-100,
-    "dark": $alchemist-gray-800,
+$yari-colors: ("primary": $alchemist-sky-2,
+  "secondary": $alchemist-victoria-1,
+  "danger": $alchemist-status-warning,
+  "warning": $alchemist-status-error,
+  "success": $alchemist-status-success,
+  "info": $alchemist-status-info,
+  "light": $alchemist-gray-100,
+  "dark": $alchemist-gray-800,
 );
 
 // Boostrap variables to override
 $body-bg: #fff;
 $body-color: #000;
 
-$theme-colors: (
-    "primary": yari-color(primary),
-    "secondary": yari-color(secondary),
-    "danger": yari-color(danger),
-    "success": yari-color(success),
-    "info": yari-color(info),
-    "warning": yari-color(warning),
-    "light": yari-color(light),
-    "dark": yari-color(dark),
+$theme-colors: ("primary": yari-color(primary),
+  "secondary": yari-color(secondary),
+  "danger": yari-color(danger),
+  "success": yari-color(success),
+  "info": yari-color(info),
+  "warning": yari-color(warning),
+  "light": yari-color(light),
+  "dark": yari-color(dark),
 );
 
 
-$colors: (
-  "blue": yari-color(primary),
+$colors: ("blue": yari-color(primary),
   "red": yari-color(danger),
   "gray": $alchemist-gray-600,
   "gray-dark": yari-color(dark),
@@ -41,7 +38,13 @@ $border-radius: .75rem;
 $border-width: 1px;
 
 
-$font-family-monospace: 'Montserrat-Regular',  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: 'Montserrat-Regular',
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
 $font-family-base: $font-family-monospace;
 
 
@@ -58,17 +61,337 @@ $spacers: map-merge((0: 0,
     7: ($spacer * 5), //80px
     8: ($spacer * 6.25), //100px
     9: ($spacer * 7.5), //120px
-    10: ($spacer * 9.375) //150px
-  ),
+    10: ($spacer * 9.375), //150px
+    11: ($spacer * 10),
+    12: ($spacer * 11)),
   $spacers);
 
 
 $enable-responsive-font-sizes: true;
 
-
 body {
-  // navbar fixed
-  padding-top: 70px;
+  height: 100%;
+  width: 100%;
   font-family: "Montserrat-Regular";
   color: $alchemist-gray-800;
+  font-size: 1rem;
+}
+
+// Override bootstrap
+.btn {
+  font-size: 0.75rem;
+  padding: .375rem 2rem;
+  -webkit-appearance: none !important;
+}
+
+
+
+.no-gutters-xs {
+  margin-right: 0;
+  margin-left: 0;
+
+  >.col,
+  >[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+%noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+.disable-selection {
+  @extend %noselect;
+}
+
+.line-separator {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+  &.only-xs {
+    @media (min-width: 767.98px) {
+      visibility: hide;
+    }
+  }
+}
+
+
+.layout-body {
+  box-sizing: border-box;
+  max-width: 100vw;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+
+  @media (min-width: 1400px) {
+    max-width: 2500px !important;
+    margin: 0 auto;
+  }
+}
+
+
+.form-no-input-outline {
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+
+  // input:-webkit-autofill {
+  //   -webkit-text-fill-color: black !important;
+  //   background: transparent !important;
+  // }
+}
+
+// html {
+//   height: 100%;
+// }
+
+body {
+  position: relative;
+}
+
+
+.default-wrp-page {
+  position: relative;
+  font-family: "Montserrat-Regular";
+  text-align: justify;
+  overflow: hidden;
+}
+
+
+// .section-scroll-animate {
+//   &>.animate-right {
+//     visibility: visible;
+//   }
+// }
+
+
+.section-scroll-animate {
+  opacity: 0;
+
+  &.animated {
+    opacity: 1;
+  }
+}
+
+
+// .slickCustomSlider {
+
+//   /* Arrows */
+
+//   .slick-prev,
+//   .slick-next {
+//     font-size: 0;
+//     line-height: 0;
+//     position: absolute;
+//     top: 50%;
+//     display: block;
+//     width: 20px;
+//     height: 20px;
+//     padding: 0;
+//     -webkit-transform: translate(0, -50%);
+//     -ms-transform: translate(0, -50%);
+//     transform: translate(0, -50%);
+//     cursor: pointer;
+//     color: transparent;
+//     border: none;
+//     outline: none;
+//     background: transparent;
+//   }
+
+//   .slick-prev {
+
+//     &:hover,
+//     &:focus {
+//       color: transparent;
+//       outline: none;
+//       background: transparent;
+//     }
+//   }
+
+//   .slick-next {
+
+//     &:hover,
+//     &:focus {
+//       color: transparent;
+//       outline: none;
+//       background: transparent;
+//     }
+//   }
+
+//   .slick-prev {
+
+//     &:hover:before,
+//     &:focus:before {
+//       opacity: 1;
+//     }
+//   }
+
+//   .slick-next {
+
+//     &:hover:before,
+//     &:focus:before {
+//       opacity: 1;
+//     }
+//   }
+
+//   .slick-prev.slick-disabled:before,
+//   .slick-next.slick-disabled:before {
+//     opacity: .25;
+//   }
+
+//   .slick-prev:before,
+//   .slick-next:before {
+//     font-family: 'slick';
+//     font-size: 20px;
+//     line-height: 1;
+//     opacity: .75;
+//     color: white;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//   }
+
+//   .slick-prev {
+//     left: -25px;
+//   }
+
+//   [dir='rtl'] .slick-prev {
+//     right: -25px;
+//     left: auto;
+//   }
+
+//   .slick-prev:before {
+//     content: '←';
+//   }
+
+//   [dir='rtl'] .slick-prev:before {
+//     content: '→';
+//   }
+
+//   .slick-next {
+//     right: -25px;
+//   }
+
+//   [dir='rtl'] .slick-next {
+//     right: auto;
+//     left: -25px;
+//   }
+
+//   .slick-next:before {
+//     content: '→';
+//   }
+
+//   [dir='rtl'] .slick-next:before {
+//     content: '←';
+//   }
+
+//   /* Dots */
+//   .slick-dotted.slick-slider {
+//     margin-bottom: 30px;
+//   }
+
+//   .slick-dots {
+//     position: absolute;
+//     bottom: -25px;
+//     display: block;
+//     width: 100%;
+//     padding: 0;
+//     margin: 0;
+//     list-style: none;
+//     text-align: center;
+
+//     li {
+//       position: relative;
+//       display: inline-block;
+//       width: 20px;
+//       height: 20px;
+//       margin: 0 5px;
+//       padding: 0;
+//       cursor: pointer;
+
+//       button {
+//         font-size: 0;
+//         line-height: 0;
+//         display: block;
+//         width: 20px;
+//         height: 20px;
+//         padding: 5px;
+//         cursor: pointer;
+//         color: transparent;
+//         border: 0;
+//         outline: none;
+//         background: transparent;
+
+//         &:hover,
+//         &:focus {
+//           outline: none;
+//         }
+
+//         &:hover:before,
+//         &:focus:before {
+//           opacity: 1;
+//         }
+
+//         &:before {
+//           font-family: 'slick';
+//           font-size: 6px;
+//           line-height: 20px;
+//           position: absolute;
+//           top: 0;
+//           left: 0;
+//           width: 20px;
+//           height: 20px;
+//           content: '•';
+//           text-align: center;
+//           opacity: .25;
+//           color: black;
+//           -webkit-font-smoothing: antialiased;
+//           -moz-osx-font-smoothing: grayscale;
+//         }
+//       }
+
+//       &.slick-active button:before {
+//         opacity: .75;
+//         color: black;
+//       }
+//     }
+//   }
+// }
+
+
+%fas-rounded {
+  display: inline-flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 32px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #FFF;
+  border-color: $alchemist-gold-2;
+  color: $alchemist-gold-1;
 }

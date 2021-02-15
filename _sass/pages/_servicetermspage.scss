@@ -1,0 +1,82 @@
+.servicetermspage {
+  position: relative;
+  font-family: "Montserrat-Regular";
+  text-align: justify;
+  overflow: hidden;
+
+  .header-service-terms {
+
+  }
+
+  .nav {
+    @include media-breakpoint-up(sm) {
+      &.collapse:not(.show) {
+        display: block !important;
+      }
+    }
+
+    .nav-link {
+      margin: 0.5rem 0;
+
+      @include media-breakpoint-up(sm) {
+        margin: 1rem 0;
+      }
+    }
+
+    li:first-of-type > .nav-link {
+        margin-top: 0!important;
+    }
+  }
+
+  #terms-tab {
+    h1, h2, h3 {
+      margin-bottom: 2rem;
+      color: $alchemist-gray-800;
+    }
+
+    h3 {
+      margin-top: 3rem;
+    }
+    p {
+      color: $alchemist-gray-700;
+    }
+  }
+}
+
+
+.btn-collapse {
+  font-weight: bold;
+  font-size: 1rem;
+  color: $alchemist-gold-5;
+
+  .less {
+    display: none;
+  }
+
+  .more {
+    display: block;
+  }
+
+  .fas {
+    margin-right: 0.5rem;
+    color: $alchemist-gold-3;
+    display: block;
+  }
+
+  &.hide {
+    .less {
+      display: block;
+    }
+
+    .more {
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: $alchemist-gold-1;
+  }
+}
+
+
+.tab-content {}
